@@ -1,0 +1,11 @@
+# متطلبات نظام التنبيه الذكي للمزرعة
+# Farm Smart Notifier Requirements
+
+# مكتبة Telegram الرسمية المتخصصة
+python-telegram-bot>=22.5
+
+# مكتبة طلبات HTTP
+requests==2.31.0
+
+# مكتبة متغيرات البيئة (اختيارية للتطوير)
+python-dotenv==1.0.0

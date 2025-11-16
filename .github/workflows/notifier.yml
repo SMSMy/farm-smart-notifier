@@ -1,0 +1,77 @@
+name: Farm Notifier Scheduler
+
+on:
+  schedule:
+    # يعمل كل يوم في الساعة 6:00 و 18:00 بتوقيت مكة المكرمة (UTC+3)
+    # 03:00 UTC = 06:00 مكة
+    # 15:00 UTC = 18:00 مكة
+    - cron: '0 3,15 * * *'
+  workflow_dispatch:  # إمكانية التشغيل اليدوي
+
+jobs:
+  run-notifier:
+    runs-on: ubuntu-latest
+    name: تشغيل نظام التنبيه
+    
+    steps:
+      - name: 📥 جلب الكود
+        uses: actions/checkout@v4
+        
+      - name: 🐍 إعداد Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: 📦 تثبيت المتطلبات
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: 🔧 تحديث الإعدادات
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+        run: |
+          # تحديث التوكنات في ملف config.json
+          sed -i "s/YOUR_BOT_TOKEN_HERE/$TELEGRAM_BOT_TOKEN/g" config.json
+          sed -i "s/YOUR_CHAT_ID_HERE/$TELEGRAM_CHAT_ID/g" config.json  
+          sed -i "s/YOUR_OPENWEATHERMAP_API_KEY_HERE/$OPENWEATHER_API_KEY/g" config.json
+          
+          # التحقق من أن جميع التوكنات تم تحديثها
+          echo "🔍 التحقق من الإعدادات..."
+          if grep -q "YOUR_BOT_TOKEN_HERE" config.json; then
+            echo "❌ فشل تحديث bot_token"
+            exit 1
+          fi
+          if grep -q "YOUR_CHAT_ID_HERE" config.json; then
+            echo "❌ فشل تحديث chat_id"  
+            exit 1
+          fi
+          if grep -q "YOUR_OPENWEATHERMAP_API_KEY_HERE" config.json; then
+            echo "❌ فشل تحديث API key"
+            exit 1
+          fi
+          echo "✅ تم تحديث جميع التوكنات بنجاح"
+          
+      - name: 🚀 تشغيل النظام
+        run: |
+          echo "🌱 بدء تشغيل نظام التنبيه الذكي للمزرعة..."
+          python main.py
+          
+      - name: 📊 حفظ التقرير
+        if: always()
+        run: |
+          echo "📋 تقرير التشغيل:"
+          echo "التاريخ: $(date)"
+          echo "الحالة: ${{ job.status }}"
+          echo "الوقت المستغرق: ${{ github.action_run_started_at }} - $(date)"
+          
+      - name: 🔍 تسجيل التفاصيل
+        if: failure()
+        run: |
+          echo "❌ فشل في التشغيل - تفاصيل الخطأ:"
+          cat config.json | head -10
+          echo "---"
+          echo "آخر 20 سطر من السجل:"
+          tail -n 20 .last_run 2>/dev/null || echo "لا يوجد ملف سجل"

@@ -1,0 +1,52 @@
+name: 🚜 نظام التنبيه الذكي للمزرعة
+
+on:
+  schedule:
+    # يعمل كل 12 ساعة (6 AM و 6 PM بتوقيت UTC)
+    - cron: '0 6,18 * * *'
+  workflow_dispatch:  # يسمح بتشغيل يدوي من GitHub
+
+jobs:
+  farm-notification:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: 📦 Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: 🔐 Create environment file
+      run: |
+        mkdir -p .env
+        cat > .env << EOF
+        TELEGRAM_BOT_TOKEN=${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID=${{ secrets.TELEGRAM_CHAT_ID }}
+        OPENWEATHER_API_KEY=${{ secrets.OPENWEATHER_API_KEY }}
+        WEATHER_CITY=Tabuk
+        WEATHER_COUNTRY=SA
+        DEBUG_MODE=false
+        LOG_FILE=farm_notifier.log
+        TIMEZONE=Asia/Dhaka
+        EOF
+        
+    - name: 🚀 Run Farm Notifier
+      run: python app.py
+      
+    - name: 📋 Upload logs
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: farm-notifier-logs
+        path: |
+          farm_notifier.log
+          *.log
+        retention-days: 7
