@@ -57,21 +57,13 @@ jobs:
       - name: 🚀 تشغيل النظام
         run: |
           echo "🌱 بدء تشغيل نظام التنبيه الذكي للمزرعة..."
-          python main.py
+          python app.py  # <<<=== تم تصحيح اسم الملف هنا
           
-      - name: 📊 حفظ التقرير
-        if: always()
-        run: |
-          echo "📋 تقرير التشغيل:"
-          echo "التاريخ: $(date)"
-          echo "الحالة: ${{ job.status }}"
-          echo "الوقت المستغرق: ${{ github.action_run_started_at }} - $(date)"
-          
-      - name: 🔍 تسجيل التفاصيل
-        if: failure()
-        run: |
-          echo "❌ فشل في التشغيل - تفاصيل الخطأ:"
-          cat config.json | head -10
-          echo "---"
-          echo "آخر 20 سطر من السجل:"
-          tail -n 20 .last_run 2>/dev/null || echo "لا يوجد ملف سجل"
+      - name: 📋 Upload logs and last run status
+        if: always() # يعمل دائمًا سواء نجحت المهمة أم فشلت
+        uses: actions/upload-artifact@v4
+        with:
+          name: farm-notifier-run-data
+          path: |
+            .last_run   # <<<=== تم التعديل ليشمل فقط الملف الذي يتم إنشاؤه
+          retention-days: 7
