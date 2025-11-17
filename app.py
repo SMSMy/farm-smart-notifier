@@ -23,7 +23,7 @@ from telegram_notifier import TelegramNotifier
 # قاموس أسماء الأشجار بالعربية
 TREE_NAMES_MAP = {
     'henna': 'الحناء',
-    'fig': 'التين', 
+    'fig': 'التين',
     'banana': 'الموز',
     'mango_small': 'مانجو صغيرة',
     'mango_large': 'مانجو كبيرة',
@@ -47,15 +47,15 @@ def _create_safe_filename(name: str) -> str:
 
 def get_messages_templates() -> Dict:
     """تحميل قوالب الرسائل الثنائية اللغة مع الإيموجيات"""
-    
+
     # التعليق الموحد (سيُضاف تلقائياً)
     disclaimer_ar = "\n\n⚠️ قد يختلف شكل العبوة أو الاسم التجاري. الأهم هو المادة الفعالة المذكورة."
     disclaimer_bn = "\n\n⚠️ প্যাকেজিং বা ব্র্যান্ডের নাম ভিন্ন হতে পারে। উল্লিখিত সক্রিয় উপাদানটিই মুখ্য।"
-    
+
     # طلب التوثيق بالفيديو/الصور
     documentation_request_ar = "\n\n🎥 <b>بعد تنفيذ المهمة أو عند الانتهاء منها، يرجى إضافة فيديو أو صورة توثّق الإنجاز.</b>"
     documentation_request_bn = "\n\n🎥 <b>কাজ সম্পন্ন করার সময় বা শেষ হওয়ার পরে অনুগ্রহ করে কাজের অগ্রগতি বা ফলাফল দেখানোর জন্য একটি ভিডিও বা ছবি যুক্ত করুন।</b>"
-    
+
     return {
         'deworming': {
             'ar': lambda d: f"🐔 <b>تنبيه دواء الديدان 🔄</b>\n\n🏷️ <b>الدواء المطلوب:</b> {d.get('drug', 'غير محدد')}\n💧 <b>الطريقة:</b> يخلط مع ماء الشرب لمدة يوم واحد فقط.{disclaimer_ar}{documentation_request_ar}",
@@ -63,8 +63,8 @@ def get_messages_templates() -> Dict:
             'image': lambda d: _create_safe_filename(d.get('drug', 'deworming')) + '.jpg'
         },
         'deworming_guide': {
-            'ar': lambda d: f"<b>🛑 مهم جداً - <a href='https://github.com/SMSMy/farm-smart-notifier/blob/main/DEWORMING_GUIDE.html'>دليل استخدام أدوية الديدان للدواجن</a></b>",
-            'bn': lambda d: f"<b><a href='https://github.com/SMSMy/farm-smart-notifier/blob/main/DEWORMING_GUIDE.html'>পোল্ট্রি বা মুরগির কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</a></b>",
+            'ar': lambda d: f"<b>🛑 مهم جداً - <a href='https://smsmy.github.io/farm-smart-notifier/DEWORMING_GUIDE.html'>دليل استخدام أدوية الديدان للدواجن</a></b>",
+            'bn': lambda d: f"<b><a href='https://smsmy.github.io/farm-smart-notifier/DEWORMING_GUIDE.html'>پوল्ট्रि أو مُرغي کرمنِشک ওषध ব্যবহारের نির্দেশिকا</a></b>",
             'image': None
         },
         'sanitization': {
@@ -95,7 +95,7 @@ def create_task_from_logic(logic_result: Dict, task_type: str, messages_template
     if not template:
         print(f"⚠️ قالب غير موجود للمهمة: {task_type}")
         return {}
-    
+
     image_value = template.get('image')
     # إذا كانت image_value دالة، نستدعيها، وإلا نستخدم القيمة مباشرة
     image_filename = image_value(logic_result) if callable(image_value) else image_value
@@ -112,14 +112,14 @@ def main():
     print("=" * 60)
     print(f"🌱 نظام التنبيه الذكي للمزرعة - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
-    
+
     try:
         # التحقق من ملف الإعدادات
         if not os.path.exists('config.json'):
             print("❌ خطأ: ملف config.json غير موجود!")
             print("💡 تأكد من وجود ملف الإعدادات في المجلد الحالي")
             return
-        
+
         # تهيئة المكونات
         print("🔧 تهيئة النظام...")
         logic = FarmLogic()
@@ -132,29 +132,29 @@ def main():
             logic.config['telegram']['bot_token'],
             logic.config['telegram']['chat_id']
         )
-        
+
         # جلب بيانات الطقس
         print("\n🌤️ جلب بيانات الطقس...")
         weather_data = weather.get_weather_data()
         weather_report = weather.analyze_conditions(weather_data)
-        
+
         if weather_report:
             print(f"✅ تم تحليل الطقس - حرارة: {weather_report['current_temp']}°C، رطوبة: {weather_report['humidity_avg']:.1f}%")
         else:
             print("⚠️ تحذير: لا يمكن جلب بيانات الطقس، سيتم الاعتماد على التقويم فقط")
-        
+
         # تحميل قوالب الرسائل
         messages_templates = get_messages_templates()
-        
+
         # بناء قائمة المهام
         print("\n📋 بناء قائمة المهام...")
         tasks_to_send = []
-        
+
         # 1. مهمة دواء الديدان + رسالة الدليل
         if logic.should_deworm_today():
             drug_name = logic.get_current_deworm_drug()
             print(f"  ➕ إضافة مهمة دواء الديدان: {drug_name}")
-            
+
             # المهمة الأساسية مع الصورة
             deworm_task_details = {'type': 'deworming', 'drug': drug_name}
             task_data = create_task_from_logic(deworm_task_details, 'deworming', messages_templates)
@@ -165,8 +165,8 @@ def main():
             print("  ➕ إضافة رسالة رابط الدليل التفاعلي")
             guide_task = {
                 'type': 'deworming_guide',
-                'ar': "🛑 <b>مهم جداً - <a href='https://github.com/SMSMy/farm-smart-notifier/blob/main/DEWORMING_GUIDE.html'>دليل استخدام أدوية الديدان للدواجن</a></b>",
-                'bn': "<b><a href='https://github.com/SMSMy/farm-smart-notifier/blob/main/DEWORMING_GUIDE.html'>পোল্ট্রি বা মুরগির কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</a></b>",
+                'ar': "🛑 <b>مهم جداً - <a href='https://smsmy.github.io/farm-smart-notifier/DEWORMING_GUIDE.html'>دليل استخدام أدوية الديدان للدواجن</a></b>",
+                'bn': "<b><a href='https://smsmy.github.io/farm-smart-notifier/DEWORMING_GUIDE.html'>پوল्ट्रि أو مُرغي کرمنِشک ওषध ব्यবहارের نير्देশिका</a></b>",
                 'image': None  # لا توجد صورة لهذه الرسالة
             }
             tasks_to_send.append(guide_task)
@@ -178,7 +178,7 @@ def main():
             task_data = create_task_from_logic(task, task['type'], messages_templates)
             if task_data:
                 tasks_to_send.append(task_data)
-        
+
         # 3. مهام تسميد الأشجار
         if weather_report:
             fertilization_tasks = logic.get_all_fertilization_tasks(weather_report)
@@ -187,13 +187,13 @@ def main():
                 task_data = create_task_from_logic(tree_task, 'fertilizer', messages_templates)
                 if task_data:
                     tasks_to_send.append(task_data)
-        
+
         # تقرير نهائي
         print(f"\n📊 تم إعداد {len(tasks_to_send)} مهمة للإرسال")
-        
+
         if not tasks_to_send:
             print("✅ لا توجد مهام مجدولة لليوم")
-            
+
             # إرسال رسالة حالة إذا كانت هناك بيانات طقس مهمة
             if weather_report and any([weather_report.get('heat_wave'), weather_report.get('cold_wave'), weather_report.get('high_humidity')]):
                 print("⚠️ إرسال تنبيهات طقس مهمة...")
@@ -202,21 +202,21 @@ def main():
             # إرسال المهام
             print(f"\n📤 إرسال {len(tasks_to_send)} تنبيه...")
             success = telegram.send_batch(tasks_to_send)
-            
+
             if success:
                 print("✅ تم إرسال جميع التنبيهات بنجاح")
             else:
                 print("❌ فشل في إرسال بعض التنبيهات")
-        
+
         # حفظ وقت التشغيل
         logic.save_last_run()
         print(f"\n🕐 تم الانتهاء بنجاح - {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        
+
     except Exception as e:
         print(f"\n❌ حدث خطأ فادح في النظام: {e}")
         import traceback
         traceback.print_exc()
-    
+
     print("=" * 60)
 
 def setup_environment():
@@ -233,39 +233,39 @@ def setup_environment():
 def quick_test():
     """اختبار سريع لجميع المكونات"""
     print("🧪 اختبار سريع للمكونات...")
-    
+
     try:
         # اختبار منطق FarmLogic
         print("\n1️⃣ اختبار FarmLogic:")
         logic = FarmLogic()
         print(f"   ✅ تم تحميل الإعدادات: {len(logic.config.get('trees_fertilizer_schedule', {}))} شجرة")
-        
+
         # اختبار جلب الطقس
         print("\n2️⃣ اختبار جلب الطقس:")
         weather = WeatherFetcher("test_key", "Tabuk", "SA")
         # لن نرسل طلب حقيقي في الاختبار
-        
+
         # اختبار Telegram (بمتغيرات البيئة)
         import os
         bot_token = os.getenv('TELEGRAM_BOT_TOKEN')
         chat_id = os.getenv('TELEGRAM_CHAT_ID')
-        
+
         if bot_token and chat_id:
             print("\n3️⃣ اختبار Telegram:")
             telegram = TelegramNotifier(bot_token, chat_id)
             print("   ✅ تم تهيئة Telegram بنجاح")
         else:
             print("\n3️⃣ تخطي اختبار Telegram (لا توجد متغيرات)")
-        
+
         print("\n✅ جميع الاختبارات نجحت!")
-        
+
     except Exception as e:
         print(f"\n❌ فشل في الاختبار: {e}")
 
 if __name__ == "__main__":
     # إعداد البيئة
     setup_environment()
-    
+
     # اختيار الوضع
     if len(sys.argv) > 1:
         if sys.argv[1] == 'test':
