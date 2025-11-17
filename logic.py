@@ -169,30 +169,36 @@ class FarmLogic:
             return 'unknown'
     
     def should_send_vitamins(self, weather_report: Optional[Dict] = None) -> bool:
-        """هل نرسل تنبيه الفيتامينات؟"""
+        """هل نرسل تنبيه الفيتامينات؟ (تعمل حتى بدون بيانات طقس)"""
         try:
-            if not weather_report:
-                print("[Logic] لا توجد بيانات طقس - تجاهل تنبيه الفيتامينات")
-                return False
-            
             triggers = self.config['chicken_schedule']['vitamins']['trigger_conditions']
             reasons = []
-            
-            # فحص الظروف الجوية
-            if 'heat_wave' in triggers and weather_report.get('heat_wave'):
-                reasons.append("heat_wave")
-                print("[Logic] تم كشف موجة حر")
-            
-            if 'cold_wave' in triggers and weather_report.get('cold_wave'):
-                reasons.append("cold_wave")
-                print("[Logic] تم كشف موجة برد")
-            
-            # بعد الدواء بيوم
-            if self._was_deworming_yesterday():
+
+            # التحقق من الشروط التي تعتمد على الطقس (فقط إذا توفر التقرير)
+            if weather_report:
+                if 'heat_wave' in triggers and weather_report.get('heat_wave'):
+                    reasons.append("heat_wave")
+                    print("[Logic] تم كشف موجة حر")
+                
+                if 'cold_wave' in triggers and weather_report.get('cold_wave'):
+                    reasons.append("cold_wave")
+                    print("[Logic] تم كشف موجة برد")
+
+            # التحقق من الشروط التي لا تعتمد على الطقس
+            if 'post_deworming' in triggers and self._was_deworming_yesterday():
                 reasons.append("post_deworming")
                 print("[Logic] أمس كان موعد دواء الديدان")
+
+            # التحقق من شرط تغيير الغذاء (الجديد والمكتمل)
+            if 'feed_change' in triggers and self._was_feed_changed_today():
+                reasons.append("feed_change")
+                print("[Logic] تم تسجيل تغيير الغذاء اليوم")
             
-            return len(reasons) > 0
+            if len(reasons) > 0:
+                print(f"[Logic] سيتم إرسال تنبيه الفيتامينات - الأسباب: {reasons}")
+                return True
+            
+            return False
             
         except Exception as e:
             print(f"❌ خطأ في فحص الفيتامينات: {e}")
@@ -211,6 +217,31 @@ class FarmLogic:
             
         except Exception:
             return False
+    
+    def _was_feed_changed_today(self) -> bool:
+        """هل تم تسجيل تغيير الغذاء لليوم الحالي؟"""
+        try:
+            flag_file = '.feed_changed_today'
+            if os.path.exists(flag_file):
+                with open(flag_file, 'r') as f:
+                    last_change_date = f.read().strip()
+                
+                # يتحقق إذا كان التاريخ المسجل هو تاريخ اليوم
+                if last_change_date == date.today().strftime('%Y-%m-%d'):
+                    return True
+        except Exception as e:
+            print(f"⚠️ خطأ في التحقق من تغيير الغذاء: {e}")
+        return False
+    
+    def mark_feed_changed(self):
+        """تقوم بإنشاء ملف علامة لتسجيل أن الغذاء قد تغير اليوم."""
+        try:
+            flag_file = '.feed_changed_today'
+            with open(flag_file, 'w') as f:
+                f.write(date.today().strftime('%Y-%m-%d'))
+            print(f"[Logic] تم تسجيل تغيير الغذاء بتاريخ اليوم.")
+        except Exception as e:
+            print(f"❌ خطأ في تسجيل تغيير الغذاء: {e}")
     
     def should_prevent_coccidiosis(self, weather_report: Optional[Dict] = None) -> bool:
         """هل يجب الوقاية من الكوكسيديا؟"""
@@ -314,16 +345,23 @@ class FarmLogic:
         return None
     
     def get_weather_dependent_tasks(self, weather_report: Optional[Dict] = None) -> List[Dict[str, Any]]:
-        """المهام التي تعتمد على الطقس"""
+        """المهام التي تعتمد على الطقس والشروط الأخرى"""
         tasks = []
         
-        if not weather_report:
-            return tasks
-        
-        # الفيتامينات بناءً على الطقس
+        # الفيتامينات (المنطق الكامل)
         if self.should_send_vitamins(weather_report):
-            reason_ar = "موجة حر" if weather_report.get('heat_wave') else "موجة برد"
-            reason_bn = "heat wave" if weather_report.get('heat_wave') else "cold wave"
+            reason_ar = "دعم وقائي"
+            reason_bn = "Preventive support"
+
+            # تحديد السبب بدقة أكبر
+            if weather_report and weather_report.get('heat_wave'):
+                reason_ar, reason_bn = 'موجة حر', 'heat wave'
+            elif weather_report and weather_report.get('cold_wave'):
+                reason_ar, reason_bn = 'موجة برد', 'cold wave'
+            elif self._was_deworming_yesterday():
+                reason_ar, reason_bn = 'دعم بعد دواء الديدان', 'post-deworming support'
+            elif self._was_feed_changed_today():
+                reason_ar, reason_bn = 'تغيير نوع الغذاء', 'feed change'
             
             tasks.append({
                 'type': 'vitamins',
@@ -331,15 +369,15 @@ class FarmLogic:
                 'reason_bn': reason_bn
             })
         
-        # الوقاية من الكوكسيديا
-        if self.should_prevent_coccidiosis(weather_report):
+        # الوقاية من الكوكسيديا (تتطلب بيانات طقس)
+        if weather_report and self.should_prevent_coccidiosis(weather_report):
             tasks.append({
                 'type': 'coccidiosis',
                 'reason_ar': "رطوبة عالية",
                 'reason_bn': "high humidity"
             })
         
-        # تطهير الحظيرة
+        # تطهير الحظيرة (لا يتطلب طقس)
         if self.should_sanitize_coop():
             tasks.append({
                 'type': 'sanitization'
