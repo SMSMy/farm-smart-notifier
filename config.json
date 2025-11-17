@@ -1,0 +1,159 @@
+{
+  "telegram": {
+    "bot_token": "YOUR_BOT_TOKEN_HERE",
+    "chat_id": "YOUR_CHAT_ID_HERE",
+    "members_count": 3
+  },
+  "weather": {
+    "api_key": "YOUR_OPENWEATHERMAP_API_KEY_HERE",
+    "city": "Tabuk",
+    "country": "SA"
+  },
+  "weather_thresholds": {
+    "heat_wave": 38,
+    "cold_wave": 8,
+    "fertilizer_min_temp": 15,
+    "fertilizer_max_temp": 35,
+    "high_humidity": 80
+  },
+  "seasons": {
+    "cold_season": [
+      ["2025-11-25", "2026-03-15"],
+      ["2026-11-25", "2027-03-15"]
+    ],
+    "heat_season": [
+      ["2025-05-25", "2025-09-30"],
+      ["2026-05-25", "2026-09-30"]
+    ],
+    "spring_season": [
+      ["2025-03-01", "2025-04-30"],
+      ["2026-03-01", "2026-04-30"]
+    ],
+    "autumn_season": [
+      ["2025-10-10", "2025-11-25"],
+      ["2026-10-10", "2026-11-25"]
+    ],
+    "dust_season": [
+      ["2025-03-20", "2025-05-20"],
+      ["2025-07-10", "2025-08-20"],
+      ["2026-03-20", "2026-05-20"],
+      ["2026-07-10", "2026-08-20"]
+    ]
+  },
+  "chicken_schedule": {
+    "deworming": {
+      "interval_days": 90,
+      "start_date": "2025-10-01",
+      "drugs_rotation": ["Fenbendazole", "Levamisole", "Piperazine"]
+    },
+    "vitamins": {
+      "trigger_conditions": ["heat_wave", "cold_wave", "post_deworming", "feed_change"]
+    },
+    "coccidiosis": {
+      "trigger_conditions": ["high_humidity", "cold_night", "diarrhea"]
+    },
+    "sanitization": {
+      "interval_days": 60,
+      "start_date": "2025-10-01",
+      "product": "Virkon"
+    }
+  },
+  "trees_fertilizer_schedule": {
+    "henna": {
+      "times_per_year": 2,
+      "seasons": ["spring_season", "autumn_season"],
+      "fertilizer": "NPK 20-20-20",
+      "amount_kg": 0.75,
+      "notes": "سقي مباشرة بعد التسميد"
+    },
+    "fig": {
+      "times_per_year": 3,
+      "dates": ["2025-03-15", "2025-06-15", "2025-08-15"],
+      "fertilizers": ["NPK متوازن", "Organic", "High Potassium"],
+      "amount_kg": 1.5,
+      "avoid_winter": true
+    },
+    "banana": {
+      "times_per_year": 3,
+      "seasons": ["spring_season", "summer", "late_summer"],
+      "fertilizers": ["NPK 30-10-10", "NPK 20-20-20", "NPK 12-12-17+Mg"],
+      "amount_kg": 1.0,
+      "needs_water": true
+    },
+    "mango_small": {
+      "times_per_year": 2,
+      "seasons": ["spring_season", "autumn_season"],
+      "fertilizer": "NPK 20-20-20",
+      "amount_kg": 0.5
+    },
+    "mango_large": {
+      "times_per_year": 3,
+      "dates": ["2025-03-15", "2025-06-15", "2025-08-15"],
+      "fertilizers": ["NPK 15-15-15", "NPK 12-12-17"],
+      "amount_kg": 1.5
+    },
+    "jackfruit_young": {
+      "times_per_year": 2,
+      "seasons": ["spring_season", "autumn_season"],
+      "fertilizer": "NPK 20-20-20",
+      "amount_kg": 0.25,
+      "light_dose": true
+    },
+    "mint_basil": {
+      "times_per_year": 12,
+      "interval_days": 30,
+      "seasons": ["spring_season", "autumn_season"],
+      "fertilizer": "NPK 20-20-20",
+      "amount_kg": 0.05,
+      "avoid_heat": true
+    },
+    "pomegranate": {
+      "times_per_year": 3,
+      "dates": ["2025-03-15", "2025-06-15", "2025-09-15"],
+      "fertilizer": "NPK 15-15-15",
+      "amount_kg": 0.75,
+      "max_temp": 35
+    },
+    "acacia": {
+      "times_per_year": 1,
+      "seasons": ["spring_season"],
+      "fertilizer": "Organic",
+      "amount_kg": 1.0,
+      "low_nitrogen": true
+    },
+    "bougainvillea": {
+      "times_per_year": 3,
+      "dates": ["2025-03-15", "2025-06-15", "2025-09-15"],
+      "fertilizer": "High Phosphorus (Bloom Booster)",
+      "amount_kg": 0.3,
+      "avoid_excess_nitrogen": true
+    },
+    "grape": {
+      "times_per_year": 3,
+      "dates": ["2025-03-15", "2025-05-15", "2025-08-15"],
+      "fertilizer": "NPK 12-12-17",
+      "amount_kg": 1.0,
+      "avoid_during_fruiting": true
+    },
+    "custard_apple": {
+      "times_per_year": 1,
+      "seasons": ["spring_season"],
+      "fertilizer": "NPK 20-20-20",
+      "amount_kg": 0.25,
+      "moderate_water": true
+    },
+    "ornamental": {
+      "times_per_year": 12,
+      "interval_days": 30,
+      "seasons": ["spring_season", "autumn_season"],
+      "fertilizer": "NPK 20-20-20",
+      "amount_kg": 0.05
+    },
+    "moringa": {
+      "times_per_year": 2,
+      "seasons": ["spring_season", "autumn_season"],
+      "fertilizer": "Low Nitrogen",
+      "amount_kg": 0.25
+    }
+  }
+}
