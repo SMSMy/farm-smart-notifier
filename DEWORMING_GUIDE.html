@@ -1,0 +1,943 @@
+<!DOCTYPE html><!DOCTYPE html>
+
+<html lang="ar" dir="rtl"><html lang="ar" dir="rtl">
+
+<head><head>
+
+    <meta charset="UTF-8">    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>دليل استخدام أدوية الديدان للدواجن</title>    <title>دليل استخدام أدوية الديدان للدواجن</title>
+
+    <style>    <style>
+
+        * {        * {
+
+            margin: 0;            margin: 0;
+
+            padding: 0;            padding: 0;
+
+            box-sizing: border-box;            box-sizing: border-box;
+
+        }        }
+
+                
+
+        body {        body {
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            line-height: 1.6;            line-height: 1.6;
+
+            color: #333;            color: #333;
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+            min-height: 100vh;            min-height: 100vh;
+
+            padding: 20px;            padding: 20px;
+
+        }        }
+
+                
+
+        .container {        .container {
+
+            max-width: 900px;            max-width: 900px;
+
+            margin: 0 auto;            margin: 0 auto;
+
+            background: white;            background: white;
+
+            border-radius: 10px;            border-radius: 10px;
+
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+
+            overflow: hidden;            overflow: hidden;
+
+        }        }
+
+                
+
+        header {        header {
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+            color: white;            color: white;
+
+            padding: 40px 20px;            padding: 40px 20px;
+
+            text-align: center;            text-align: center;
+
+        }        }
+
+                
+
+        header h1 {        header h1 {
+
+            font-size: 2.5em;            font-size: 2.5em;
+
+            margin-bottom: 10px;            margin-bottom: 10px;
+
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+        }        }
+
+                
+
+        header p {        header p {
+
+            font-size: 1.1em;            font-size: 1.1em;
+
+            opacity: 0.9;            opacity: 0.9;
+
+        }        }
+
+                
+
+        .emoji {        .emoji {
+
+            margin: 0 5px;            font-size: 1.3em;
+
+        }            margin: 0 5px;
+
+                }
+
+        .content {        
+
+            padding: 40px;        .content {
+
+        }            padding: 40px;
+
+                }
+
+        .section {        
+
+            margin-bottom: 40px;        .section {
+
+        }            margin-bottom: 40px;
+
+                }
+
+        .section h2 {        
+
+            color: #667eea;        .section h2 {
+
+            margin-bottom: 20px;            color: #667eea;
+
+            padding-bottom: 10px;            margin-bottom: 20px;
+
+            border-bottom: 3px solid #667eea;            padding-bottom: 10px;
+
+            font-size: 1.8em;            border-bottom: 3px solid #667eea;
+
+        }            font-size: 1.8em;
+
+                }
+
+        .drug-card {        
+
+            background: #f8f9fa;        .drug-card {
+
+            border-left: 5px solid #667eea;            background: #f8f9fa;
+
+            padding: 20px;            border-left: 5px solid #667eea;
+
+            margin-bottom: 20px;            padding: 20px;
+
+            border-radius: 5px;            margin-bottom: 20px;
+
+            transition: all 0.3s ease;            border-radius: 5px;
+
+        }            transition: all 0.3s ease;
+
+                }
+
+        .drug-card:hover {        
+
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);        .drug-card:hover {
+
+            transform: translateX(-5px);            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+
+        }            transform: translateX(-5px);
+
+                }
+
+        .drug-card h3 {        
+
+            color: #333;        .drug-card h3 {
+
+            margin-bottom: 15px;            color: #333;
+
+            font-size: 1.4em;            margin-bottom: 15px;
+
+        }            font-size: 1.4em;
+
+                }
+
+        .info-row {        
+
+            display: flex;        .info-row {
+
+            justify-content: space-between;            display: flex;
+
+            margin-bottom: 10px;            justify-content: space-between;
+
+            padding: 8px 0;            margin-bottom: 10px;
+
+        }            padding: 8px 0;
+
+                }
+
+        .label {        
+
+            font-weight: bold;        .label {
+
+            color: #764ba2;            font-weight: bold;
+
+            min-width: 150px;            color: #764ba2;
+
+        }            min-width: 150px;
+
+                }
+
+        .value {        
+
+            color: #333;        .value {
+
+            flex: 1;            color: #333;
+
+            text-align: right;            flex: 1;
+
+        }            text-align: right;
+
+                }
+
+        .warning {        
+
+            background: #fff3cd;        .warning {
+
+            border-left: 5px solid #ffc107;            background: #fff3cd;
+
+            padding: 15px;            border-left: 5px solid #ffc107;
+
+            margin: 15px 0;            padding: 15px;
+
+            border-radius: 5px;            margin: 15px 0;
+
+        }            border-radius: 5px;
+
+                }
+
+        .warning strong {        
+
+            color: #d39e00;        .warning strong {
+
+        }            color: #d39e00;
+
+                }
+
+        .tip {        
+
+            background: #d1ecf1;        .tip {
+
+            border-left: 5px solid #17a2b8;            background: #d1ecf1;
+
+            padding: 15px;            border-left: 5px solid #17a2b8;
+
+            margin: 15px 0;            padding: 15px;
+
+            border-radius: 5px;            margin: 15px 0;
+
+        }            border-radius: 5px;
+
+                }
+
+        .tip strong {        
+
+            color: #0c5460;        .tip strong {
+
+        }            color: #0c5460;
+
+                }
+
+        .success {        
+
+            background: #d4edda;        .success {
+
+            border-left: 5px solid #28a745;            background: #d4edda;
+
+            padding: 15px;            border-left: 5px solid #28a745;
+
+            margin: 15px 0;            padding: 15px;
+
+            border-radius: 5px;            margin: 15px 0;
+
+        }            border-radius: 5px;
+
+                }
+
+        .success strong {        
+
+            color: #155724;        .success strong {
+
+        }            color: #155724;
+
+                }
+
+        table {        
+
+            width: 100%;        table {
+
+            border-collapse: collapse;            width: 100%;
+
+            margin: 20px 0;            border-collapse: collapse;
+
+        }            margin: 20px 0;
+
+                }
+
+        table th {        
+
+            background: #667eea;        table th {
+
+            color: white;            background: #667eea;
+
+            padding: 12px;            color: white;
+
+            text-align: right;            padding: 12px;
+
+            font-weight: bold;            text-align: right;
+
+        }            font-weight: bold;
+
+                }
+
+        table td {        
+
+            padding: 12px;        table td {
+
+            border-bottom: 1px solid #ddd;            padding: 12px;
+
+            text-align: right;            border-bottom: 1px solid #ddd;
+
+        }            text-align: right;
+
+                }
+
+        table tr:hover {        
+
+            background: #f5f5f5;        table tr:hover {
+
+        }            background: #f5f5f5;
+
+                }
+
+        ol, ul {        
+
+            margin-right: 30px;        .schedule-table {
+
+            margin-bottom: 15px;            margin: 20px 0;
+
+        }        }
+
+                
+
+        li {        ol, ul {
+
+            margin-bottom: 10px;            margin-right: 30px;
+
+        }            margin-bottom: 15px;
+
+                }
+
+        footer {        
+
+            background: #f8f9fa;        li {
+
+            padding: 20px;            margin-bottom: 10px;
+
+            text-align: center;        }
+
+            color: #666;        
+
+            border-top: 1px solid #ddd;        .highlight {
+
+        }            background: #fff3cd;
+
+                    padding: 2px 6px;
+
+        .grid {            border-radius: 3px;
+
+            display: grid;            font-weight: bold;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));        }
+
+            gap: 20px;        
+
+            margin: 20px 0;        .button {
+
+        }            display: inline-block;
+
+                    background: #667eea;
+
+        .grid-item {            color: white;
+
+            background: #f8f9fa;            padding: 12px 24px;
+
+            padding: 20px;            border-radius: 5px;
+
+            border-radius: 5px;            text-decoration: none;
+
+            border: 1px solid #ddd;            margin: 10px 0;
+
+        }            transition: all 0.3s ease;
+
+                    cursor: pointer;
+
+        .grid-item h4 {            border: none;
+
+            color: #667eea;            font-size: 1em;
+
+            margin-bottom: 10px;        }
+
+        }        
+
+                .button:hover {
+
+        @media print {            background: #764ba2;
+
+            body {            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.3);
+
+                background: white;        }
+
+            }        
+
+            .container {        footer {
+
+                box-shadow: none;            background: #f8f9fa;
+
+            }            padding: 20px;
+
+        }            text-align: center;
+
+                    color: #666;
+
+        @media (max-width: 768px) {            border-top: 1px solid #ddd;
+
+            header h1 {        }
+
+                font-size: 1.8em;        
+
+            }        .grid {
+
+            .content {            display: grid;
+
+                padding: 20px;            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            }            gap: 20px;
+
+            .info-row {            margin: 20px 0;
+
+                flex-direction: column;        }
+
+            }        
+
+        }        .grid-item {
+
+    </style>            background: #f8f9fa;
+
+</head>            padding: 20px;
+
+<body>            border-radius: 5px;
+
+    <div class="container">            border: 1px solid #ddd;
+
+        <header>        }
+
+            <h1><span class="emoji">🐔</span> دليل استخدام أدوية الديدان للدواجن <span class="emoji">💊</span></h1>        
+
+            <p>نظام شامل لإدارة صحة الدواجن والوقاية من الطفيليات</p>        .grid-item h4 {
+
+        </header>            color: #667eea;
+
+                    margin-bottom: 10px;
+
+        <div class="content">        }
+
+            <!-- جدول المواعيد الموسمية -->        
+
+            <div class="section">        @media print {
+
+                <h2><span class="emoji">📅</span> جدول المواعيد الموسمية</h2>            body {
+
+                <table>                background: white;
+
+                    <thead>            }
+
+                        <tr>            .container {
+
+                            <th>التاريخ</th>                box-shadow: none;
+
+                            <th>الدواء المقترح</th>            }
+
+                            <th>نوع الديدان</th>        }
+
+                            <th>الملاحظات</th>        
+
+                        </tr>        @media (max-width: 768px) {
+
+                    </thead>            header h1 {
+
+                    <tbody>                font-size: 1.8em;
+
+                        <tr>            }
+
+                            <td>15 فبراير</td>            .content {
+
+                            <td><strong>Fenbendazole</strong></td>                padding: 20px;
+
+                            <td>الديدان الأسطوانية والشريطية</td>            }
+
+                            <td>فترة ما بعد الشتاء</td>            .info-row {
+
+                        </tr>                flex-direction: column;
+
+                        <tr>            }
+
+                            <td>15 يونيو</td>            .label {
+
+                            <td><strong>Levamisole</strong></td>                margin-bottom: 5px;
+
+                            <td>الديدان الأسطوانية</td>            }
+
+                            <td>منتصف موسم الحر</td>        }
+
+                        </tr>    </style>
+
+                        <tr></head>
+
+                            <td>15 سبتمبر</td><body>
+
+                            <td><strong>Piperazine</strong></td>    <div class="container">
+
+                            <td>الديدان الأسطوانية</td>        <header>
+
+                            <td>فترة الانتقال للخريف</td>            <h1><span class="emoji">🐔</span> دليل استخدام أدوية الديدان للدواجن <span class="emoji">💊</span></h1>
+
+                        </tr>            <p>نظام شامل لإدارة صحة الدواجن والوقاية من الطفيليات</p>
+
+                        <tr>        </header>
+
+                            <td>15 ديسمبر</td>            background-color: white;
+
+                            <td><strong>Fenbendazole</strong></td>            max-width: 900px;
+
+                            <td>الديدان الأسطوانية والشريطية</td>            margin: 60px auto 0 auto; /* مسافة للزر */
+
+                            <td>دخول موسم الشتاء</td>            padding: 40px;
+
+                        </tr>            border-radius: 12px;
+
+                    </tbody>            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+                </table>        }
+
+            </div>
+
+                    /* تنسيقات عامة */
+
+            <!-- الأدوية المختلفة -->        h1 { color: #2c3e50; margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+
+            <div class="section">        h2 { color: #2980b9; margin-top: 30px; }
+
+                <h2><span class="emoji">💊</span> الأدوية المستخدمة</h2>        
+
+                        /* الجداول */
+
+                <div class="drug-card">        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+
+                    <h3>1. Fenbendazole (فينبندازول)</h3>        th, td { border: 1px solid #ddd; padding: 12px; vertical-align: top; }
+
+                    <div class="info-row">        th { background-color: #2c3e50; color: white; }
+
+                        <span class="label">المادة الفعالة:</span>        tr:nth-child(even) { background-color: #f9f9f9; }
+
+                        <span class="value">Fenbendazole 20%</span>
+
+                    </div>        /* البطاقات والتحذيرات */
+
+                    <div class="info-row">        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px; }
+
+                        <span class="label">الاستخدام:</span>        .card { padding: 15px; border-radius: 8px; background: #f0f7fb; border-right: 5px solid #3498db; }
+
+                        <span class="value">الديدان الأسطوانية والشريطية</span>        /* تعديل الحد للنسخة الإنجليزية/البنغالية ليكون يساراً */
+
+                    </div>        [dir="ltr"] .card { border-right: none; border-left: 5px solid #3498db; }
+
+                    <div class="info-row">
+
+                        <span class="label">الجرعة:</span>        .warning-box { background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ffeeba; }
+
+                        <span class="value">5-10 ملغ/كغ</span>        .warning-item { padding: 8px 0; border-bottom: 1px dashed #dccf9f; }
+
+                    </div>        .warning-item:last-child { border-bottom: none; }
+
+                    <div class="tip">
+
+                        <strong><span class="emoji">💡</span> نصيحة:</strong> فعّال ضد معظم أنواع الديدان. الخيار الأول في البرنامج الدوري.        /* تفاصيل الأدوية */
+
+                    </div>        .drug-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; background: white; }
+
+                </div>        .drug-title { font-weight: bold; color: #c0392b; font-size: 1.2em; margin-bottom: 10px; display: block; }
+
+                
+
+                <div class="drug-card">        /* التحكم في الظهور والاختفاء */
+
+                    <h3>2. Levamisole (ليفاميزول)</h3>        .hidden { display: none; }
+
+                    <div class="info-row">
+
+                        <span class="label">المادة الفعالة:</span>        /* تخصيص الخطوط حسب اللغة */
+
+                        <span class="value">Levamisole HCl 2.6%</span>        .arabic-content { font-family: 'Amiri', serif; }
+
+                    </div>        .bengali-content { font-family: 'Hind Siliguri', sans-serif; }
+
+                    <div class="info-row">
+
+                        <span class="label">الاستخدام:</span>    </style>
+
+                        <span class="value">الديدان الأسطوانية</span></head>
+
+                    </div><body>
+
+                    <div class="info-row">
+
+                        <span class="label">الجرعة:</span>    <div class="lang-btn-container">
+
+                        <span class="value">1 ملغ/كغ</span>        <button class="toggle-btn" onclick="toggleLanguage()" id="btnText"> বাংলা</button>
+
+                    </div>    </div>
+
+                    <div class="success">
+
+                        <strong><span class="emoji">✅</span> ميزة:</strong> له تأثير محفز للمناعة بالإضافة إلى مفعوله المضاد للديدان.    <div class="container">
+
+                    </div>
+
+                </div>        <div id="arabicSection" class="arabic-content" dir="rtl">
+
+                            <h1>دليل استخدام أدوية الديدان للدواجن</h1>
+
+                <div class="drug-card">
+
+                    <h3>3. Piperazine (بيبرازين)</h3>            <div class="warning-box">
+
+                    <div class="info-row">                <h3>⚠️ تنبيهات هامة جداً</h3>
+
+                        <span class="label">المادة الفعالة:</span>                <div class="warning-item">لا تعطِ دواء الديدان قبل أو بعد التلقيح (Vaccines) بـ 7 أيام.</div>
+
+                        <span class="value">Piperazine citrate</span>                <div class="warning-item">أوقف الفيتامينات التي تحتوي على معادن (مثل الحديد) أثناء العلاج.</div>
+
+                    </div>                <div class="warning-item">لا تخلط الأدوية معاً. التزم بجرعة الشركة المصنعة.</div>
+
+                    <div class="info-row">            </div>
+
+                        <span class="label">الاستخدام:</span>
+
+                        <span class="value">الديدان الأسطوانية</span>            <h2>قواعد اختيار الدواء</h2>
+
+                    </div>            <div class="card-grid">
+
+                    <div class="info-row">                <div class="card">
+
+                        <span class="label">الجرعة:</span>                    <strong>حظيرة صغيرة / مغلقة</strong><br>
+
+                        <span class="value">50-100 ملغ/كغ</span>                    الخيار الأفضل: <span style="color:#c0392b; font-weight:bold;">Levamisole</span>
+
+                    </div>                </div>
+
+                    <div class="tip">                <div class="card" style="background:#f0fcf4; border-color:#27ae60;">
+
+                        <strong><span class="emoji">💡</span> ملاحظة:</strong> آمن جداً للاستخدام مع الصيصان.                    <strong>مزرعة مفتوحة (تمشي كثيراً)</strong><br>
+
+                    </div>                    الخيار الأول: <span style="color:#c0392b; font-weight:bold;">Fenbendazole</span>
+
+                </div>                </div>
+
+            </div>                <div class="card" style="background:#fef9e7; border-color:#f39c12;">
+
+                                <strong>صيصان أو دجاج صغير</strong><br>
+
+            <!-- طريقة الإعطاء -->                    الأكثر أماناً: <span style="color:#c0392b; font-weight:bold;">Piperazine</span>
+
+            <div class="section">                </div>
+
+                <h2><span class="emoji">🔧</span> طريقة الإعطاء الصحيحة</h2>            </div>
+
+                <ol>
+
+                    <li><strong>حساب الجرعة:</strong> على أساس وزن الدواجن (كغ)</li>            <h2>جدول الوقاية السنوي</h2>
+
+                    <li><strong>التذويب:</strong> ذوب الدواء في ماء دافئ</li>            <table>
+
+                    <li><strong>الخلط:</strong> أضفه إلى خزان المياه</li>                <thead>
+
+                    <li><strong>المراقبة:</strong> تأكد من شرب جميع الدواجن</li>                    <tr>
+
+                    <li><strong>المدة:</strong> استمر حسب نوع الدواء</li>                        <th>التوقيت</th>
+
+                    <li><strong>المتابعة:</strong> راقب أي علامات تحسن</li>                        <th>الدواء</th>
+
+                </ol>                        <th>السبب</th>
+
+                <div class="warning">                    </tr>
+
+                    <strong><span class="emoji">⚠️</span> تحذير:</strong> لا تستخدم ماء عادي لمدة يومين بعد انتهاء العلاج.                </thead>
+
+                </div>                <tbody>
+
+            </div>                    <tr>
+
+                                    <td><strong>فبراير</strong> (بداية اعتدال الجو)</td>
+
+            <!-- الاحتياطات -->                        <td>Fenbendazole</td>
+
+            <div class="section">                        <td>تنظيف قوي قبل موسم وضع البيض.</td>
+
+                <h2><span class="emoji">🛡️</span> احتياطات السلامة</h2>                    </tr>
+
+                <div class="grid">                    <tr>
+
+                    <div class="grid-item">                        <td><strong>يونيو</strong> (ذروة الحرارة)</td>
+
+                        <h4><span class="emoji">🧤</span> الحماية الشخصية</h4>                        <td>Levamisole</td>
+
+                        <ul>                        <td>علاج متوسط الموسم (تزيد العدوى مع الحرارة).</td>
+
+                            <li>استخدم قفازات واقية</li>                    </tr>
+
+                            <li>تجنب استنشاق الغبار</li>                    <tr>
+
+                            <li>اغسل يديك جيداً</li>                        <td><strong>سبتمبر</strong> (انكسار الحر)</td>
+
+                        </ul>                        <td>Piperazine</td>
+
+                    </div>                        <td>دورة خفيفة وآمنة قبل دخول البرد.</td>
+
+                    <div class="grid-item">                    </tr>
+
+                        <h4><span class="emoji">🌡️</span> ظروف التخزين</h4>                    <tr>
+
+                        <ul>                        <td><strong>ديسمبر</strong> (أول البرد)</td>
+
+                            <li>15-25 درجة مئوية</li>                        <td>Fenbendazole (جرعة خفيفة)</td>
+
+                            <li>بعيداً عن الضوء</li>                        <td>لمنع تراكم الإصابات خلال الشتاء.</td>
+
+                            <li>بعيد عن الأطفال</li>                    </tr>
+
+                        </ul>                </tbody>
+
+                    </div>            </table>
+
+                    <div class="grid-item">
+
+                        <h4><span class="emoji">📝</span> السجلات</h4>            <h2>تفاصيل الأدوية</h2>
+
+                        <ul>            <div class="drug-box">
+
+                            <li>احفظ سجلات العلاج</li>                <span class="drug-title">1. Fenbendazole (فين بندازول)</span>
+
+                            <li>وثق التواريخ والجرعات</li>                <ul>
+
+                            <li>لاحظ أي آثار جانبية</li>                    <li>فعّال ضد أغلب الديدان الشريطية والأسطوانية.</li>
+
+                        </ul>                    <li>ممتاز للتربية الأرضية.</li>
+
+                    </div>                    <li>أفضل وقت: بداية ونهاية الموسم.</li>
+
+                </div>                </ul>
+
+            </div>            </div>
+
+                        <div class="drug-box">
+
+            <!-- الأعراض -->                <span class="drug-title">2. Levamisole (ليفاميزول)</span>
+
+            <div class="section">                <ul>
+
+                <h2><span class="emoji">🔍</span> علامات وجود الديدان</h2>                    <li>قوي جداً ضد الديدان الأسطوانية.</li>
+
+                <div class="warning">                    <li>يستخدم عند ملاحظة: إسهال، هزال، نقص إنتاج.</li>
+
+                    <strong>المؤشرات الرئيسية:</strong>                    <li>يستخدم مرة واحدة منتصف الموسم (الصيف/الشتاء).</li>
+
+                    <ul style="margin-top: 10px;">                </ul>
+
+                        <li>تأخر في النمو والإنتاجية</li>            </div>
+
+                        <li>ضعف الشهية وفقدان الوزن</li>            <div class="drug-box">
+
+                        <li>إسهال أو إمساك</li>                <span class="drug-title">3. Piperazine (بيبيرازين)</span>
+
+                        <li>شحوب الأغشية المخاطية</li>                <ul>
+
+                        <li>ظهور الديدان في الفضلات</li>                    <li>أضعف من السابقين ولكن آمن جداً.</li>
+
+                        <li>الخمول والضعف</li>                    <li>يصلح للصيصان والدجاج الصغير.</li>
+
+                    </ul>                    <li>يستخدم عادة دورة خفيفة بعد الأمطار.</li>
+
+                </div>                </ul>
+
+            </div>            </div>
+
+                    </div>
+
+            <!-- أسئلة شائعة -->
+
+            <div class="section">        <div id="bengaliSection" class="bengali-content hidden" dir="ltr">
+
+                <h2><span class="emoji">❓</span> أسئلة شائعة</h2>            <h1>পোল্ট্রি বা মুরগির কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</h1>
+
+                <div class="drug-card">
+
+                    <h3>س: هل أدمج أدوية مختلفة؟</h3>            <div class="warning-box">
+
+                    <p>ج: <strong>لا</strong>. استخدم نوعاً واحداً فقط حسب الجدول.</p>                <h3>⚠️ গুরুত্বপূর্ণ সতর্কতা (Warnings)</h3>
+
+                </div>                <div class="warning-item">টিকা (Vaccine) দেওয়ার ৭ দিন আগে বা পরে কৃমির ঔষধ দিবেন না।</div>
+
+                <div class="drug-card">                <div class="warning-item">ঔষধ চলাকালীন আয়রন বা মিনারেল যুক্ত ভিটামিন বন্ধ রাখুন।</div>
+
+                    <h3>س: ماذا إن نسيت الموعد؟</h3>                <div class="warning-item">একাধিক ঔষধ মিশাবেন না। কোম্পানির নির্দেশিত মাত্রা (Dose) মেনে চলুন।</div>
+
+                    <p>ج: أعطِ الدواء عند تذكرك. استشر الطبيب البيطري للمساعدة.</p>            </div>
+
+                </div>
+
+                <div class="drug-card">            <h2>ঔষধ নির্বাচনের নিয়ম (Rules)</h2>
+
+                    <h3>س: هل هناك آثار جانبية؟</h3>            <div class="card-grid">
+
+                    <p>ج: الأدوية آمنة، لكن قد يحدث إسهال مؤقت. استشر عند ظهور أعراض غير طبيعية.</p>                <div class="card">
+
+                </div>                    <strong>আবদ্ধ বা খাঁচায় পালন</strong><br>
+
+                <div class="drug-card">                    সবচেয়ে ভালো: <span style="color:#c0392b; font-weight:bold;">Levamisole</span>
+
+                    <h3>س: هل يمكن أكل البيض بعد العلاج؟</h3>                </div>
+
+                    <p>ج: اتبع فترة الانسحاب (Withdrawal Period) المكتوبة على الدواء.</p>                <div class="card" style="background:#f0fcf4; border-left: 5px solid #27ae60;">
+
+                </div>                    <strong>খোলা খামারে (Free range)</strong><br>
+
+            </div>                    প্রথম পছন্দ: <span style="color:#c0392b; font-weight:bold;">Fenbendazole</span>
+
+        </div>                </div>
+
+                        <div class="card" style="background:#fef9e7; border-left: 5px solid #f39c12;">
+
+        <footer>                    <strong>ছোট বাচ্চা মুরগি</strong><br>
+
+            <p>📞 استشر الطبيب البيطري قبل استخدام أي دواء</p>                    সবচেয়ে নিরাপদ: <span style="color:#c0392b; font-weight:bold;">Piperazine</span>
+
+            <p>🔄 آخر تحديث: 17 نوفمبر 2025 | الإصدار 1.0</p>                </div>
+
+            <p>🌐 نظام إدارة مزرعة ذكية</p>            </div>
+
+        </footer>
+
+    </div>            <h2>বাৎসরিক সময়সূচী (Schedule)</h2>
+
+</body>            <table>
+
+</html>                <thead>
+
+                    <tr>
+                        <th>সময় (Time)</th>
+                        <th>ঔষধ (Medicine)</th>
+                        <th>কারণ (Reason)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ফেব্রুয়ারি</strong> (বসন্তের শুরু)</td>
+                        <td>Fenbendazole</td>
+                        <td>ডিম পাড়ার মৌসুমের আগে ভালো করে পরিষ্কার করার জন্য।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>জুন</strong> (প্রচন্ড গরম)</td>
+                        <td>Levamisole</td>
+                        <td>গরম ও আর্দ্রতায় সংক্রমণ বাড়ে, তাই এই সময় প্রয়োজন।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>সেপ্টেম্বর</strong> (গরম কমার পর)</td>
+                        <td>Piperazine</td>
+                        <td>শীত আসার আগে একটি হালকা ও নিরাপদ ডোজ।</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ডিসেম্বর</strong> (শীতকাল)</td>
+                        <td>Fenbendazole (হালকা ডোজ)</td>
+                        <td>শীতকালে সংক্রমণ জমা হওয়া রোধ করতে।</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>ঔষধের বিবরণ (Details)</h2>
+            <div class="drug-box">
+                <span class="drug-title">1. Fenbendazole (ফেনবেনডাজল)</span>
+                <ul>
+                    <li>বেশিরভাগ কৃমির বিরুদ্ধে কার্যকর এবং নিরাপদ।</li>
+                    <li>খোলা খামারের (Free Range) জন্য খুব ভালো।</li>
+                    <li>ব্যবহারের সেরা সময়: মৌসুমের শুরু এবং শেষে।</li>
+                </ul>
+            </div>
+            <div class="drug-box">
+                <span class="drug-title">2. Levamisole (লেভামিসোল)</span>
+                <ul>
+                    <li>গোল কৃমির (Roundworms) বিরুদ্ধে খুব শক্তিশালী।</li>
+                    <li>লক্ষণ: পাতলা পায়খানা, শুকিয়ে যাওয়া, ডিম কমে যাওয়া।</li>
+                    <li>বছরের মাঝখানে (গরম/শীতে) একবার ব্যবহার করা ভালো।</li>
+                </ul>
+            </div>
+            <div class="drug-box">
+                <span class="drug-title">3. Piperazine (পাইপারাজিন)</span>
+                <ul>
+                    <li>আগের দুটির চেয়ে দুর্বল কিন্তু খুব নিরাপদ।</li>
+                    <li>ছোট বাচ্চার জন্য উপযুক্ত।</li>
+                    <li>বৃষ্টি বা পানি জমার পরে ব্যবহার করা হয়।</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            const arDiv = document.getElementById('arabicSection');
+            const bnDiv = document.getElementById('bengaliSection');
+            const btn = document.getElementById('btnText');
+            const htmlTag = document.documentElement;
+
+            if (arDiv.classList.contains('hidden')) {
+                // Show Arabic, Hide Bengali
+                arDiv.classList.remove('hidden');
+                bnDiv.classList.add('hidden');
+                btn.innerText = "English / বাংলা"; // Button shows option to switch TO Bengali
+                htmlTag.setAttribute('lang', 'ar');
+            } else {
+                // Show Bengali, Hide Arabic
+                arDiv.classList.add('hidden');
+                bnDiv.classList.remove('hidden');
+                btn.innerText = "العودة للعربية"; // Button shows option to switch TO Arabic
+                htmlTag.setAttribute('lang', 'bn');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -9,6 +9,7 @@
 
 import sys
 import os
+import re
 from datetime import datetime
 from typing import Dict, List, Optional
 
@@ -37,6 +38,13 @@ TREE_NAMES_MAP = {
     'moringa': 'المورينجا'
 }
 
+def _create_safe_filename(name: str) -> str:
+    """يحول اسم المنتج إلى اسم ملف آمن (أحرف صغيرة، شرطات سفلية)."""
+    name = name.lower()
+    name = re.sub(r'[()\s]+', '_', name)  # استبدال المسافات والأقواس بشرطة سفلية
+    name = re.sub(r'[^a-z0-9_+-]', '', name)  # إزالة أي رموز غير آمنة
+    return name
+
 def get_messages_templates() -> Dict:
     """تحميل قوالب الرسائل الثنائية اللغة مع الإيموجيات"""
     
@@ -52,7 +60,12 @@ def get_messages_templates() -> Dict:
         'deworming': {
             'ar': lambda d: f"🐔 <b>تنبيه دواء الديدان 🔄</b>\n\n🏷️ <b>الدواء المطلوب:</b> {d.get('drug', 'غير محدد')}\n💧 <b>الطريقة:</b> يخلط مع ماء الشرب لمدة يوم واحد فقط.{disclaimer_ar}{documentation_request_ar}",
             'bn': lambda d: f"🐔 <b>কৃমির ঔষধের সতর্কতা 🔄</b>\n\n🏷️ <b>প্রয়োজনীয় ঔষধ:</b> {d.get('drug', 'unknown')}\n💧 <b>পদ্ধতি:</b> শুধুমাত্র একদিনের জন্য খাবার পানির সাথে মিশিয়ে দিন।{disclaimer_bn}{documentation_request_bn}",
-            'image': 'deworming.jpg'
+            'image': lambda d: _create_safe_filename(d.get('drug', 'deworming')) + '.jpg'
+        },
+        'deworming_guide': {
+            'ar': lambda d: f"<b>🛑 مهم جداً - <a href='https://github.com/SMSMy/farm-smart-notifier/blob/main/DEWORMING_GUIDE.html'>دليل استخدام أدوية الديدان للدواجن</a></b>",
+            'bn': lambda d: f"<b><a href='https://github.com/SMSMy/farm-smart-notifier/blob/main/DEWORMING_GUIDE.html'>পোল্ট্রি বা মুরগির কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</a></b>",
+            'image': None
         },
         'sanitization': {
             'ar': lambda d: f"🧽 <b>تنبيه تطهير الحظيرة ✨</b>\n\n🧹 <b>المطلوب:</b> تنظيف وتطهير الحظيرة بالكامل\n🏠 <b>الطريقة:</b> تنظيف جاف، ثم رش بمطهر (Virkon)، ثم تجفيف كامل{disclaimer_ar}{documentation_request_ar}",
@@ -77,17 +90,21 @@ def get_messages_templates() -> Dict:
     }
 
 def create_task_from_logic(logic_result: Dict, task_type: str, messages_templates: Dict) -> Dict:
-    """إنشاء مهمة من نتيجة logic"""
+    """إنشاء مهمة من نتيجة logic (مع دعم الصور الديناميكية)"""
     template = messages_templates.get(task_type)
     if not template:
         print(f"⚠️ قالب غير موجود للمهمة: {task_type}")
         return {}
     
+    image_value = template.get('image')
+    # إذا كانت image_value دالة، نستدعيها، وإلا نستخدم القيمة مباشرة
+    image_filename = image_value(logic_result) if callable(image_value) else image_value
+
     return {
-        'type': f"{task_type}_{logic_result.get('tree', '')}",
+        'type': f"{task_type}_{logic_result.get('tree', '') or logic_result.get('drug', '')}",
         'ar': template['ar'](logic_result),
         'bn': template['bn'](logic_result),
-        'image': template.get('image')
+        'image': image_filename
     }
 
 def main():
@@ -133,18 +150,28 @@ def main():
         print("\n📋 بناء قائمة المهام...")
         tasks_to_send = []
         
-        # 1. المهام الأساسية (غير معتمدة على الطقس)
+        # 1. مهمة دواء الديدان + رسالة الدليل
         if logic.should_deworm_today():
-            print("  ➕ إضافة مهمة دواء الديدان")
-            deworm_task = {
-                'type': 'deworming',
-                'drug': logic.get_current_deworm_drug()
-            }
-            task_data = create_task_from_logic(deworm_task, 'deworming', messages_templates)
+            drug_name = logic.get_current_deworm_drug()
+            print(f"  ➕ إضافة مهمة دواء الديدان: {drug_name}")
+            
+            # المهمة الأساسية مع الصورة
+            deworm_task_details = {'type': 'deworming', 'drug': drug_name}
+            task_data = create_task_from_logic(deworm_task_details, 'deworming', messages_templates)
             if task_data:
                 tasks_to_send.append(task_data)
-        
-        # 2. المهام المعتمدة على الطقس
+
+            # ✅ إضافة رسالة الدليل المنفصلة (بدون صورة)
+            print("  ➕ إضافة رسالة رابط الدليل التفاعلي")
+            guide_task = {
+                'type': 'deworming_guide',
+                'ar': "🛑 <b>مهم جداً - <a href='https://github.com/SMSMy/farm-smart-notifier/blob/main/DEWORMING_GUIDE.html'>دليل استخدام أدوية الديدان للدواجن</a></b>",
+                'bn': "<b><a href='https://github.com/SMSMy/farm-smart-notifier/blob/main/DEWORMING_GUIDE.html'>পোল্ট্রি বা মুরগির কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</a></b>",
+                'image': None  # لا توجد صورة لهذه الرسالة
+            }
+            tasks_to_send.append(guide_task)
+
+        # 2. المهام المعتمدة على الطقس والشروط الأخرى
         weather_dependent_tasks = logic.get_weather_dependent_tasks(weather_report)
         for task in weather_dependent_tasks:
             print(f"  ➕ إضافة مهمة الطقس: {task['type']}")

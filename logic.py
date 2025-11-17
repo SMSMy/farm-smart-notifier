@@ -41,43 +41,54 @@ class FarmLogic:
         return False
     
     def should_deworm_today(self) -> bool:
-        """هل اليوم موعد دواء الديدان؟"""
+        """هل اليوم هو أحد المواعيد الموسمية المحددة لدواء الديدان؟"""
         try:
-            start_date_str = self.config['chicken_schedule']['deworming']['start_date']
-            start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
-            interval = self.config['chicken_schedule']['deworming']['interval_days']
-            
             today = date.today()
-            days_diff = (today - start_date).days
+            today_str = today.strftime("%m-%d")
             
-            should_deworm = days_diff % interval == 0
+            deworming_config = self.config['chicken_schedule']['deworming']
+            seasonal_schedule = deworming_config.get('seasonal_schedule', [])
             
-            if should_deworm:
-                print(f"[Logic] موعد دواء الديدان اليوم - آخر مرة: {start_date}, الفاصل: {interval} يوم")
+            # البحث عن موعد اليوم في الجدول الموسمي
+            for schedule_item in seasonal_schedule:
+                if schedule_item['date'] == today_str:
+                    drug = schedule_item['drug']
+                    print(f"[Logic] موعد دواء الديدان اليوم - الدواء: {drug}")
+                    return True
             
-            return should_deworm
+            return False
             
         except Exception as e:
             print(f"❌ خطأ في حساب دواء الديدان: {e}")
             return False
     
     def get_current_deworm_drug(self) -> str:
-        """الدواء الحالي في التناوب"""
+        """يعيد الدواء المحدد لليوم الحالي من الجدول الموسمي"""
         try:
-            start_date_str = self.config['chicken_schedule']['deworming']['start_date']
-            start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
-            drugs = self.config['chicken_schedule']['deworming']['drugs_rotation']
-            
             today = date.today()
-            cycles = (today - start_date).days // 90
-            current_drug = drugs[cycles % len(drugs)]
+            today_str = today.strftime("%m-%d")
             
-            print(f"[Logic] الدواء الحالي: {current_drug}")
-            return current_drug
+            deworming_config = self.config['chicken_schedule']['deworming']
+            seasonal_schedule = deworming_config.get('seasonal_schedule', [])
+            
+            # البحث عن الدواء المطابق لاليوم
+            for schedule_item in seasonal_schedule:
+                if schedule_item['date'] == today_str:
+                    drug = schedule_item['drug']
+                    print(f"[Logic] الدواء الحالي: {drug}")
+                    return drug
+            
+            # إذا لم يوجد، إرجع الدواء الأول (قيمة افتراضية)
+            if seasonal_schedule:
+                default_drug = seasonal_schedule[0]['drug']
+                print(f"[Logic] لم يوجد دواء لليوم، الدواء الافتراضي: {default_drug}")
+                return default_drug
+            
+            return "Fenbendazole"  # قيمة افتراضية نهائية
             
         except Exception as e:
             print(f"❌ خطأ في اختيار الدواء: {e}")
-            return drugs[0] if 'drugs' in locals() else "Fenbendazole"
+            return "Fenbendazole"
     
     def should_fertilize_tree(self, tree_key: str, weather_report: Optional[Dict] = None) -> bool:
         """هل يجب تسميد الشجرة اليوم؟"""

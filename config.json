@@ -42,9 +42,12 @@
   },
   "chicken_schedule": {
     "deworming": {
-      "interval_days": 90,
-      "start_date": "2025-10-01",
-      "drugs_rotation": ["Fenbendazole", "Levamisole", "Piperazine"]
+      "seasonal_schedule": [
+        { "date": "02-15", "drug": "Fenbendazole" },
+        { "date": "06-15", "drug": "Levamisole" },
+        { "date": "09-15", "drug": "Piperazine" },
+        { "date": "12-15", "drug": "Fenbendazole" }
+      ]
     },
     "vitamins": {
       "trigger_conditions": ["heat_wave", "cold_wave", "post_deworming", "feed_change"]
