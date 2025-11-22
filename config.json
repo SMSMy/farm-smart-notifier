@@ -50,7 +50,12 @@
       ]
     },
     "vitamins": {
-      "trigger_conditions": ["heat_wave", "cold_wave", "post_deworming", "feed_change"]
+      "trigger_conditions": [
+        "heat_wave",
+        "cold_wave",
+        "post_deworming",
+        "feed_change"
+      ]
     },
     "coccidiosis": {
       "trigger_conditions": ["high_humidity", "cold_night", "diarrhea"]
@@ -59,6 +64,35 @@
       "interval_days": 60,
       "start_date": "2025-10-01",
       "product": "Virkon"
+    },
+    "water_station": {
+      "interval_days": 14,
+      "start_date": "2025-11-01"
+    },
+    "pipe_waterer": {
+      "start_date": "2025-11-01",
+      "intervals": {
+        "change_water": 3,
+        "rinse": 7,
+        "sanitize": 15,
+        "deep_clean": 30
+      }
+    },
+    "weekly_cleaning": {
+      "interval_days": 7,
+      "start_date": "2025-11-01"
+    },
+    "soil_turning": {
+      "interval_days": 10,
+      "start_date": "2025-11-01"
+    },
+    "ventilation": {
+      "interval_days": 10,
+      "start_date": "2025-11-01"
+    },
+    "feeder_cleaning": {
+      "interval_days": 14,
+      "start_date": "2025-11-01"
     }
   },
   "trees_fertilizer_schedule": {

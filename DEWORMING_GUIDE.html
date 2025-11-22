@@ -1,298 +1,385 @@
 <!DOCTYPE html>
 <html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>دليل أدوية الديدان - Poultry Deworming Guide</title>
     <style>
-        /* استيراد الخطوط: أميري للعربية، وهند سيليجوري للبنغالية */
-        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;600&display=swap');
+      /* استيراد الخطوط: أميري للعربية، وهند سيليجوري للبنغالية */
+      @import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;600&display=swap");
 
-        body {
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f6f8;
-            min-height: 100vh;
-        }
+      body {
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f6f8;
+        min-height: 100vh;
+      }
 
-        /* تنسيق زر تغيير اللغة */
-        .lang-btn-container {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-        }
+      /* تنسيق زر تغيير اللغة */
+      .lang-btn-container {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+      }
 
-        .toggle-btn {
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: sans-serif;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: background 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+      .toggle-btn {
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-family: sans-serif;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-        .toggle-btn:hover {
-            background-color: #34495e;
-        }
+      .toggle-btn:hover {
+        background-color: #34495e;
+      }
 
-        .toggle-btn::before {
-            content: "🌍"; 
-        }
+      .toggle-btn::before {
+        content: "🌍";
+      }
 
-        /* الحاوية الرئيسية */
-        .container {
-            background-color: white;
-            max-width: 900px;
-            margin: 60px auto 0 auto; /* مسافة للزر */
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
+      /* الحاوية الرئيسية */
+      .container {
+        background-color: white;
+        max-width: 900px;
+        margin: 60px auto 0 auto; /* مسافة للزر */
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
 
-        /* تنسيقات عامة */
-        h1 { color: #2c3e50; margin-top: 0; border-bottom: 2px solid #eee; padding-bottom: 15px; }
-        h2 { color: #2980b9; margin-top: 30px; }
-        
-        /* الجداول */
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { border: 1px solid #ddd; padding: 12px; vertical-align: top; }
-        th { background-color: #2c3e50; color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
+      /* تنسيقات عامة */
+      h1 {
+        color: #2c3e50;
+        margin-top: 0;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 15px;
+      }
+      h2 {
+        color: #2980b9;
+        margin-top: 30px;
+      }
 
-        /* البطاقات والتحذيرات */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px; }
-        .card { padding: 15px; border-radius: 8px; background: #f0f7fb; border-right: 5px solid #3498db; }
-        /* تعديل الحد للنسخة الإنجليزية/البنغالية ليكون يساراً */
-        [dir="ltr"] .card { border-right: none; border-left: 5px solid #3498db; }
+      /* الجداول */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        vertical-align: top;
+      }
+      th {
+        background-color: #2c3e50;
+        color: white;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
 
-        .warning-box { background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ffeeba; }
-        .warning-item { padding: 8px 0; border-bottom: 1px dashed #dccf9f; }
-        .warning-item:last-child { border-bottom: none; }
+      /* البطاقات والتحذيرات */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        margin-top: 15px;
+      }
+      .card {
+        padding: 15px;
+        border-radius: 8px;
+        background: #f0f7fb;
+        border-right: 5px solid #3498db;
+      }
+      /* تعديل الحد للنسخة الإنجليزية/البنغالية ليكون يساراً */
+      [dir="ltr"] .card {
+        border-right: none;
+        border-left: 5px solid #3498db;
+      }
 
-        /* تفاصيل الأدوية */
-        .drug-box { border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; background: white; }
-        .drug-title { font-weight: bold; color: #c0392b; font-size: 1.2em; margin-bottom: 10px; display: block; }
+      .warning-box {
+        background-color: #fff3cd;
+        color: #856404;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ffeeba;
+      }
+      .warning-item {
+        padding: 8px 0;
+        border-bottom: 1px dashed #dccf9f;
+      }
+      .warning-item:last-child {
+        border-bottom: none;
+      }
 
-        /* التحكم في الظهور والاختفاء */
-        .hidden { display: none; }
+      /* تفاصيل الأدوية */
+      .drug-box {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 15px;
+        background: white;
+      }
+      .drug-title {
+        font-weight: bold;
+        color: #c0392b;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        display: block;
+      }
 
-        /* تخصيص الخطوط حسب اللغة */
-        .arabic-content { font-family: 'Amiri', serif; }
-        .bengali-content { font-family: 'Hind Siliguri', sans-serif; }
+      /* التحكم في الظهور والاختفاء */
+      .hidden {
+        display: none;
+      }
 
+      /* تخصيص الخطوط حسب اللغة */
+      .arabic-content {
+        font-family: "Amiri", serif;
+      }
+      .bengali-content {
+        font-family: "Hind Siliguri", sans-serif;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="lang-btn-container">
-        <button class="toggle-btn" onclick="toggleLanguage()" id="btnText">Switch to Bengali 🇧🇩</button>
+      <button class="toggle-btn" onclick="toggleLanguage()" id="btnText">
+        Switch to Bengali 🇧🇩
+      </button>
     </div>
 
     <div class="container">
+      <div id="arabicSection" class="arabic-content" dir="rtl">
+        <h1>دليل استخدام أدوية الديدان للدواجن</h1>
 
-        <div id="arabicSection" class="arabic-content" dir="rtl">
-            <h1>دليل استخدام أدوية الديدان للدواجن</h1>
-
-            <div class="warning-box">
-                <h3>⚠️ تنبيهات هامة جداً</h3>
-                <div class="warning-item">لا تعطِ دواء الديدان قبل أو بعد التلقيح (Vaccines) بـ 7 أيام.</div>
-                <div class="warning-item">أوقف الفيتامينات التي تحتوي على معادن (مثل الحديد) أثناء العلاج.</div>
-                <div class="warning-item">لا تخلط الأدوية معاً. التزم بجرعة الشركة المصنعة.</div>
-            </div>
-
-            <h2>قواعد اختيار الدواء</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <strong>حظيرة صغيرة / مغلقة</strong><br>
-                    الخيار الأفضل: <span style="color:#c0392b; font-weight:bold;">Levamisole</span>
-                </div>
-                <div class="card" style="background:#f0fcf4; border-color:#27ae60;">
-                    <strong>مزرعة مفتوحة (تمشي كثيراً)</strong><br>
-                    الخيار الأول: <span style="color:#c0392b; font-weight:bold;">Fenbendazole</span>
-                </div>
-                <div class="card" style="background:#fef9e7; border-color:#f39c12;">
-                    <strong>صيصان أو دجاج صغير</strong><br>
-                    الأكثر أماناً: <span style="color:#c0392b; font-weight:bold;">Piperazine</span>
-                </div>
-            </div>
-
-            <h2>جدول الوقاية السنوي</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>التوقيت</th>
-                        <th>الدواء</th>
-                        <th>السبب</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>فبراير</strong> (بداية اعتدال الجو)</td>
-                        <td>Fenbendazole</td>
-                        <td>تنظيف قوي قبل موسم وضع البيض.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>يونيو</strong> (ذروة الحرارة)</td>
-                        <td>Levamisole</td>
-                        <td>علاج متوسط الموسم (تزيد العدوى مع الحرارة).</td>
-                    </tr>
-                    <tr>
-                        <td><strong>سبتمبر</strong> (انكسار الحر)</td>
-                        <td>Piperazine</td>
-                        <td>دورة خفيفة وآمنة قبل دخول البرد.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ديسمبر</strong> (أول البرد)</td>
-                        <td>Fenbendazole (جرعة خفيفة)</td>
-                        <td>لمنع تراكم الإصابات خلال الشتاء.</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>تفاصيل الأدوية</h2>
-            <div class="drug-box">
-                <span class="drug-title">1. Fenbendazole (فين بندازول)</span>
-                <ul>
-                    <li>فعّال ضد أغلب الديدان الشريطية والأسطوانية.</li>
-                    <li>ممتاز للتربية الأرضية.</li>
-                    <li>أفضل وقت: بداية ونهاية الموسم.</li>
-                </ul>
-            </div>
-            <div class="drug-box">
-                <span class="drug-title">2. Levamisole (ليفاميزول)</span>
-                <ul>
-                    <li>قوي جداً ضد الديدان الأسطوانية.</li>
-                    <li>يستخدم عند ملاحظة: إسهال، هزال، نقص إنتاج.</li>
-                    <li>يستخدم مرة واحدة منتصف الموسم (الصيف/الشتاء).</li>
-                </ul>
-            </div>
-            <div class="drug-box">
-                <span class="drug-title">3. Piperazine (بيبيرازين)</span>
-                <ul>
-                    <li>أضعف من السابقين ولكن آمن جداً.</li>
-                    <li>يصلح للصيصان والدجاج الصغير.</li>
-                    <li>يستخدم عادة دورة خفيفة بعد الأمطار.</li>
-                </ul>
-            </div>
+        <div class="warning-box">
+          <h3>⚠️ تنبيهات هامة جداً</h3>
+          <div class="warning-item">
+            لا تعطِ دواء الديدان قبل أو بعد التلقيح (Vaccines) بـ 7 أيام.
+          </div>
+          <div class="warning-item">
+            أوقف الفيتامينات التي تحتوي على معادن (مثل الحديد) أثناء العلاج.
+          </div>
+          <div class="warning-item">
+            لا تخلط الأدوية معاً. التزم بجرعة الشركة المصنعة.
+          </div>
         </div>
 
-        <div id="bengaliSection" class="bengali-content hidden" dir="ltr">
-            <h1>পোল্ট্রি বা মুরগির কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</h1>
-
-            <div class="warning-box">
-                <h3>⚠️ গুরুত্বপূর্ণ সতর্কতা (Warnings)</h3>
-                <div class="warning-item">টিকা (Vaccine) দেওয়ার ৭ দিন আগে বা পরে কৃমির ঔষধ দিবেন না।</div>
-                <div class="warning-item">ঔষধ চলাকালীন আয়রন বা মিনারেল যুক্ত ভিটামিন বন্ধ রাখুন।</div>
-                <div class="warning-item">একাধিক ঔষধ মিশাবেন না। কোম্পানির নির্দেশিত মাত্রা (Dose) মেনে চলুন।</div>
-            </div>
-
-            <h2>ঔষধ নির্বাচনের নিয়ম (Rules)</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <strong>আবদ্ধ বা খাঁচায় পালন</strong><br>
-                    সবচেয়ে ভালো: <span style="color:#c0392b; font-weight:bold;">Levamisole</span>
-                </div>
-                <div class="card" style="background:#f0fcf4; border-left: 5px solid #27ae60;">
-                    <strong>খোলা খামারে (Free range)</strong><br>
-                    প্রথম পছন্দ: <span style="color:#c0392b; font-weight:bold;">Fenbendazole</span>
-                </div>
-                <div class="card" style="background:#fef9e7; border-left: 5px solid #f39c12;">
-                    <strong>ছোট বাচ্চা মুরগি</strong><br>
-                    সবচেয়ে নিরাপদ: <span style="color:#c0392b; font-weight:bold;">Piperazine</span>
-                </div>
-            </div>
-
-            <h2>বাৎসরিক সময়সূচী (Schedule)</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>সময় (Time)</th>
-                        <th>ঔষধ (Medicine)</th>
-                        <th>কারণ (Reason)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>ফেব্রুয়ারি</strong> (বসন্তের শুরু)</td>
-                        <td>Fenbendazole</td>
-                        <td>ডিম পাড়ার মৌসুমের আগে ভালো করে পরিষ্কার করার জন্য।</td>
-                    </tr>
-                    <tr>
-                        <td><strong>জুন</strong> (প্রচন্ড গরম)</td>
-                        <td>Levamisole</td>
-                        <td>গরম ও আর্দ্রতায় সংক্রমণ বাড়ে, তাই এই সময় প্রয়োজন।</td>
-                    </tr>
-                    <tr>
-                        <td><strong>সেপ্টেম্বর</strong> (গরম কমার পর)</td>
-                        <td>Piperazine</td>
-                        <td>শীত আসার আগে একটি হালকা ও নিরাপদ ডোজ।</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ডিসেম্বর</strong> (শীতকাল)</td>
-                        <td>Fenbendazole (হালকা ডোজ)</td>
-                        <td>শীতকালে সংক্রমণ জমা হওয়া রোধ করতে।</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>ঔষধের বিবরণ (Details)</h2>
-            <div class="drug-box">
-                <span class="drug-title">1. Fenbendazole (ফেনবেনডাজল)</span>
-                <ul>
-                    <li>বেশিরভাগ কৃমির বিরুদ্ধে কার্যকর এবং নিরাপদ।</li>
-                    <li>খোলা খামারের (Free Range) জন্য খুব ভালো।</li>
-                    <li>ব্যবহারের সেরা সময়: মৌসুমের শুরু এবং শেষে।</li>
-                </ul>
-            </div>
-            <div class="drug-box">
-                <span class="drug-title">2. Levamisole (লেভামিসোল)</span>
-                <ul>
-                    <li>গোল কৃমির (Roundworms) বিরুদ্ধে খুব শক্তিশালী।</li>
-                    <li>লক্ষণ: পাতলা পায়খানা, শুকিয়ে যাওয়া, ডিম কমে যাওয়া।</li>
-                    <li>বছরের মাঝখানে (গরম/শীতে) একবার ব্যবহার করা ভালো।</li>
-                </ul>
-            </div>
-            <div class="drug-box">
-                <span class="drug-title">3. Piperazine (পাইপারাজিন)</span>
-                <ul>
-                    <li>আগের দুটির চেয়ে দুর্বল কিন্তু খুব নিরাপদ।</li>
-                    <li>ছোট বাচ্চার জন্য উপযুক্ত।</li>
-                    <li>বৃষ্টি বা পানি জমার পরে ব্যবহার করা হয়।</li>
-                </ul>
-            </div>
+        <h2>قواعد اختيار الدواء</h2>
+        <div class="card-grid">
+          <div class="card">
+            <strong>حظيرة صغيرة / مغلقة</strong><br />
+            الخيار الأفضل:
+            <span style="color: #c0392b; font-weight: bold">Levamisole</span>
+          </div>
+          <div class="card" style="background: #f0fcf4; border-color: #27ae60">
+            <strong>مزرعة مفتوحة (تمشي كثيراً)</strong><br />
+            الخيار الأول:
+            <span style="color: #c0392b; font-weight: bold">Fenbendazole</span>
+          </div>
+          <div class="card" style="background: #fef9e7; border-color: #f39c12">
+            <strong>صيصان أو دجاج صغير</strong><br />
+            الأكثر أماناً:
+            <span style="color: #c0392b; font-weight: bold">Piperazine</span>
+          </div>
         </div>
 
+        <h2>جدول الوقاية السنوي</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>التوقيت</th>
+              <th>الدواء</th>
+              <th>السبب</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>فبراير</strong> (بداية اعتدال الجو)</td>
+              <td>Fenbendazole</td>
+              <td>تنظيف قوي قبل موسم وضع البيض.</td>
+            </tr>
+            <tr>
+              <td><strong>يونيو</strong> (ذروة الحرارة)</td>
+              <td>Levamisole</td>
+              <td>علاج متوسط الموسم (تزيد العدوى مع الحرارة).</td>
+            </tr>
+            <tr>
+              <td><strong>سبتمبر</strong> (انكسار الحر)</td>
+              <td>Piperazine</td>
+              <td>دورة خفيفة وآمنة قبل دخول البرد.</td>
+            </tr>
+            <tr>
+              <td><strong>ديسمبر</strong> (أول البرد)</td>
+              <td>Fenbendazole (جرعة خفيفة)</td>
+              <td>لمنع تراكم الإصابات خلال الشتاء.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>تفاصيل الأدوية</h2>
+        <div class="drug-box">
+          <span class="drug-title">1. Fenbendazole (فين بندازول)</span>
+          <ul>
+            <li>فعّال ضد أغلب الديدان الشريطية والأسطوانية.</li>
+            <li>ممتاز للتربية الأرضية.</li>
+            <li>أفضل وقت: بداية ونهاية الموسم.</li>
+          </ul>
+        </div>
+        <div class="drug-box">
+          <span class="drug-title">2. Levamisole (ليفاميزول)</span>
+          <ul>
+            <li>قوي جداً ضد الديدان الأسطوانية.</li>
+            <li>يستخدم عند ملاحظة: إسهال، هزال، نقص إنتاج.</li>
+            <li>يستخدم مرة واحدة منتصف الموسم (الصيف/الشتاء).</li>
+          </ul>
+        </div>
+        <div class="drug-box">
+          <span class="drug-title">3. Piperazine (بيبيرازين)</span>
+          <ul>
+            <li>أضعف من السابقين ولكن آمن جداً.</li>
+            <li>يصلح للصيصان والدجاج الصغير.</li>
+            <li>يستخدم عادة دورة خفيفة بعد الأمطار.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="bengaliSection" class="bengali-content hidden" dir="ltr">
+        <h1>পোল্ট্রি বা মুরগির কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</h1>
+
+        <div class="warning-box">
+          <h3>⚠️ গুরুত্বপূর্ণ সতর্কতা (Warnings)</h3>
+          <div class="warning-item">
+            টিকা (Vaccine) দেওয়ার ৭ দিন আগে বা পরে কৃমির ঔষধ দিবেন না।
+          </div>
+          <div class="warning-item">
+            ঔষধ চলাকালীন আয়রন বা মিনারেল যুক্ত ভিটামিন বন্ধ রাখুন।
+          </div>
+          <div class="warning-item">
+            একাধিক ঔষধ মিশাবেন না। কোম্পানির নির্দেশিত মাত্রা (Dose) মেনে চলুন।
+          </div>
+        </div>
+
+        <h2>ঔষধ নির্বাচনের নিয়ম (Rules)</h2>
+        <div class="card-grid">
+          <div class="card">
+            <strong>আবদ্ধ বা খাঁচায় পালন</strong><br />
+            সবচেয়ে ভালো:
+            <span style="color: #c0392b; font-weight: bold">Levamisole</span>
+          </div>
+          <div
+            class="card"
+            style="background: #f0fcf4; border-left: 5px solid #27ae60"
+          >
+            <strong>খোলা খামারে (Free range)</strong><br />
+            প্রথম পছন্দ:
+            <span style="color: #c0392b; font-weight: bold">Fenbendazole</span>
+          </div>
+          <div
+            class="card"
+            style="background: #fef9e7; border-left: 5px solid #f39c12"
+          >
+            <strong>ছোট বাচ্চা মুরগি</strong><br />
+            সবচেয়ে নিরাপদ:
+            <span style="color: #c0392b; font-weight: bold">Piperazine</span>
+          </div>
+        </div>
+
+        <h2>বাৎসরিক সময়সূচী (Schedule)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>সময় (Time)</th>
+              <th>ঔষধ (Medicine)</th>
+              <th>কারণ (Reason)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ফেব্রুয়ারি</strong> (বসন্তের শুরু)</td>
+              <td>Fenbendazole</td>
+              <td>ডিম পাড়ার মৌসুমের আগে ভালো করে পরিষ্কার করার জন্য।</td>
+            </tr>
+            <tr>
+              <td><strong>জুন</strong> (প্রচন্ড গরম)</td>
+              <td>Levamisole</td>
+              <td>গরম ও আর্দ্রতায় সংক্রমণ বাড়ে, তাই এই সময় প্রয়োজন।</td>
+            </tr>
+            <tr>
+              <td><strong>সেপ্টেম্বর</strong> (গরম কমার পর)</td>
+              <td>Piperazine</td>
+              <td>শীত আসার আগে একটি হালকা ও নিরাপদ ডোজ।</td>
+            </tr>
+            <tr>
+              <td><strong>ডিসেম্বর</strong> (শীতকাল)</td>
+              <td>Fenbendazole (হালকা ডোজ)</td>
+              <td>শীতকালে সংক্রমণ জমা হওয়া রোধ করতে।</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>ঔষধের বিবরণ (Details)</h2>
+        <div class="drug-box">
+          <span class="drug-title">1. Fenbendazole (ফেনবেনডাজল)</span>
+          <ul>
+            <li>বেশিরভাগ কৃমির বিরুদ্ধে কার্যকর এবং নিরাপদ।</li>
+            <li>খোলা খামারের (Free Range) জন্য খুব ভালো।</li>
+            <li>ব্যবহারের সেরা সময়: মৌসুমের শুরু এবং শেষে।</li>
+          </ul>
+        </div>
+        <div class="drug-box">
+          <span class="drug-title">2. Levamisole (লেভামিসোল)</span>
+          <ul>
+            <li>গোল কৃমির (Roundworms) বিরুদ্ধে খুব শক্তিশালী।</li>
+            <li>লক্ষণ: পাতলা পায়খানা, শুকিয়ে যাওয়া, ডিম কমে যাওয়া।</li>
+            <li>বছরের মাঝখানে (গরম/শীতে) একবার ব্যবহার করা ভালো।</li>
+          </ul>
+        </div>
+        <div class="drug-box">
+          <span class="drug-title">3. Piperazine (পাইপারাজিন)</span>
+          <ul>
+            <li>আগের দুটির চেয়ে দুর্বল কিন্তু খুব নিরাপদ।</li>
+            <li>ছোট বাচ্চার জন্য উপযুক্ত।</li>
+            <li>বৃষ্টি বা পানি জমার পরে ব্যবহার করা হয়।</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <script>
-        function toggleLanguage() {
-            const arDiv = document.getElementById('arabicSection');
-            const bnDiv = document.getElementById('bengaliSection');
-            const btn = document.getElementById('btnText');
-            const htmlTag = document.documentElement;
+      function toggleLanguage() {
+        const arDiv = document.getElementById("arabicSection");
+        const bnDiv = document.getElementById("bengaliSection");
+        const btn = document.getElementById("btnText");
+        const htmlTag = document.documentElement;
 
-            if (arDiv.classList.contains('hidden')) {
-                // Show Arabic, Hide Bengali
-                arDiv.classList.remove('hidden');
-                bnDiv.classList.add('hidden');
-                btn.innerText = "Switch to Bengali 🇧🇩";
-                htmlTag.setAttribute('lang', 'ar');
-            } else {
-                // Show Bengali, Hide Arabic
-                arDiv.classList.add('hidden');
-                bnDiv.classList.remove('hidden');
-                btn.innerText = "العودة للعربية 🇸🇦";
-                htmlTag.setAttribute('lang', 'bn');
-            }
+        if (arDiv.classList.contains("hidden")) {
+          // Show Arabic, Hide Bengali
+          arDiv.classList.remove("hidden");
+          bnDiv.classList.add("hidden");
+          btn.innerText = "Switch to Bengali 🇧🇩";
+          htmlTag.setAttribute("lang", "ar");
+        } else {
+          // Show Bengali, Hide Arabic
+          arDiv.classList.add("hidden");
+          bnDiv.classList.remove("hidden");
+          btn.innerText = "العودة للعربية 🇸🇦";
+          htmlTag.setAttribute("lang", "bn");
         }
+      }
     </script>
-</body>
+  </body>
 </html>

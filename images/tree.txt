@@ -1,0 +1,18 @@
+images/
+├── coccidia.jpg
+├── deworming.jpg
+├── fenbendazole.jpg
+├── fertilizer.png
+├── generate_tree.py
+├── high_phosphorus_(bloom_booster).webp
+├── high_potassium.webp
+├── levamisole.webp
+├── low_nitrogen.jpg
+├── npk_12-12-17+mg.jpg
+├── npk_15-15-15.png
+├── npk_20-20-20.jpg
+├── organic.jpg
+├── piperazine.webp
+├── sanitizer.png
+├── tree.txt
+└── vitamins.png
