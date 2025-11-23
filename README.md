@@ -8,6 +8,25 @@
 
 ## ✨ الميزات الجديدة المحدثة
 
+### 🔗 روابط تفاعلية للأدلة (جديد!)
+
+- **تنسيق MarkdownV2**: جميع الرسائل محدثة لاستخدام تنسيق MarkdownV2 الحديث
+- **روابط للأدلة**: كل إشعار يحتوي على رابط `[🔍 المزيد من التفاصيل]` يوجه للدليل التفصيلي على GitHub Pages
+- **دعم كامل**: روابط لـ 15+ نوع إشعار (دجاج وأشجار)
+- **ثنائية اللغة**: الروابط متوفرة بالعربية والبنغالية
+
+**مثال على الرسالة الجديدة:**
+
+```
+🧹 *تنبيه تطهير الحظيرة* 🧹
+
+حان وقت تطهير وتعقيم الحظيرة...
+
+[🔍 المزيد من التفاصيل](https://smsmy.github.io/farm-smart-notifier/docs/sanitization.html)
+
+🎥 *بعد تنفيذ المهمة، يرجى إضافة فيديو...*
+```
+
 ### 🎨 تصميم محسّن:
 
 - **إيموجيات متقدمة**: إضافة إيموجيات مناسبة لكل نوع مهمة
@@ -118,8 +137,11 @@ farm-notifier/
 ├── 📄 requirements.txt       # المكتبات المطلوبة
 ├── 📄 .env.example           # قالب متغيرات البيئة
 ├── 📄 setup.sh              # سكريبت الإعداد
+├── 📄 test_markdownv2.py    # اختبار تنسيق MarkdownV2 (جديد!)
+├── 📄 mark_feed_change.py   # تسجيل تغيير الغذاء
 ├── 📄 INSTALLATION_GUIDE.md  # دليل التثبيت الشامل
 ├── 📁 images/               # صور للمهام
+├── 📁 docs/                 # صفحات الأدلة على GitHub Pages
 └── 📁 .github/workflows/    # إعدادات GitHub Actions
 ```
 
@@ -130,6 +152,9 @@ farm-notifier/
 ```bash
 # اختبار شامل للمكونات
 python app.py test
+
+# اختبار تنسيق MarkdownV2 والروابط (جديد!)
+python test_markdownv2.py
 
 # اختبار Telegram فقط
 from telegram_notifier import test_telegram
@@ -266,6 +291,37 @@ crontab -e
 
 - **العربية**: للرسائل الرئيسية والصور
 - **البنغالية**: للرسائل التوضيحية
+
+---
+
+## 📚 الأدلة التفاعلية على GitHub Pages
+
+جميع إشعارات النظام تحتوي على روابط مباشرة للأدلة التفصيلية المتوفرة على:
+**https://smsmy.github.io/farm-smart-notifier/docs/**
+
+### أدلة الدجاج 🐔:
+
+- [دواء الديدان](https://smsmy.github.io/farm-smart-notifier/docs/deworming.html)
+- [الفيتامينات](https://smsmy.github.io/farm-smart-notifier/docs/vitamins.html)
+- [الكوكسيديا](https://smsmy.github.io/farm-smart-notifier/docs/coccidiosis.html)
+- [تطهير الحظيرة](https://smsmy.github.io/farm-smart-notifier/docs/sanitization.html)
+- [التنظيف الأسبوعي](https://smsmy.github.io/farm-smart-notifier/docs/weekly_cleaning.html)
+- [تقليب التراب](https://smsmy.github.io/farm-smart-notifier/docs/soil_turning.html)
+- [فحص التهوية](https://smsmy.github.io/farm-smart-notifier/docs/ventilation.html)
+- [غسيل المعالف](https://smsmy.github.io/farm-smart-notifier/docs/feeder_cleaning.html)
+- [محطة الماء](https://smsmy.github.io/farm-smart-notifier/docs/water_station.html)
+- [السقاية الأنبوبية](https://smsmy.github.io/farm-smart-notifier/docs/pipe_waterer.html)
+
+### أدلة الأشجار 🌳:
+
+- [دليل التسميد الشامل](https://smsmy.github.io/farm-smart-notifier/docs/fertilizer.html)
+- [الموز](https://smsmy.github.io/farm-smart-notifier/docs/banana.html)
+- [التين](https://smsmy.github.io/farm-smart-notifier/docs/fig.html)
+- [المانجو](https://smsmy.github.io/farm-smart-notifier/docs/mango.html)
+- [الرمان](https://smsmy.github.io/farm-smart-notifier/docs/pomegranate.html)
+- [العنب](https://smsmy.github.io/farm-smart-notifier/docs/grape.html)
+- [الحناء](https://smsmy.github.io/farm-smart-notifier/docs/henna.html)
+- والمزيد...
 
 ---
 
