@@ -83,11 +83,11 @@
       "start_date": "2025-11-01"
     },
     "soil_turning": {
-      "interval_days": 10,
+      "interval_days": 7,
       "start_date": "2025-11-01"
     },
     "ventilation": {
-      "interval_days": 10,
+      "interval_days": 7,
       "start_date": "2025-11-01"
     },
     "feeder_cleaning": {
