@@ -1,0 +1,77 @@
+name: Update Farm Notifications
+
+on:
+  schedule:
+    # تحديث كل 6 ساعات
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # يمكن تشغيله يدوياً
+  push:
+    branches: [ main ]
+    paths:
+      - 'config.json'
+      - 'logic.py'
+      - 'generate_notifications.py'
+
+jobs:
+  update-notifications:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Generate notifications JSON
+      run: |
+        python generate_notifications.py
+
+    - name: Check if notifications.json changed
+      id: check_changes
+      run: |
+        if git diff --quiet docs/notifications.json; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Commit and push changes
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add docs/notifications.json
+        git commit -m "🔄 تحديث الإشعارات التلقائي - $(date '+%Y-%m-%d %H:%M')"
+        git push
+
+    - name: Create summary
+      run: |
+        echo "## 📊 تقرير تحديث الإشعارات" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **التاريخ**: $(date '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_STEP_SUMMARY
+        echo "- **الحالة**: $(if [ '${{ steps.check_changes.outputs.changed }}' == 'true' ]; then echo 'تم التحديث ✅'; else echo 'لا توجد تغييرات ⏭️'; fi)" >> $GITHUB_STEP_SUMMARY
+        echo "- **عدد الإشعارات**: $(python -c "import json; print(json.load(open('docs/notifications.json'))['total_count'])")" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ -f docs/notifications.json ]; then
+          echo "### الإشعار القادم:" >> $GITHUB_STEP_SUMMARY
+          python -c "
+import json
+data = json.load(open('docs/notifications.json'))
+if data['countdown']['next_notification']:
+    notif = data['countdown']['next_notification']
+    print(f\"- **المهمة**: {notif['title_ar']}\")
+    print(f\"- **التاريخ**: {notif['date']} في {notif['time']}\")
+    print(f\"- **النوع**: {notif['type']}\")
+else:
+    print('- لا توجد إشعارات قادمة')
+" >> $GITHUB_STEP_SUMMARY
+        fi
+
