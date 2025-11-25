@@ -219,14 +219,21 @@ class FarmLogic:
         """هل أمس كان موعد دواء الديدان؟"""
         try:
             yesterday = date.today() - timedelta(days=1)
-            start_date_str = self.config['chicken_schedule']['deworming']['start_date']
-            start_date = datetime.strptime(start_date_str, "%Y-%m-%d").date()
-            interval = self.config['chicken_schedule']['deworming']['interval_days']
+            yesterday_str = yesterday.strftime("%m-%d")
 
-            days_diff = (yesterday - start_date).days
-            return days_diff % interval == 0
+            deworming_config = self.config['chicken_schedule']['deworming']
+            seasonal_schedule = deworming_config.get('seasonal_schedule', [])
 
-        except Exception:
+            # البحث عن موعد أمس في الجدول الموسمي
+            for schedule_item in seasonal_schedule:
+                if schedule_item['date'] == yesterday_str:
+                    print(f"[Logic] أمس كان موعد دواء الديدان: {schedule_item['drug']}")
+                    return True
+
+            return False
+
+        except Exception as e:
+            print(f"⚠️ خطأ في التحقق من دواء الديدان بالأمس: {e}")
             return False
 
     def _was_feed_changed_today(self) -> bool:

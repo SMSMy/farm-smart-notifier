@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>دليل دواء الديدان | Deworming Guide</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="countdown-timer-static.js" defer></script>
+    <script src="card-countdown.js" defer></script>
+    <script src="page-countdown.js" defer></script>
   </head>
   <body>
     <div class="lang-toggle">
@@ -13,12 +16,18 @@
     </div>
 
     <div class="container">
-      <header onclick="window.location.href='index.html'" style="cursor: pointer;">
+      <header
+        onclick="window.location.href='index.html'"
+        style="cursor: pointer"
+      >
         <div class="header-content">
           <h1>مزرعة أبو أسامة</h1>
           <p class="subtitle">دليل دواء الديدان (Deworming)</p>
         </div>
       </header>
+
+      <!-- Countdown Timer Container -->
+      <div id="countdown-container"></div>
 
       <!-- Arabic Content -->
       <div class="content-section active" id="content-ar">
@@ -39,13 +48,20 @@
           </div>
 
           <h3>متى يجب القيام به؟</h3>
-          <p>بشكل دوري (موسمي) كل 3 أشهر، أو عند رؤية ديدان في الفضلات.</p>
+          <p>بشكل موسمي (4 مرات سنوياً) في المواعيد المحددة التالية:</p>
+          <ul>
+            <li><strong>15 فبراير:</strong> Fenbendazole</li>
+            <li><strong>15 مايو:</strong> Levamisole</li>
+            <li><strong>15 أغسطس:</strong> Ivermectin</li>
+            <li><strong>15 نوفمبر:</strong> Albendazole</li>
+          </ul>
+          <p>أو عند رؤية ديدان في الفضلات.</p>
 
           <h3>كيف تنفذه خطوة بخطوة؟</h3>
           <ol>
             <li>
-              <strong>الاختيار:</strong> اختر دواء مناسب مثل فينبيندازول أو
-              ألبيندازول.
+              <strong>الاختيار:</strong> استخدم الدواء المحدد للموعد الحالي حسب
+              الجدول أعلاه.
             </li>
             <li>
               <strong>التعطيش:</strong> ارفع الماء (والعلف) عن الدجاج لمدة
@@ -109,17 +125,24 @@
           </div>
 
           <h3>কখন করতে হবে?</h3>
-          <p>নিয়মিতভাবে প্রতি ৩ মাস পর পর, অথবা মলে কৃমি দেখা গেলে।</p>
+          <p>নিয়মিতভাবে বছরে ৪ বার নির্ধারিত তারিখে:</p>
+          <ul>
+            <li><strong>১৫ ফেব্রুয়ারি:</strong> Fenbendazole</li>
+            <li><strong>১৫ মে:</strong> Levamisole</li>
+            <li><strong>১৫ আগস্ট:</strong> Ivermectin</li>
+            <li><strong>১৫ নভেম্বর:</strong> Albendazole</li>
+          </ul>
+          <p>অথবা মলে কৃমি দেখা গেলে।</p>
 
           <h3>ধাপগুলো কীভাবে করবেন?</h3>
           <ol>
             <li>
-              <strong>নির্বাচন:</strong> ফেনবেনডাজল বা অ্যালবেনডাজল এর মতো
-              উপযুক্ত ঔষধ বেছে নিন।
+              <strong>নির্বাচন:</strong> উপরের তালিকা অনুযায়ী নির্ধারিত ঔষধ
+              ব্যবহার করুন।
             </li>
             <li>
               <strong>পিপাসার্ত রাখা:</strong> ঔষধ দেওয়ার ২ ঘণ্টা আগে পানি (এবং
-              খাবার) সরিয়ে নিন যাতে তারা পুরোটা পান করে।
+              খাবার) সরিয়ে নিন যাতে তারা পুরোটা পান করে.।
             </li>
             <li>
               <strong>মেশানো:</strong> একদিনের জন্য পর্যাপ্ত পানির সাথে ঔষধ
@@ -197,4 +220,3 @@
     </script>
   </body>
 </html>
-
