@@ -4,58 +4,58 @@
  */
 
 class FarmNotifierCountdownStatic {
-    constructor(options = {}) {
-        this.jsonFile = options.jsonFile || 'notifications.json';
-        this.containerId = options.containerId || 'countdown-container';
-        this.updateInterval = options.updateInterval || 1000; // تحديث كل ثانية
-        this.language = options.language || 'ar';
+  constructor(options = {}) {
+    this.jsonFile = options.jsonFile || "notifications.json";
+    this.containerId = options.containerId || "countdown-container";
+    this.updateInterval = options.updateInterval || 1000; // تحديث كل ثانية
+    this.language = options.language || "ar";
 
-        this.container = null;
-        this.intervalId = null;
-        this.notificationData = null;
-        this.isRunning = false;
+    this.container = null;
+    this.intervalId = null;
+    this.notificationData = null;
+    this.isRunning = false;
 
-        this.init();
+    this.init();
+  }
+
+  init() {
+    this.createContainer();
+    this.fetchNotificationData();
+    this.startCountdown();
+
+    // تحديث البيانات كل 10 دقائق
+    setInterval(() => {
+      this.fetchNotificationData();
+    }, 10 * 60 * 1000);
+  }
+
+  createContainer() {
+    // البحث عن الحاوية الموجودة أو إنشاء واحدة جديدة
+    this.container = document.getElementById(this.containerId);
+
+    if (!this.container) {
+      this.container = document.createElement("div");
+      this.container.id = this.containerId;
+      this.container.className = "countdown-timer";
+
+      // إضافة الحاوية إلى أعلى الصفحة
+      const header = document.querySelector("header");
+      if (header) {
+        header.parentNode.insertBefore(this.container, header.nextSibling);
+      } else {
+        document.body.insertBefore(this.container, document.body.firstChild);
+      }
     }
 
-    init() {
-        this.createContainer();
-        this.fetchNotificationData();
-        this.startCountdown();
+    this.addStyles();
+  }
 
-        // تحديث البيانات كل 10 دقائق
-        setInterval(() => {
-            this.fetchNotificationData();
-        }, 10 * 60 * 1000);
-    }
-
-    createContainer() {
-        // البحث عن الحاوية الموجودة أو إنشاء واحدة جديدة
-        this.container = document.getElementById(this.containerId);
-
-        if (!this.container) {
-            this.container = document.createElement('div');
-            this.container.id = this.containerId;
-            this.container.className = 'countdown-timer';
-
-            // إضافة الحاوية إلى أعلى الصفحة
-            const header = document.querySelector('header');
-            if (header) {
-                header.parentNode.insertBefore(this.container, header.nextSibling);
-            } else {
-                document.body.insertBefore(this.container, document.body.firstChild);
-            }
-        }
-
-        this.addStyles();
-    }
-
-    addStyles() {
-        // إضافة CSS للعداد إذا لم يكن موجوداً
-        if (!document.getElementById('countdown-styles')) {
-            const style = document.createElement('style');
-            style.id = 'countdown-styles';
-            style.textContent = `
+  addStyles() {
+    // إضافة CSS للعداد إذا لم يكن موجوداً
+    if (!document.getElementById("countdown-styles")) {
+      const style = document.createElement("style");
+      style.id = "countdown-styles";
+      style.textContent = `
                 .countdown-timer {
                     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                     color: white;
@@ -232,101 +232,124 @@ class FarmNotifierCountdownStatic {
                     text-align: center;
                 }
             `;
-            document.head.appendChild(style);
-        }
+      document.head.appendChild(style);
+    }
+  }
+
+  async fetchNotificationData() {
+    try {
+      this.showLoading();
+
+      // Check for file protocol which might block fetch
+      if (window.location.protocol === "file:") {
+        console.warn(
+          "Running via file:// protocol. Fetch might fail due to CORS."
+        );
+      }
+
+      // Create a timeout promise
+      const timeout = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error("Request timed out (10s)")), 10000);
+      });
+
+      // Race between fetch and timeout
+      const response = await Promise.race([fetch(this.jsonFile), timeout]);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      console.log("Countdown data loaded:", data); // Debug log
+      this.notificationData = data;
+      this.updateDisplay();
+    } catch (error) {
+      console.error("Error fetching notification data:", error);
+      this.showError(error.message);
+    }
+  }
+
+  startCountdown() {
+    if (this.isRunning) return;
+
+    this.isRunning = true;
+    this.intervalId = setInterval(() => {
+      this.updateCountdown();
+    }, this.updateInterval);
+  }
+
+  stopCountdown() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
+    this.isRunning = false;
+  }
+
+  updateCountdown() {
+    if (
+      !this.notificationData ||
+      !this.notificationData.countdown.next_notification
+    ) {
+      return;
     }
 
-    async fetchNotificationData() {
-        try {
-            this.showLoading();
+    const now = new Date();
+    const targetTime = new Date(
+      this.notificationData.countdown.next_notification.datetime
+    );
+    const timeDiff = targetTime - now;
 
-            const response = await fetch(this.jsonFile);
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-            }
-
-            const data = await response.json();
-            this.notificationData = data;
-            this.updateDisplay();
-
-        } catch (error) {
-            console.error('خطأ في جلب بيانات الإشعارات:', error);
-            this.showError(error.message);
-        }
+    if (timeDiff <= 0) {
+      // انتهى الوقت، إعادة جلب البيانات
+      this.fetchNotificationData();
+      return;
     }
 
-    startCountdown() {
-        if (this.isRunning) return;
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
 
-        this.isRunning = true;
-        this.intervalId = setInterval(() => {
-            this.updateCountdown();
-        }, this.updateInterval);
+    this.renderCountdown({ days, hours, minutes, seconds });
+  }
+
+  updateDisplay() {
+    if (!this.notificationData) {
+      this.showError("لا توجد بيانات");
+      return;
     }
 
-    stopCountdown() {
-        if (this.intervalId) {
-            clearInterval(this.intervalId);
-            this.intervalId = null;
-        }
-        this.isRunning = false;
+    if (!this.notificationData.countdown.next_notification) {
+      this.showNoNotifications();
+      return;
     }
 
-    updateCountdown() {
-        if (!this.notificationData || !this.notificationData.countdown.next_notification) {
-            return;
-        }
+    this.updateCountdown();
+  }
 
-        const now = new Date();
-        const targetTime = new Date(this.notificationData.countdown.next_notification.datetime);
-        const timeDiff = targetTime - now;
+  renderCountdown(time) {
+    const isArabic = this.language === "ar";
+    const title = isArabic ? "الإشعار القادم" : "পরবর্তী বিজ্ঞপ্তি";
+    const nextNotification = this.notificationData.countdown.next_notification;
+    const taskTitle = isArabic
+      ? nextNotification.title_ar
+      : nextNotification.title_bn;
 
-        if (timeDiff <= 0) {
-            // انتهى الوقت، إعادة جلب البيانات
-            this.fetchNotificationData();
-            return;
-        }
+    const labels = isArabic
+      ? { days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية" }
+      : { days: "দিন", hours: "ঘন্টা", minutes: "মিনিট", seconds: "সেকেন্ড" };
 
-        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    // معلومات إضافية
+    const generatedAt = new Date(this.notificationData.generated_at);
+    const infoText = isArabic
+      ? `آخر تحديث: ${generatedAt.toLocaleString("ar")}`
+      : `সর্বশেষ আপডেট: ${generatedAt.toLocaleString("bn")}`;
 
-        this.renderCountdown({ days, hours, minutes, seconds });
-    }
-
-    updateDisplay() {
-        if (!this.notificationData) {
-            this.showError('لا توجد بيانات');
-            return;
-        }
-
-        if (!this.notificationData.countdown.next_notification) {
-            this.showNoNotifications();
-            return;
-        }
-
-        this.updateCountdown();
-    }
-
-    renderCountdown(time) {
-        const isArabic = this.language === 'ar';
-        const title = isArabic ? 'الإشعار القادم' : 'পরবর্তী বিজ্ঞপ্তি';
-        const nextNotification = this.notificationData.countdown.next_notification;
-        const taskTitle = isArabic ? nextNotification.title_ar : nextNotification.title_bn;
-
-        const labels = isArabic ?
-            { days: 'يوم', hours: 'ساعة', minutes: 'دقيقة', seconds: 'ثانية' } :
-            { days: 'দিন', hours: 'ঘন্টা', minutes: 'মিনিট', seconds: 'সেকেন্ড' };
-
-        // معلومات إضافية
-        const generatedAt = new Date(this.notificationData.generated_at);
-        const infoText = isArabic ?
-            `آخر تحديث: ${generatedAt.toLocaleString('ar')}` :
-            `সর্বশেষ আপডেট: ${generatedAt.toLocaleString('bn')}`;
-
-        // شرح الألوان
-        const colorGuideAr = `
+    // شرح الألوان
+    const colorGuideAr = `
             <div class="color-guide">
                 <span class="color-item urgent">🔴 عاجل</span>
                 <span class="color-item medium">🟡 متوسط</span>
@@ -334,7 +357,7 @@ class FarmNotifierCountdownStatic {
             </div>
         `;
 
-        const colorGuideBn = `
+    const colorGuideBn = `
             <div class="color-guide">
                 <span class="color-item urgent">🔴 জরুরি</span>
                 <span class="color-item medium">🟡 মাঝারি</span>
@@ -342,7 +365,7 @@ class FarmNotifierCountdownStatic {
             </div>
         `;
 
-        this.container.innerHTML = `
+    this.container.innerHTML = `
             <div class="countdown-header">
                 <div class="countdown-title">
                     ${nextNotification.icon} ${title}
@@ -353,12 +376,16 @@ class FarmNotifierCountdownStatic {
                 ${isArabic ? colorGuideAr : colorGuideBn}
             </div>
             <div class="countdown-display">
-                ${time.days > 0 ? `
+                ${
+                  time.days > 0
+                    ? `
                     <div class="countdown-unit">
                         <span class="countdown-number">${time.days}</span>
                         <div class="countdown-label">${labels.days}</div>
                     </div>
-                ` : ''}
+                `
+                    : ""
+                }
                 <div class="countdown-unit">
                     <span class="countdown-number">${time.hours}</span>
                     <div class="countdown-label">${labels.hours}</div>
@@ -376,84 +403,84 @@ class FarmNotifierCountdownStatic {
                 ${infoText} | ${this.notificationData.total_count} إشعار مجدول
             </div>
         `;
-    }
+  }
 
-    showLoading() {
-        const isArabic = this.language === 'ar';
-        const message = isArabic ? 'جاري تحميل البيانات...' : 'ডেটা লোড হচ্ছে...';
+  showLoading() {
+    const isArabic = this.language === "ar";
+    const message = isArabic ? "جاري تحميل البيانات..." : "ডেটা লোড হচ্ছে...";
 
-        this.container.innerHTML = `
+    this.container.innerHTML = `
             <div class="countdown-loading">
                 ⏳ ${message}
             </div>
         `;
-    }
+  }
 
-    showError(error) {
-        const isArabic = this.language === 'ar';
-        const message = isArabic ? 'خطأ في تحميل البيانات' : 'ডেটা লোড করতে ত্রুটি';
+  showError(error) {
+    const isArabic = this.language === "ar";
+    const message = isArabic ? "خطأ في تحميل البيانات" : "ডেটা লোড করতে ত্রুটি";
 
-        this.container.innerHTML = `
+    this.container.innerHTML = `
             <div class="countdown-error">
                 ❌ ${message}
                 <br><small>${error}</small>
                 <br><small>تأكد من وجود ملف ${this.jsonFile}</small>
             </div>
         `;
-    }
+  }
 
-    showNoNotifications() {
-        const isArabic = this.language === 'ar';
-        const message = isArabic ?
-            'لا توجد إشعارات مجدولة خلال الشهر القادم' :
-            'আগামী মাসে কোনো বিজ্ঞপ্তি নির্ধারিত নেই';
+  showNoNotifications() {
+    const isArabic = this.language === "ar";
+    const message = isArabic
+      ? "لا توجد إشعارات مجدولة خلال الشهر القادم"
+      : "আগামী মাসে কোনো বিজ্ঞপ্তি নির্ধারিত নেই";
 
-        this.container.innerHTML = `
+    this.container.innerHTML = `
             <div class="countdown-no-notifications">
                 ✅ ${message}
             </div>
         `;
-    }
+  }
 
-    // تغيير اللغة
-    setLanguage(language) {
-        this.language = language;
-        this.updateDisplay();
-    }
+  // تغيير اللغة
+  setLanguage(language) {
+    this.language = language;
+    this.updateDisplay();
+  }
 
-    // تدمير العداد
-    destroy() {
-        this.stopCountdown();
-        if (this.container) {
-            this.container.remove();
-        }
+  // تدمير العداد
+  destroy() {
+    this.stopCountdown();
+    if (this.container) {
+      this.container.remove();
     }
+  }
 }
 
 // تهيئة تلقائية عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', function() {
-    // تحديد اللغة الحالية
-    const currentLang = document.documentElement.getAttribute('lang') || 'ar';
+document.addEventListener("DOMContentLoaded", function () {
+  // تحديد اللغة الحالية
+  const currentLang = document.documentElement.getAttribute("lang") || "ar";
 
-    // إنشاء العداد
-    window.farmCountdownStatic = new FarmNotifierCountdownStatic({
-        language: currentLang,
-        jsonFile: 'notifications.json'
-    });
+  // إنشاء العداد
+  window.farmCountdownStatic = new FarmNotifierCountdownStatic({
+    language: currentLang,
+    jsonFile: "notifications.json",
+  });
 
-    // ربط تغيير اللغة بالعداد
-    const langButtons = document.querySelectorAll('.lang-btn');
-    langButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const targetLang = this.dataset.lang;
-            if (window.farmCountdownStatic) {
-                window.farmCountdownStatic.setLanguage(targetLang);
-            }
-        });
+  // ربط تغيير اللغة بالعداد
+  const langButtons = document.querySelectorAll(".lang-btn");
+  langButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const targetLang = this.dataset.lang;
+      if (window.farmCountdownStatic) {
+        window.farmCountdownStatic.setLanguage(targetLang);
+      }
     });
+  });
 });
 
 // تصدير الكلاس للاستخدام الخارجي
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = FarmNotifierCountdownStatic;
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = FarmNotifierCountdownStatic;
 }
