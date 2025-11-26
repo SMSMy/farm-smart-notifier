@@ -182,14 +182,18 @@ def main():
         # استخدام مفتاح API من متغيرات البيئة إذا وجد
         api_key = os.getenv('OPENWEATHER_API_KEY') or logic.config['weather']['api_key']
 
+        # استخدام توكن Telegram من متغيرات البيئة إذا وجد
+        bot_token = os.getenv('TELEGRAM_BOT_TOKEN') or logic.config['telegram']['bot_token']
+        chat_id = os.getenv('TELEGRAM_CHAT_ID') or logic.config['telegram']['chat_id']
+
         weather = WeatherFetcher(
             api_key,
             logic.config['weather']['city'],
             logic.config['weather']['country']
         )
         telegram = TelegramNotifier(
-            logic.config['telegram']['bot_token'],
-            logic.config['telegram']['chat_id']
+            bot_token,
+            chat_id
         )
 
         # جلب بيانات الطقس
