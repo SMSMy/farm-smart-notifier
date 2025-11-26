@@ -94,9 +94,9 @@ else
     echo "4. إنشاء Repository الخاص"
     echo "   Create Private Repository"
     echo ""
-    
+
     read -p "📋 URL الـ repository الجديد: " repo_url
-    
+
     if [ -n "$repo_url" ]; then
         git remote add origin "$repo_url"
         echo "✅ تم ربط الـ remote origin."
@@ -111,7 +111,7 @@ if git remote get-url origin &> /dev/null; then
     git push -u origin main
     echo "✅ تم رفع المشروع بنجاح!"
     echo "✅ Project uploaded successfully!"
-    
+
     # إرشادات إضافية
     echo ""
     echo "🎯 الخطوات التالية:"
@@ -125,7 +125,7 @@ if git remote get-url origin &> /dev/null; then
     echo "3. أضف الـ 3 secrets التالية:"
     echo "   Add these 3 secrets:"
     echo ""
-    echo "   📱 TELEGRAM_BOT_TOKEN = 8570871156:AAEuu5MCXstCTRBXNYyNXta7cxInWCIeHZM"
+    echo "   📱 TELEGRAM_BOT_TOKEN = YOUR_TOKEN_HERE"
     echo "   📱 TELEGRAM_CHAT_ID = 1003443250446"
     echo "   🌤️ OPENWEATHER_API_KEY = dbe40b3b9ff7646fb726a1a1bde13aba"
     echo ""
@@ -137,7 +137,7 @@ if git remote get-url origin &> /dev/null; then
     echo ""
     echo "📖 راجع ملف GITHUB_DEPLOYMENT_GUIDE.md للتفاصيل الكاملة"
     echo "📖 See GITHUB_DEPLOYMENT_GUIDE.md for full details"
-    
+
 else
     echo "⚠️ لم يتم العثور على remote origin. يرجى ربط الـ repository أولاً."
     echo "⚠️ No remote origin found. Please connect your repository first."

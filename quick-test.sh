@@ -40,12 +40,25 @@ echo "✅ جميع الملفات المطلوبة موجودة."
 
 # التحقق من ملف .env
 if [ ! -f ".env" ]; then
-    echo "⚠️ ملف .env غير موجود. سأنشئ واحد للاختبار..."
-    echo "⚠️ .env file not found. Creating one for testing..."
-    
+    echo "⚠️ ملف .env غير موجود."
+    echo "⚠️ .env file not found."
+
+    echo "📝 الرجاء إدخال TELEGRAM_BOT_TOKEN:"
+    echo "📝 Please enter TELEGRAM_BOT_TOKEN:"
+    read -r bot_token
+
+    if [ -z "$bot_token" ]; then
+        echo "❌ لم يتم إدخال التوكن. الخروج..."
+        echo "❌ No token entered. Exiting..."
+        exit 1
+    fi
+
+    echo "📝 جاري إنشاء ملف .env..."
+    echo "📝 Creating .env file..."
+
     cat > .env << EOF
 # ملف اختبار للنظام
-TELEGRAM_BOT_TOKEN=8570871156:AAEuu5MCXstCTRBXNYyNXta7cxInWCIeHZM
+TELEGRAM_BOT_TOKEN=$bot_token
 TELEGRAM_CHAT_ID=1003443250446
 OPENWEATHER_API_KEY=dbe40b3b9ff7646fb726a1a1bde13aba
 WEATHER_CITY=Tabuk
@@ -54,8 +67,8 @@ DEBUG_MODE=true
 LOG_FILE=test_farm_notifier.log
 TIMEZONE=Asia/Dhaka
 EOF
-    
-    echo "✅ تم إنشاء ملف .env للاختبار."
+
+    echo "✅ تم إنشاء ملف .env."
 else
     echo "✅ ملف .env موجود."
 fi
