@@ -181,6 +181,20 @@ class StaticNotificationGenerator:
                 'icon': '🪣'
             })
 
+        # فحص الحجر الصحي
+        if self._should_quarantine_on_date(check_date):
+            notifications.append({
+                'type': 'quarantine',
+                'title_ar': 'الحجر الصحي - عزل طيور جديدة',
+                'title_bn': 'কোয়ারেন্টাইন - নতুন পাখি আলাদা করুন',
+                'date': check_date.isoformat(),
+                'time': '08:00',
+                'datetime': datetime.combine(check_date, datetime.strptime('08:00', '%H:%M').time()).isoformat(),
+                'priority': 'high',
+                'icon': '🛡️',
+                'duration_days': 14
+            })
+
         # فحص السقاية الأنبوبية
         pipe_tasks = self._get_pipe_waterer_tasks_for_date(check_date)
         for task in pipe_tasks:
@@ -356,6 +370,20 @@ class StaticNotificationGenerator:
     def _should_clean_feeders_on_date(self, check_date: date) -> bool:
         try:
             config = self.logic.config['chicken_schedule'].get('feeder_cleaning', {})
+            if not config:
+                return False
+
+            start_date = datetime.strptime(config['start_date'], "%Y-%m-%d").date()
+            interval = config['interval_days']
+            days_diff = (check_date - start_date).days
+
+            return days_diff >= 0 and days_diff % interval == 0
+        except:
+            return False
+
+    def _should_quarantine_on_date(self, check_date: date) -> bool:
+        try:
+            config = self.logic.config['chicken_schedule'].get('quarantine', {})
             if not config:
                 return False
 
