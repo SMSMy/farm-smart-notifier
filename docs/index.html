@@ -15,12 +15,23 @@
     </div>
 
     <div class="container">
-      <header>
+      <header class="header-with-image">
         <div class="header-content">
           <h1>مزرعة أبو أسامة</h1>
           <p class="subtitle">أدلة مزرعة أبو أسامة | Farm Guides</p>
         </div>
       </header>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="ابحث عن الدلائل... | Search guides..."
+        />
+        <span class="search-icon">🔍</span>
+      </div>
 
       <!-- Countdown Timer Container -->
       <div id="countdown-container"></div>
@@ -469,19 +480,37 @@
       </footer>
     </div>
 
+    <!-- Floating Navigation Buttons -->
+    <button
+      class="scroll-btn scroll-to-trees"
+      onclick="scrollToTrees()"
+      title="انتقل إلى قسم الأشجار | Go to Trees Section"
+    >
+      🌳<span class="scroll-btn-text">الأشجار</span>
+    </button>
+    <button
+      class="scroll-btn scroll-to-top"
+      onclick="scrollToTop()"
+      title="العودة للأعلى | Back to Top"
+      style="display: none"
+    >
+      ⬆️<span class="scroll-btn-text">الدجاج</span>
+    </button>
+
     <script>
-      const langButtons = document.querySelectorAll(".lang-btn");
+      // Language Toggle
+      const langBtns = document.querySelectorAll(".lang-btn");
       const contentSections = document.querySelectorAll(".content-section");
 
-      langButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const targetLang = btn.dataset.lang;
+      langBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const targetLang = this.dataset.lang;
 
           // Update active button
-          langButtons.forEach((b) => b.classList.remove("active"));
-          btn.classList.add("active");
+          langBtns.forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
 
-          // Update active content
+          // Update content
           contentSections.forEach((section) => {
             section.classList.remove("active");
           });
@@ -489,14 +518,63 @@
             .getElementById(`content-${targetLang}`)
             .classList.add("active");
 
-          // Update body class for font and direction
-          document.body.className = targetLang === "bn" ? "lang-bn" : "";
-          document.documentElement.setAttribute("lang", targetLang);
-          document.documentElement.setAttribute(
-            "dir",
-            targetLang === "bn" ? "ltr" : "rtl"
-          );
+          // Update body language class
+          document.body.classList.toggle("lang-bn", targetLang === "bn");
         });
+      });
+
+      // Search Functionality
+      const searchInput = document.getElementById("searchInput");
+      searchInput.addEventListener("input", function (e) {
+        const searchTerm = e.target.value.toLowerCase();
+        const guideCards = document.querySelectorAll(".guide-card");
+
+        guideCards.forEach((card) => {
+          const title = card
+            .querySelector(".card-title")
+            .textContent.toLowerCase();
+          const subtitle =
+            card.querySelector(".card-subtitle")?.textContent.toLowerCase() ||
+            "";
+
+          if (title.includes(searchTerm) || subtitle.includes(searchTerm)) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+
+      // Scroll Buttons
+      function scrollToTrees() {
+        const treesSection = document.querySelector(".tree-theme");
+        if (treesSection) {
+          treesSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // Show/Hide back to top button based on scroll position
+      window.addEventListener("scroll", function () {
+        const scrollToTopBtn = document.querySelector(".scroll-to-top");
+        const scrollToTreesBtn = document.querySelector(".scroll-to-trees");
+        const treesSection = document.querySelector(".tree-theme");
+
+        if (treesSection) {
+          const treesSectionTop = treesSection.offsetTop;
+          const scrollPosition = window.scrollY;
+
+          if (scrollPosition > treesSectionTop - 200) {
+            scrollToTopBtn.style.display = "flex";
+            scrollToTreesBtn.style.display = "none";
+          } else {
+            scrollToTopBtn.style.display = "none";
+            scrollToTreesBtn.style.display = "flex";
+          }
+        }
       });
     </script>
   </body>
