@@ -75,8 +75,7 @@
         { "date": "02-15", "drug": "Fenbendazole" },
         { "date": "05-15", "drug": "Levamisole" },
         { "date": "08-15", "drug": "Ivermectin" },
-        { "date": "11-15", "drug": "Albendazole" },
-        { "date": "12-15", "drug": "Fenbendazole" }
+        { "date": "11-15", "drug": "Albendazole" }
       ]
     },
     "vitamins": {
@@ -89,11 +88,6 @@
     },
     "coccidiosis": {
       "trigger_conditions": ["high_humidity", "cold_night", "diarrhea"]
-    },
-    "quarantine": {
-      "interval_days": 45,
-      "start_date": "2025-11-01",
-      "duration_days": 14
     },
     "sanitization": {
       "interval_days": 60,

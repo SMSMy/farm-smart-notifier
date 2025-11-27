@@ -181,20 +181,6 @@ class StaticNotificationGenerator:
                 'icon': '🪣'
             })
 
-        # فحص الحجر الصحي
-        if self._should_quarantine_on_date(check_date):
-            notifications.append({
-                'type': 'quarantine',
-                'title_ar': 'الحجر الصحي - عزل طيور جديدة',
-                'title_bn': 'কোয়ারেন্টাইন - নতুন পাখি আলাদা করুন',
-                'date': check_date.isoformat(),
-                'time': '08:00',
-                'datetime': datetime.combine(check_date, datetime.strptime('08:00', '%H:%M').time()).isoformat(),
-                'priority': 'high',
-                'icon': '🛡️',
-                'duration_days': 14
-            })
-
         # فحص السقاية الأنبوبية
         pipe_tasks = self._get_pipe_waterer_tasks_for_date(check_date)
         for task in pipe_tasks:
@@ -462,26 +448,27 @@ class StaticNotificationGenerator:
             }
 
             # إضافة جدولة تسميد مبسطة للأشجار
+            # تواريخ بداية محسوبة لتظهر خلال الـ30 يوماً القادمة
             fertilizer_schedule = {
-                'henna': {'interval': 45, 'fertilizer': 'NPK 20-20-20'},
-                'fig': {'interval': 60, 'fertilizer': 'NPK متوازن'},
-                'banana': {'interval': 30, 'fertilizer': 'NPK 30-10-10'},
-                'mango_small': {'interval': 90, 'fertilizer': 'NPK 20-20-20'},
-                'mango_large': {'interval': 75, 'fertilizer': 'NPK 15-15-15'},
-                'pomegranate': {'interval': 80, 'fertilizer': 'NPK 15-15-15'},
-                'grape': {'interval': 70, 'fertilizer': 'NPK 12-12-17'},
-                'jackfruit_young': {'interval': 120, 'fertilizer': 'NPK 20-20-20'},
-                'acacia': {'interval': 180, 'fertilizer': 'Organic'},
-                'bougainvillea': {'interval': 50, 'fertilizer': 'High Phosphorus'},
-                'mint_basil': {'interval': 25, 'fertilizer': 'NPK 20-20-20'},
-                'moringa': {'interval': 90, 'fertilizer': 'Low Nitrogen'},
-                'custard_apple': {'interval': 18, 'fertilizer': 'NPK 20-20-20'}  # تم تحديثها من 150 إلى 18 يوماً
+                'henna': {'interval': 45, 'start_date': date(2025, 10, 15), 'fertilizer': 'NPK 20-20-20'},
+                'fig': {'interval': 60, 'start_date': date(2025, 11, 10), 'fertilizer': 'NPK متوازن'},
+                'banana': {'interval': 30, 'start_date': date(2025, 11, 1), 'fertilizer': 'NPK 30-10-10'},
+                'mango_small': {'interval': 90, 'start_date': date(2025, 11, 15), 'fertilizer': 'NPK 20-20-20'},
+                'mango_large': {'interval': 75, 'start_date': date(2025, 11, 20), 'fertilizer': 'NPK 15-15-15'},
+                'pomegranate': {'interval': 80, 'start_date': date(2025, 12, 5), 'fertilizer': 'NPK 15-15-15'},
+                'grape': {'interval': 70, 'start_date': date(2025, 12, 8), 'fertilizer': 'NPK 12-12-17'},
+                'jackfruit_young': {'interval': 120, 'start_date': date(2025, 12, 10), 'fertilizer': 'NPK 20-20-20'},
+                'acacia': {'interval': 180, 'start_date': date(2025, 12, 12), 'fertilizer': 'Organic'},
+                'bougainvillea': {'interval': 50, 'start_date': date(2025, 10, 25), 'fertilizer': 'High Phosphorus'},
+                'mint_basil': {'interval': 25, 'start_date': date(2025, 11, 18), 'fertilizer': 'NPK 20-20-20'},
+                'moringa': {'interval': 90, 'start_date': date(2025, 12, 15), 'fertilizer': 'Low Nitrogen'},
+                'custard_apple': {'interval': 18, 'start_date': date(2025, 11, 13), 'fertilizer': 'NPK 20-20-20'}
             }
 
             # فحص كل شجرة
-            base_date = date(2025, 11, 1)  # تاريخ البداية
             for tree_key, schedule in fertilizer_schedule.items():
-                days_diff = (check_date - base_date).days
+                start_date = schedule['start_date']
+                days_diff = (check_date - start_date).days
                 if days_diff >= 0 and days_diff % schedule['interval'] == 0:
                     tasks.append({
                         'tree_key': tree_key,
