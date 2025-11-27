@@ -1,0 +1,163 @@
+[
+  {
+    "title_ar": "دواء الديدان",
+    "title_bn": "কৃমির ঔষধ",
+    "url": "deworming.html",
+    "category": "poultry",
+    "keywords": "ديدان كريمي deworming worms طفيليات"
+  },
+  {
+    "title_ar": "الفيتامينات",
+    "title_bn": "ভিটামিন",
+    "url": "vitamins.html",
+    "category": "poultry",
+    "keywords": "فيتامينات vitamins إلكتروليت"
+  },
+  {
+    "title_ar": "التطهير",
+    "title_bn": "জীবাণুমুক্তকরণ",
+    "url": "sanitization.html",
+    "category": "poultry",
+    "keywords": "تطهير تنظيف sanitization cleaning"
+  },
+  {
+    "title_ar": "الكوكسيديا",
+    "title_bn": "কক্সিডিওসিস",
+    "url": "coccidiosis.html",
+    "category": "poultry",
+    "keywords": "كوكسيديا coccidiosis مرض"
+  },
+  {
+    "title_ar": "التنظيف الأسبوعي",
+    "title_bn": "সাপ্তাহিক পরিষ্কার",
+    "url": "weekly_cleaning.html",
+    "category": "poultry",
+    "keywords": "تنظيف cleaning أسبوعي weekly"
+  },
+  {
+    "title_ar": "تقليب التراب",
+    "title_bn": "মাটি নাড়াচাড়া",
+    "url": "soil_turning.html",
+    "category": "poultry",
+    "keywords": "تراب تقليب soil turning"
+  },
+  {
+    "title_ar": "التهوية",
+    "title_bn": "বায়ুচলাচল",
+    "url": "ventilation.html",
+    "category": "poultry",
+    "keywords": "تهوية هواء ventilation air"
+  },
+  {
+    "title_ar": "غسيل المعالف",
+    "title_bn": "খাবার পাত্র পরিষ্কার",
+    "url": "feeder_cleaning.html",
+    "category": "poultry",
+    "keywords": "معالف علف feeder cleaning"
+  },
+  {
+    "title_ar": "محطة الماء",
+    "title_bn": "পানি স্টেশন",
+    "url": "water_station.html",
+    "category": "poultry",
+    "keywords": "ماء محطة water station"
+  },
+  {
+    "title_ar": "السقاية الأنبوبية",
+    "title_bn": "পাইপ ওয়াটারার",
+    "url": "pipe_waterer.html",
+    "category": "poultry",
+    "keywords": "سقاية أنبوب pipe waterer"
+  },
+  {
+    "title_ar": "الحجر الصحي",
+    "title_bn": "কোয়ারেন্টাইন",
+    "url": "quarantine.html",
+    "category": "poultry",
+    "keywords": "حجر صحي quarantine عزل"
+  },
+  {
+    "title_ar": "الحناء",
+    "title_bn": "মেহেদি",
+    "url": "henna.html",
+    "category": "trees",
+    "keywords": "حناء henna شجرة tree"
+  },
+  {
+    "title_ar": "التين",
+    "title_bn": "ডুমুর",
+    "url": "fig.html",
+    "category": "trees",
+    "keywords": "تين fig شجرة tree"
+  },
+  {
+    "title_ar": "الموز",
+    "title_bn": "কলা",
+    "url": "banana.html",
+    "category": "trees",
+    "keywords": "موز banana شجرة tree"
+  },
+  {
+    "title_ar": "المانجو",
+    "title_bn": "আম",
+    "url": "mango.html",
+    "category": "trees",
+    "keywords": "مانجو mango شجرة tree"
+  },
+  {
+    "title_ar": "الرمان",
+    "title_bn": "ডালিম",
+    "url": "pomegranate.html",
+    "category": "trees",
+    "keywords": "رمان pomegranate شجرة tree"
+  },
+  {
+    "title_ar": "العنب",
+    "title_bn": "আঙ্গুর",
+    "url": "grape.html",
+    "category": "trees",
+    "keywords": "عنب grape شجرة tree"
+  },
+  {
+    "title_ar": "الكاكايا",
+    "title_bn": "কাঁঠাল",
+    "url": "jackfruit.html",
+    "category": "trees",
+    "keywords": "كاكايا جاك فروت jackfruit شجرة tree"
+  },
+  {
+    "title_ar": "الأكاسيا",
+    "title_bn": "বাবলা",
+    "url": "acacia.html",
+    "category": "trees",
+    "keywords": "أكاسيا acacia شجرة tree"
+  },
+  {
+    "title_ar": "الجهنمية",
+    "title_bn": "বাগানবিলাস",
+    "url": "bougainvillea.html",
+    "category": "trees",
+    "keywords": "جهنمية bougainvillea شجرة tree زينة"
+  },
+  {
+    "title_ar": "النعناع والريحان",
+    "title_bn": "পুদিনা ও তুলসী",
+    "url": "mint.html",
+    "category": "trees",
+    "keywords": "نعناع ريحان mint basil"
+  },
+  {
+    "title_ar": "المورينجا",
+    "title_bn": "সজনে",
+    "url": "moringa.html",
+    "category": "trees",
+    "keywords": "مورينجا moringa شجرة tree"
+  },
+  {
+    "title_ar": "القشطة",
+    "title_bn": "আতা",
+    "url": "custard.html",
+    "category": "trees",
+    "keywords": "قشطة custard شجرة tree"
+  }
+]
