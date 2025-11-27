@@ -101,9 +101,16 @@ class FarmNotifierCountdownStatic {
                 }
 
                 .countdown-next-task {
-                    font-size: 0.9rem;
-                    opacity: 0.9;
+                    font-size: 1rem;
+                    opacity: 0.95;
                     margin-bottom: 10px;
+                    background: rgba(255, 255, 255, 0.15);
+                    padding: 12px 20px;
+                    border-radius: 8px;
+                    font-weight: 600;
+                    letter-spacing: 0.3px;
+                    line-height: 1.6;
+                    backdrop-filter: blur(5px);
                 }
 
                 .countdown-display {
