@@ -34,7 +34,7 @@ class StaticNotificationGenerator:
 
         return {
             'generated_at': datetime.now().isoformat(),
-            'notifications': notifications,
+            'upcoming_notifications': notifications,
             'countdown': countdown_data,
             'total_count': len(notifications)
         }
