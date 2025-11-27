@@ -91,7 +91,7 @@
       "trigger_conditions": ["high_humidity", "cold_night", "diarrhea"]
     },
     "quarantine": {
-      "interval_days": 90,
+      "interval_days": 45,
       "start_date": "2025-11-01",
       "duration_days": 14
     },
