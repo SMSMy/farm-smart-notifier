@@ -81,6 +81,32 @@ h1 {
   font-size: 1.2rem;
   opacity: 0.95;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+/* Category-based colors for subtitle */
+.subtitle.poultry-page {
+  background: rgba(231, 107, 76, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.subtitle.tree-page {
+  background: rgba(42, 157, 143, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Category-based colors for countdown next task */
+.countdown-next-task.poultry-page {
+  background: linear-gradient(135deg, #ff9a8b 0%, #ff6a88 100%);
+  border-left: 4px solid #e76f51;
+}
+
+.countdown-next-task.tree-page {
+  background: linear-gradient(135deg, #a8edea 0%, #6dd5a6 100%);
+  border-left: 4px solid #2a9d8f;
 }
 
 /* Search Container */
