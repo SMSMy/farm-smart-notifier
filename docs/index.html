@@ -554,12 +554,12 @@
           return;
         }
 
-        // Search in index
+        // Search in index (title + content)
         const results = searchIndex.filter((item) => {
           return (
             item.title_ar.toLowerCase().includes(searchTerm) ||
             item.title_bn.toLowerCase().includes(searchTerm) ||
-            item.keywords.toLowerCase().includes(searchTerm)
+            item.content.toLowerCase().includes(searchTerm)
           );
         });
 
@@ -569,13 +569,28 @@
             const resultItem = document.createElement("a");
             resultItem.href = result.url;
             resultItem.className = "search-result-item";
+
+            // Extract snippet around search term
+            let snippet = "";
+            const contentLower = result.content.toLowerCase();
+            const index = contentLower.indexOf(searchTerm);
+            if (index !== -1) {
+              const start = Math.max(0, index - 40);
+              const end = Math.min(result.content.length, index + 60);
+              snippet = "..." + result.content.substring(start, end) + "...";
+            }
+
             resultItem.innerHTML = `
               <span class="result-icon">${
                 result.category === "poultry" ? "🐔" : "🌳"
               }</span>
               <div class="result-text">
                 <div class="result-title">${result.title_ar}</div>
-                <div class="result-subtitle">${result.title_bn}</div>
+                ${
+                  snippet
+                    ? `<div class="result-snippet">${snippet}</div>`
+                    : `<div class="result-subtitle">${result.title_bn}</div>`
+                }
               </div>
             `;
             searchResults.appendChild(resultItem);
