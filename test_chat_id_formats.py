@@ -57,7 +57,7 @@ def test_chat_id(bot_token, chat_id, description):
 
 def main():
     # معلومات البوت
-    bot_token = "8570871156:AAHmHPx715silUtWbir-y3N8IJVjxIuGcQQ"
+    bot_token = "******"
 
     print("=" * 60)
     print("🔍 اختبار تنسيقات Chat ID المختلفة")
