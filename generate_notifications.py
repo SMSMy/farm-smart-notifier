@@ -451,10 +451,10 @@ class StaticNotificationGenerator:
             # تواريخ بداية محسوبة لتظهر خلال الـ30 يوماً القادمة
             fertilizer_schedule = {
                 'henna': {'interval': 45, 'start_date': date(2025, 10, 15), 'fertilizer': 'NPK 20-20-20'},
-                'fig': {'interval': 60, 'start_date': date(2025, 11, 10), 'fertilizer': 'NPK متوازن'},
+                'fig': {'interval': 60, 'start_date': date(2025, 12, 6), 'fertilizer': 'NPK متوازن'},
                 'banana': {'interval': 30, 'start_date': date(2025, 11, 1), 'fertilizer': 'NPK 30-10-10'},
-                'mango_small': {'interval': 90, 'start_date': date(2025, 11, 15), 'fertilizer': 'NPK 20-20-20'},
-                'mango_large': {'interval': 75, 'start_date': date(2025, 11, 20), 'fertilizer': 'NPK 15-15-15'},
+                'mango_small': {'interval': 90, 'start_date': date(2025, 12, 3), 'fertilizer': 'NPK 20-20-20'},
+                'mango_large': {'interval': 75, 'start_date': date(2025, 12, 9), 'fertilizer': 'NPK 15-15-15'},
                 'pomegranate': {'interval': 80, 'start_date': date(2025, 12, 5), 'fertilizer': 'NPK 15-15-15'},
                 'grape': {'interval': 70, 'start_date': date(2025, 12, 8), 'fertilizer': 'NPK 12-12-17'},
                 'jackfruit_young': {'interval': 120, 'start_date': date(2025, 12, 10), 'fertilizer': 'NPK 20-20-20'},

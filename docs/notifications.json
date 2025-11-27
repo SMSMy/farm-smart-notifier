@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-27T03:13:08.969575",
+  "generated_at": "2025-11-27T03:14:12.374166",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -140,6 +140,18 @@
       "fertilizer": "NPK 20-20-20"
     },
     {
+      "type": "fertilizer",
+      "title_ar": "تسميد مانجو صغيرة",
+      "title_bn": "ছোট আম সার প্রয়োগ",
+      "date": "2025-12-03",
+      "time": "16:00",
+      "datetime": "2025-12-03T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "mango_small",
+      "fertilizer": "NPK 20-20-20"
+    },
+    {
       "type": "pipe_waterer_change_water",
       "title_ar": "السقاية الأنبوبية - تغيير الماء",
       "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
@@ -202,6 +214,18 @@
       "icon": "🚰"
     },
     {
+      "type": "fertilizer",
+      "title_ar": "تسميد التين",
+      "title_bn": "ডুমুর সার প্রয়োগ",
+      "date": "2025-12-06",
+      "time": "16:00",
+      "datetime": "2025-12-06T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "fig",
+      "fertilizer": "NPK متوازن"
+    },
+    {
       "type": "pipe_waterer_change_water",
       "title_ar": "السقاية الأنبوبية - تغيير الماء",
       "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
@@ -222,6 +246,18 @@
       "icon": "🌳",
       "tree": "grape",
       "fertilizer": "NPK 12-12-17"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد مانجو كبيرة",
+      "title_bn": "বড় আম সার প্রয়োগ",
+      "date": "2025-12-09",
+      "time": "16:00",
+      "datetime": "2025-12-09T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "mango_large",
+      "fertilizer": "NPK 15-15-15"
     },
     {
       "type": "pipe_waterer_change_water",
@@ -482,13 +518,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 128811,
+      "total_seconds": 128747,
       "days": 1,
       "hours": 11,
-      "minutes": 46,
-      "seconds": 51
+      "minutes": 45,
+      "seconds": 47
     },
-    "current_time": "2025-11-27T03:13:08.969575"
+    "current_time": "2025-11-27T03:14:12.374166"
   },
-  "total_count": 44
+  "total_count": 47
 }
