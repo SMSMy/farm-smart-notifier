@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-27T03:14:12.374166",
+  "generated_at": "2025-11-27T03:15:16.121868",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -10,6 +10,18 @@
       "datetime": "2025-11-28T15:00:00",
       "priority": "medium",
       "icon": "🚰"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد مانجو صغيرة",
+      "title_bn": "ছোট আম সার প্রয়োগ",
+      "date": "2025-11-28",
+      "time": "16:00",
+      "datetime": "2025-11-28T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "mango_small",
+      "fertilizer": "NPK 20-20-20"
     },
     {
       "type": "water_station",
@@ -141,15 +153,15 @@
     },
     {
       "type": "fertilizer",
-      "title_ar": "تسميد مانجو صغيرة",
-      "title_bn": "ছোট আম সার প্রয়োগ",
-      "date": "2025-12-03",
+      "title_ar": "تسميد مانجو كبيرة",
+      "title_bn": "বড় আম সার প্রয়োগ",
+      "date": "2025-12-02",
       "time": "16:00",
-      "datetime": "2025-12-03T16:00:00",
+      "datetime": "2025-12-02T16:00:00",
       "priority": "medium",
       "icon": "🌳",
-      "tree": "mango_small",
-      "fertilizer": "NPK 20-20-20"
+      "tree": "mango_large",
+      "fertilizer": "NPK 15-15-15"
     },
     {
       "type": "pipe_waterer_change_water",
@@ -246,18 +258,6 @@
       "icon": "🌳",
       "tree": "grape",
       "fertilizer": "NPK 12-12-17"
-    },
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد مانجو كبيرة",
-      "title_bn": "বড় আম সার প্রয়োগ",
-      "date": "2025-12-09",
-      "time": "16:00",
-      "datetime": "2025-12-09T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "mango_large",
-      "fertilizer": "NPK 15-15-15"
     },
     {
       "type": "pipe_waterer_change_water",
@@ -518,13 +518,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 128747,
+      "total_seconds": 128683,
       "days": 1,
       "hours": 11,
-      "minutes": 45,
-      "seconds": 47
+      "minutes": 44,
+      "seconds": 43
     },
-    "current_time": "2025-11-27T03:14:12.374166"
+    "current_time": "2025-11-27T03:15:16.121868"
   },
   "total_count": 47
 }
