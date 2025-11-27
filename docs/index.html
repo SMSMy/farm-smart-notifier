@@ -531,8 +531,12 @@
         .then((response) => response.json())
         .then((data) => {
           searchIndex = data;
+          console.log(`✅ Search index loaded: ${searchIndex.length} pages`);
         })
-        .catch((err) => console.error("Failed to load search index:", err));
+        .catch((err) => {
+          console.error("❌ Failed to load search index:", err);
+          console.log("Search will only work on current page.");
+        });
 
       const searchInput = document.getElementById("searchInput");
       const searchResults = document.createElement("div");

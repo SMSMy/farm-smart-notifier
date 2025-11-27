@@ -127,12 +127,13 @@ h1 {
   right: 0;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--primary);
   margin-top: 10px;
   max-height: 400px;
   overflow-y: auto;
   display: none;
-  z-index: 1000;
+  z-index: 10000;
 }
 
 .search-result-item {
