@@ -56,7 +56,7 @@ def get_messages_templates() -> Dict:
     """تحميل قوالب الرسائل الثنائية اللغة مع الإيموجيات بتنسيق MarkdownV2"""
 
     # الرابط الأساسي لصفحات GitHub Pages
-    BASE_URL = "https://smsmy.github.io/farm-smart-notifier/docs"
+    BASE_URL = "https://smsmy.github.io/farm-smart-notifier"
 
     # التعليق الموحد (سيُضاف تلقائياً)
     disclaimer_ar = escape_markdown_v2("\n\n⚠️ قد يختلف شكل العبوة أو الاسم التجاري. الأهم هو المادة الفعالة المذكورة.")
@@ -228,8 +228,8 @@ def main():
             print("  ➕ إضافة رسالة رابط الدليل التفاعلي")
             guide_task = {
                 'type': 'deworming_guide',
-                'ar': "🛑 <b>مهم جداً - <a href='https://smsmy.github.io/farm-smart-notifier/docs/deworming.html'>دليل استخدام أدوية الديدان للدواجن</a></b>",
-                'bn': "<b><a href='https://smsmy.github.io/farm-smart-notifier/docs/deworming.html'>পোল্ট্রি বা মুরগি কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</a></b>",
+                'ar': "🛑 <b>مهم جداً - <a href='https://smsmy.github.io/farm-smart-notifier/deworming.html'>دليل استخدام أدوية الديدان للدواجن</a></b>",
+                'bn': "<b><a href='https://smsmy.github.io/farm-smart-notifier/deworming.html'>পোল্ট্রি বা মুরগি কৃমিনাশক ঔষধ ব্যবহারের নির্দেশিকা</a></b>",
                 'image': None  # لا توجد صورة لهذه الرسالة
             }
             tasks_to_send.append(guide_task)

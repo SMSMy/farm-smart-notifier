@@ -297,30 +297,30 @@ crontab -e
 ## 📚 الأدلة التفاعلية على GitHub Pages
 
 جميع إشعارات النظام تحتوي على روابط مباشرة للأدلة التفصيلية المتوفرة على:
-**https://smsmy.github.io/farm-smart-notifier/docs/**
+**https://smsmy.github.io/farm-smart-notifier/**
 
 ### أدلة الدجاج 🐔:
 
-- [دواء الديدان](https://smsmy.github.io/farm-smart-notifier/docs/deworming.html)
-- [الفيتامينات](https://smsmy.github.io/farm-smart-notifier/docs/vitamins.html)
-- [الكوكسيديا](https://smsmy.github.io/farm-smart-notifier/docs/coccidiosis.html)
-- [تطهير الحظيرة](https://smsmy.github.io/farm-smart-notifier/docs/sanitization.html)
-- [التنظيف الأسبوعي](https://smsmy.github.io/farm-smart-notifier/docs/weekly_cleaning.html)
-- [تقليب التراب](https://smsmy.github.io/farm-smart-notifier/docs/soil_turning.html)
-- [فحص التهوية](https://smsmy.github.io/farm-smart-notifier/docs/ventilation.html)
-- [غسيل المعالف](https://smsmy.github.io/farm-smart-notifier/docs/feeder_cleaning.html)
-- [محطة الماء](https://smsmy.github.io/farm-smart-notifier/docs/water_station.html)
-- [السقاية الأنبوبية](https://smsmy.github.io/farm-smart-notifier/docs/pipe_waterer.html)
+- [دواء الديدان](https://smsmy.github.io/farm-smart-notifier/deworming.html)
+- [الفيتامينات](https://smsmy.github.io/farm-smart-notifier/vitamins.html)
+- [الكوكسيديا](https://smsmy.github.io/farm-smart-notifier/coccidiosis.html)
+- [تطهير الحظيرة](https://smsmy.github.io/farm-smart-notifier/sanitization.html)
+- [التنظيف الأسبوعي](https://smsmy.github.io/farm-smart-notifier/weekly_cleaning.html)
+- [تقليب التراب](https://smsmy.github.io/farm-smart-notifier/soil_turning.html)
+- [فحص التهوية](https://smsmy.github.io/farm-smart-notifier/ventilation.html)
+- [غسيل المعالف](https://smsmy.github.io/farm-smart-notifier/feeder_cleaning.html)
+- [محطة الماء](https://smsmy.github.io/farm-smart-notifier/water_station.html)
+- [السقاية الأنبوبية](https://smsmy.github.io/farm-smart-notifier/pipe_waterer.html)
 
 ### أدلة الأشجار 🌳:
 
-- [دليل التسميد الشامل](https://smsmy.github.io/farm-smart-notifier/docs/fertilizer.html)
-- [الموز](https://smsmy.github.io/farm-smart-notifier/docs/banana.html)
-- [التين](https://smsmy.github.io/farm-smart-notifier/docs/fig.html)
-- [المانجو](https://smsmy.github.io/farm-smart-notifier/docs/mango.html)
-- [الرمان](https://smsmy.github.io/farm-smart-notifier/docs/pomegranate.html)
-- [العنب](https://smsmy.github.io/farm-smart-notifier/docs/grape.html)
-- [الحناء](https://smsmy.github.io/farm-smart-notifier/docs/henna.html)
+- [دليل التسميد الشامل](https://smsmy.github.io/farm-smart-notifier/fertilizer.html)
+- [الموز](https://smsmy.github.io/farm-smart-notifier/banana.html)
+- [التين](https://smsmy.github.io/farm-smart-notifier/fig.html)
+- [المانجو](https://smsmy.github.io/farm-smart-notifier/mango.html)
+- [الرمان](https://smsmy.github.io/farm-smart-notifier/pomegranate.html)
+- [العنب](https://smsmy.github.io/farm-smart-notifier/grape.html)
+- [الحناء](https://smsmy.github.io/farm-smart-notifier/henna.html)
 - والمزيد...
 
 ---
