@@ -67,21 +67,17 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ -f docs/notifications.json ]; then
             echo "### الإشعار القادم:" >> $GITHUB_STEP_SUMMARY
-            python -c "
-import sys, textwrap, json
-code = '''
-try:
-    data = json.load(open('docs/notifications.json'))
-    if data.get('countdown') and data['countdown'].get('next_notification'):
-        notif = data['countdown']['next_notification']
-        print(f'- **المهمة**: {notif.get(\"title_ar\", \"N/A\")}')
-        print(f'- **التاريخ**: {notif.get(\"date\", \"N/A\")} في {notif.get(\"time\", \"N/A\")}')
-        print(f'- **النوع**: {notif.get(\"type\", \"N/A\")}')
-    else:
-        print('- لا توجد إشعارات قادمة')
-except Exception as e:
-    print(f'- حدث خطأ أثناء قراءة الملف: {e}')
-'''
-exec(textwrap.dedent(code))
-" >> $GITHUB_STEP_SUMMARY
+            python -c "import sys, textwrap, json; code = '''
+            try:
+                data = json.load(open('docs/notifications.json'))
+                if data.get('countdown') and data['countdown'].get('next_notification'):
+                    notif = data['countdown']['next_notification']
+                    print(f'- **المهمة**: {notif.get(\"title_ar\", \"N/A\")}')
+                    print(f'- **التاريخ**: {notif.get(\"date\", \"N/A\")} في {notif.get(\"time\", \"N/A\")}')
+                    print(f'- **النوع**: {notif.get(\"type\", \"N/A\")}')
+                else:
+                    print('- لا توجد إشعارات قادمة')
+            except Exception as e:
+                print(f'- حدث خطأ أثناء قراءة الملف: {e}')
+            '''; exec(textwrap.dedent(code))" >> $GITHUB_STEP_SUMMARY
           fi
