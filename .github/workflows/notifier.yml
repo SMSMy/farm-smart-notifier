@@ -46,7 +46,7 @@ jobs:
           CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           WEATHER_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         run: |
-          # استخدام jq لتحديث ملف JSON بشكل آمن وسليم
+          # نستخدم jq لأنه آمن تماماً مع الرموز الخاصة
           jq --arg bot_token "$BOT_TOKEN" \
              --arg chat_id "$CHAT_ID" \
              --arg weather_key "$WEATHER_KEY" \
