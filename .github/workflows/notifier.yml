@@ -46,26 +46,14 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         run: |
-          # استبدال النصوص المؤقتة في config.json بالقيم الفعلية من GitHub Secrets
-          sed -i "s|YOUR_BOT_TOKEN_HERE|$TELEGRAM_BOT_TOKEN|g" config.json
-          sed -i "s|YOUR_CHAT_ID_HERE|$TELEGRAM_CHAT_ID|g" config.json
-          sed -i "s|YOUR_OPENWEATHERMAP_API_KEY_HERE|$OPENWEATHER_API_KEY|g" config.json
+          # استخدام jq لتحديث ملف JSON بشكل آمن
+          jq --arg token "$TELEGRAM_BOT_TOKEN" \
+             --arg chat_id "$TELEGRAM_CHAT_ID" \
+             --arg weather_key "$OPENWEATHER_API_KEY" \
+             '.telegram.bot_token = $token | .telegram.chat_id = $chat_id | .weather.api_key = $weather_key' \
+             config.json > config.tmp.json && mv config.tmp.json config.json
 
-          # التحقق للتأكد من أن جميع القيم قد تم استبدالها بنجاح
-          echo "🔍 التحقق من الإعدادات..."
-          if grep -q "YOUR_BOT_TOKEN_HERE" config.json; then
-            echo "❌ فشل تحديث bot_token"
-            exit 1
-          fi
-          if grep -q "YOUR_CHAT_ID_HERE" config.json; then
-            echo "❌ فشل تحديث chat_id"
-            exit 1
-          fi
-          if grep -q "YOUR_OPENWEATHERMAP_API_KEY_HERE" config.json; then
-            echo "❌ فشل تحديث API key"
-            exit 1
-          fi
-          echo "✅ تم تحديث جميع التوكنات بنجاح"
+          echo "✅ تم تحديث ملف الإعدادات بنجاح"
 
       # الخطوة 5: تشغيل السكربت الرئيسي للتطبيق
       - name: 🚀 تشغيل النظام
