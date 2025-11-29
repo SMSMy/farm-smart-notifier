@@ -40,20 +40,20 @@ jobs:
           pip install -r requirements.txt
 
       # الخطوة 4: تحديث ملف الإعدادات باستخدام الأسرار (Secrets)
-      - name: 🔧 تحديث الإعدادات
+      - name: Update Config with Secrets using jq
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          WEATHER_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
         run: |
-          # استخدام jq لتحديث ملف JSON بشكل آمن
-          jq --arg token "$TELEGRAM_BOT_TOKEN" \
-             --arg chat_id "$TELEGRAM_CHAT_ID" \
-             --arg weather_key "$OPENWEATHER_API_KEY" \
-             '.telegram.bot_token = $token | .telegram.chat_id = $chat_id | .weather.api_key = $weather_key' \
+          # استخدام jq لتحديث ملف JSON بشكل آمن وسليم
+          jq --arg bot_token "$BOT_TOKEN" \
+             --arg chat_id "$CHAT_ID" \
+             --arg weather_key "$WEATHER_KEY" \
+             '.telegram.bot_token = $bot_token | .telegram.chat_id = $chat_id | .weather.api_key = $weather_key' \
              config.json > config.tmp.json && mv config.tmp.json config.json
 
-          echo "✅ تم تحديث ملف الإعدادات بنجاح"
+          echo "✅ تم تحديث ملف الإعدادات بنجاح باستخدام jq"
 
       # الخطوة 5: تشغيل السكربت الرئيسي للتطبيق
       - name: 🚀 تشغيل النظام

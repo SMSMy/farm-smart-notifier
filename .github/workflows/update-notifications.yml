@@ -50,6 +50,11 @@ jobs:
           git config --local user.name "GitHub Action"
           git add docs/notifications.json
           git commit -m "🔄 تحديث الإشعارات التلقائي - $(date '+%Y-%m-%d %H:%M')"
+
+          # --- إضافة هذا السطر الجديد لحل المشكلة ---
+          git pull --rebase origin main
+          # ----------------------------------------
+
           git push
 
       - name: Create summary
