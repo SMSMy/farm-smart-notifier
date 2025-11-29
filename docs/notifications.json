@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-29T01:22:30.741752",
+  "generated_at": "2025-11-29T03:37:30.562595",
   "upcoming_notifications": [
     {
       "type": "water_station",
@@ -578,13 +578,13 @@
       "icon": "💧"
     },
     "countdown": {
-      "total_seconds": 31049,
+      "total_seconds": 22949,
       "days": 0,
-      "hours": 8,
-      "minutes": 37,
+      "hours": 6,
+      "minutes": 22,
       "seconds": 29
     },
-    "current_time": "2025-11-29T01:22:30.741734"
+    "current_time": "2025-11-29T03:37:30.562576"
   },
   "total_count": 53
 }
