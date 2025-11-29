@@ -1,5 +1,6 @@
 # اسم سير العمل الذي يظهر في تبويب Actions على GitHub
 name: Farm Notifier Scheduler
+# Updated at 2025-11-29 04:15 to force jq update
 
 # الأحداث التي تؤدي إلى تشغيل سير العمل
 on:
