@@ -126,109 +126,101 @@
   },
   "trees_fertilizer_schedule": {
     "henna": {
-      "times_per_year": 2,
-      "seasons": ["spring_season", "autumn_season"],
+      "interval_days": 45,
+      "start_date": "2025-10-15",
       "fertilizer": "NPK 20-20-20",
       "amount_kg": 0.75,
       "notes": "سقي مباشرة بعد التسميد"
     },
     "fig": {
-      "times_per_year": 3,
-      "dates": ["2025-03-15", "2025-06-15", "2025-08-15"],
-      "fertilizers": ["NPK متوازن", "Organic", "High Potassium"],
+      "interval_days": 60,
+      "start_date": "2025-12-06",
+      "fertilizer": "NPK Balanced",
       "amount_kg": 1.5,
       "avoid_winter": true
     },
     "banana": {
-      "times_per_year": 3,
-      "seasons": ["spring_season", "heat_season", "autumn_season"],
-      "fertilizers": ["NPK 30-10-10", "NPK 20-20-20", "NPK 12-12-17+Mg"],
+      "interval_days": 30,
+      "start_date": "2025-11-01",
+      "fertilizer": "NPK 30-10-10",
       "amount_kg": 1.0,
       "needs_water": true
     },
     "mango_small": {
-      "times_per_year": 2,
-      "seasons": ["spring_season", "autumn_season"],
+      "interval_days": 30,
+      "start_date": "2025-11-29",
       "fertilizer": "NPK 20-20-20",
       "amount_kg": 0.5
     },
     "mango_large": {
-      "times_per_year": 3,
-      "dates": ["2025-03-15", "2025-06-15", "2025-08-15"],
-      "fertilizers": ["NPK 15-15-15", "NPK 12-12-17"],
+      "interval_days": 30,
+      "start_date": "2025-12-03",
+      "fertilizer": "NPK 15-15-15",
       "amount_kg": 1.5
     },
     "jackfruit_young": {
-      "times_per_year": 2,
-      "seasons": ["spring_season", "autumn_season"],
+      "interval_days": 120,
+      "start_date": "2025-12-10",
       "fertilizer": "NPK 20-20-20",
       "amount_kg": 0.25,
       "light_dose": true
     },
     "mint_basil": {
-      "times_per_year": 12,
-      "interval_days": 30,
-      "seasons": ["spring_season", "autumn_season"],
+      "interval_days": 25,
+      "start_date": "2025-11-18",
       "fertilizer": "NPK 20-20-20",
       "amount_kg": 0.05,
       "avoid_heat": true
     },
     "pomegranate": {
-      "times_per_year": 3,
-      "dates": ["2025-03-15", "2025-06-15", "2025-09-15"],
+      "interval_days": 80,
+      "start_date": "2025-12-05",
       "fertilizer": "NPK 15-15-15",
       "amount_kg": 0.75,
       "max_temp": 35
     },
     "acacia": {
-      "times_per_year": 1,
-      "seasons": ["spring_season"],
+      "interval_days": 180,
+      "start_date": "2025-12-12",
       "fertilizer": "Organic",
       "amount_kg": 1.0,
       "low_nitrogen": true
     },
     "bougainvillea": {
-      "times_per_year": 3,
-      "dates": ["2025-03-15", "2025-06-15", "2025-09-15"],
-      "fertilizer": "High Phosphorus (Bloom Booster)",
+      "interval_days": 50,
+      "start_date": "2025-10-25",
+      "fertilizer": "High Phosphorus",
       "amount_kg": 0.3,
       "avoid_excess_nitrogen": true
     },
     "grape": {
-      "times_per_year": 3,
-      "dates": ["2025-03-15", "2025-05-15", "2025-08-15"],
+      "interval_days": 70,
+      "start_date": "2025-12-08",
       "fertilizer": "NPK 12-12-17",
       "amount_kg": 1.0,
       "avoid_during_fruiting": true
     },
     "custard_apple": {
       "interval_days": 18,
-      "start_date": "2025-03-01",
-      "fertilizer": "NPK 20-20-20 + Organic",
+      "start_date": "2025-11-13",
+      "fertilizer": "NPK 20-20-20",
       "amount_kg": 0.25,
       "moderate_water": true,
       "note": "كل أسبوعين إلى 3 أسابيع",
       "avoid_winter": true
     },
     "ornamental": {
-      "times_per_year": 12,
       "interval_days": 30,
-      "seasons": ["spring_season", "autumn_season"],
+      "start_date": "2025-11-01",
       "fertilizer": "NPK 20-20-20",
       "amount_kg": 0.05
     },
     "moringa": {
-      "times_per_year": 2,
-      "seasons": ["cold_season", "heat_season"],
-      "fertilizer": "Organic 50-100g",
+      "interval_days": 90,
+      "start_date": "2025-12-15",
+      "fertilizer": "Organic",
       "amount_kg": 0.075,
-      "note": "مرتان سنوياً في الشتاء والصيف",
-      "liquid_weekly": {
-        "interval_days": 7,
-        "start_date": "2025-03-01",
-        "fertilizer": "Balanced NPK Liquid",
-        "amount_ml": 50
-      }
+      "note": "مرتان سنوياً في الشتاء والصيف"
     }
   }
 }

@@ -100,30 +100,31 @@ class FarmLogic:
 
             print(f"[Logic] فحص تسميد {tree_key}...")
 
-            # شرط 1: الموسم
-            season_ok = False
-            if 'seasons' in tree:
-                for season in tree['seasons']:
-                    if self.is_date_in_season(season):
-                        season_ok = True
-                        print(f"[Logic] {tree_key} في موسم {season}")
-                        break
-
-            # شرط 2: التاريخ المحدد
+            # شرط 1: الفاصل الزمني (Interval)
             date_ok = False
-            if 'dates' in tree:
+            if 'start_date' in tree and 'interval_days' in tree:
+                start_date = datetime.strptime(tree['start_date'], "%Y-%m-%d").date()
+                interval = tree['interval_days']
+                days_diff = (date.today() - start_date).days
+
+                if days_diff >= 0 and days_diff % interval == 0:
+                    date_ok = True
+                    print(f"[Logic] {tree_key} موعد التسميد الدوري (كل {interval} يوم)")
+
+            # دعم التواريخ المحددة يدوياً (Legacy)
+            elif 'dates' in tree:
                 today_str = date.today().strftime("%Y-%m-%d")
                 if today_str in tree['dates']:
                     date_ok = True
                     print(f"[Logic] {tree_key} في التاريخ المحدد: {today_str}")
 
-            # شرط 3: ظروف الطقس
+            # شرط 2: ظروف الطقس
             weather_ok = True
             if weather_report and not weather_report.get('good_fertilizer_time', True):
                 weather_ok = False
                 print(f"[Logic] طقس غير مناسب للتسميد")
 
-            # شرط 4: درجة الحرارة القصوى
+            # شرط 3: درجة الحرارة القصوى
             temp_ok = True
             if 'max_temp' in tree and weather_report:
                 max_temp = weather_report.get('max_temp_48h', 0)
@@ -132,7 +133,7 @@ class FarmLogic:
                     print(f"[Logic] درجة الحرارة {max_temp}°C أعلى من الحد المسموح {tree['max_temp']}°C")
 
             # نتيجة نهائية
-            result = (season_ok or date_ok) and weather_ok and temp_ok
+            result = date_ok and weather_ok and temp_ok
 
             if result:
                 print(f"✅ يجب تسميد {tree_key} اليوم")

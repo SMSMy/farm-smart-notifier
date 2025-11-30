@@ -80,12 +80,12 @@ def get_messages_templates() -> Dict:
         'sanitization': {
             'ar': lambda d: f"🧹 *تنبيه تطهير الحظيرة* 🧹\n\n{escape_markdown_v2('حان وقت تطهير وتعقيم الحظيرة لضمان بيئة نظيفة وصحية للطيور.')}\n\n[🔍 المزيد من التفاصيل]({BASE_URL}/sanitization.html){disclaimer_ar}{documentation_request_ar}",
             'bn': lambda d: f"🧹 *খামার পরিষ্কারের সতর্কতা* 🧹\n\n{escape_markdown_v2('পাখিদের জন্য পরিষ্কার এবং স্বাস্থ্যকর পরিবেশ নিশ্চিত করতে খামার পরিষ্কার এবং জীবাণুমুক্ত করার সময়।')}\n\n[🔍 আরও বিস্তারিত]({BASE_URL}/sanitization.html){disclaimer_bn}{documentation_request_bn}",
-            'image': 'sanitizer.jpg'
+            'image': 'sanitizer.png'
         },
         'vitamins': {
             'ar': lambda d: f"💊 *تنبيه فيتامينات وإלكتروليت* 🌡️\n\n🔥 *السبب:* {escape_markdown_v2(d.get('reason_ar', 'غير محدد'))}\n💧 *الطريقة:* {escape_markdown_v2('تضاف إلى ماء الشرب لمدة يومين.')}\n\n[🔍 المزيد من التفاصيل]({BASE_URL}/vitamins.html){disclaimer_ar}{documentation_request_ar}",
             'bn': lambda d: f"💊 *ভিটামিন ও ইলেক্ট্রোলাইট সতর্কতা* 🌡️\n\n🔥 *কারণ:* {escape_markdown_v2(d.get('reason_bn', 'unknown'))}\n💧 *পদ্ধতি:* {escape_markdown_v2('দুই দিনের জন্য পানির সাথে যোগ করুন।')}\n\n[🔍 আরও বিস্তारিত]({BASE_URL}/vitamins.html){disclaimer_bn}{documentation_request_bn}",
-            'image': 'vitamins.jpg'
+            'image': 'vitamins.png'
         },
         'coccidiosis': {
             'ar': lambda d: f"🦠 *تنبيه وقاية من الكوكسيديا* 💧\n\n⚠️ *السبب:* {escape_markdown_v2(d.get('reason_ar', 'رطوبة عالية'))}\n💧 *الطريقة:* {escape_markdown_v2('إضافة مضاد كوكسيديا للماء.')}\n\n[🔍 المزيد من التفاصيل]({BASE_URL}/coccidiosis.html){disclaimer_ar}{documentation_request_ar}",
@@ -93,9 +93,9 @@ def get_messages_templates() -> Dict:
             'image': 'coccidia.jpg'
         },
         'fertilizer': {
-            'ar': lambda d: f"🍌 *تنبيه تسميد {escape_markdown_v2(TREE_NAMES_MAP.get(d.get('tree', ''), d.get('tree', '')))}* 🍌\n\n{escape_markdown_v2('حان موعد تسميد المحصول للحصول على أفضل جودة وكمية. تفقّد النباتات الآن.')}\n\n🧪 *السماد:* {escape_markdown_v2({'Organic': 'العضوي', 'Organic 50-100g': 'عضوي 50-100 جم'}.get(d.get('details', {}).get('fertilizer'), d.get('details', {}).get('fertilizer', 'غير محدد')))}\n⚖️ *الكمية:* {escape_markdown_v2(str(d.get('details', {}).get('amount_kg', 0)) + ' كجم')}\n\n[🔍 المزيد من التفاصيل]({BASE_URL}/{d.get('tree', 'fertilizer')}.html){documentation_request_ar}",
+            'ar': lambda d: f"🍌 *تنبيه تسميد {escape_markdown_v2(TREE_NAMES_MAP.get(d.get('tree', ''), d.get('tree', '')))}* 🍌\n\n{escape_markdown_v2('حان موعد تسميد المحصول للحصول على أفضل جودة وكمية. تفقّد النباتات الآن.')}\n\n🧪 *السماد:* {escape_markdown_v2({'Organic': 'العضوي', 'Organic 50-100g': 'عضوي 50-100 جم', 'NPK Balanced': 'NPK متوازن', 'High Phosphorus': 'عالي الفسفور', 'Low Nitrogen': 'منخفض النيتروجين'}.get(d.get('details', {}).get('fertilizer'), d.get('details', {}).get('fertilizer', 'غير محدد')))}\n⚖️ *الكمية:* {escape_markdown_v2(str(d.get('details', {}).get('amount_kg', 0)) + ' كجم')}\n\n[🔍 المزيد من التفاصيل]({BASE_URL}/{d.get('tree', 'fertilizer')}.html){documentation_request_ar}",
             'bn': lambda d: f"🍌 *{escape_markdown_v2(TREE_NAMES_MAP.get(d.get('tree', ''), d.get('tree', '')))} সার প্রয়োগের সতর্কতা* 🍌\n\n{escape_markdown_v2('সেরা মানের ও পরিমাণের জন্য ফসলে সার দেওয়ার সময়। এখনই গাছ পরীক্ষা করুন।')}\n\n🧪 *সার:* {escape_markdown_v2(d.get('details', {}).get('fertilizer', 'unknown'))}\n⚖️ *পরিমাণ:* {escape_markdown_v2(str(d.get('details', {}).get('amount_kg', 0)) + ' কেজি')}\n\n[🔍 আরও বিস্তারিত]({BASE_URL}/{d.get('tree', 'fertilizer')}.html){documentation_request_bn}",
-            'image': 'fertilizer.jpg'
+            'image': 'fertilizer.png'
         },
         'water_station': {
             'ar': lambda d: f"🚰 *تنبيه تنظيف محطة الماء* 💧\n\n{escape_markdown_v2('حان وقت تنظيف نظام المياه.')}\n\n[🔍 المزيد من التفاصيل]({BASE_URL}/water_station.html){disclaimer_ar}{documentation_request_ar}",
@@ -154,6 +154,13 @@ def create_task_from_logic(logic_result: Dict, task_type: str, messages_template
     image_value = template.get('image')
     # إذا كانت image_value دالة، نستدعيها، وإلا نستخدم القيمة مباشرة
     image_filename = image_value(logic_result) if callable(image_value) else image_value
+
+    # التحقق من وجود الصورة
+    if image_filename:
+        image_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'images', image_filename)
+        if not os.path.exists(image_path):
+            print(f"⚠️ تحذير: الصورة غير موجودة: {image_filename} - سيتم إرسال التنبيه بدون صورة")
+            image_filename = None
 
     return {
         'type': f"{task_type}_{logic_result.get('tree', '') or logic_result.get('drug', '')}",
