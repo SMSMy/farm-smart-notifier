@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-11-30T12:43:23.111640",
+  "generated_at": "2025-11-30T18:31:32.457474",
   "upcoming_notifications": [
     {
       "type": "vitamins",
@@ -506,13 +506,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 94596,
-      "days": 1,
-      "hours": 2,
-      "minutes": 16,
-      "seconds": 36
+      "total_seconds": 73707,
+      "days": 0,
+      "hours": 20,
+      "minutes": 28,
+      "seconds": 27
     },
-    "current_time": "2025-11-30T12:43:23.111622"
+    "current_time": "2025-11-30T18:31:32.457456"
   },
   "total_count": 46
 }
