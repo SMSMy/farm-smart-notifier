@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-01T02:09:29.019167",
+  "generated_at": "2025-12-01T06:38:44.074520",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_deep_clean",
@@ -496,13 +496,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 46230,
+      "total_seconds": 30075,
       "days": 0,
-      "hours": 12,
-      "minutes": 50,
-      "seconds": 30
+      "hours": 8,
+      "minutes": 21,
+      "seconds": 15
     },
-    "current_time": "2025-12-01T02:09:29.019149"
+    "current_time": "2025-12-01T06:38:44.074503"
   },
   "total_count": 45
 }
