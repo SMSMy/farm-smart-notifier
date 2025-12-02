@@ -1,40 +1,6 @@
 {
-  "generated_at": "2025-12-01T18:38:46.327528",
+  "generated_at": "2025-12-02T01:52:56.613960",
   "upcoming_notifications": [
-    {
-      "type": "pipe_waterer_deep_clean",
-      "title_ar": "السقاية الأنبوبية - تنظيف عميق",
-      "title_bn": "পাইপ ওয়াটারার - গভীর পরিষ্কার",
-      "date": "2025-12-01",
-      "time": "15:00",
-      "datetime": "2025-12-01T15:00:00",
-      "priority": "medium",
-      "icon": "🚰"
-    },
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد الموز",
-      "title_bn": "কলা সার প্রয়োগ",
-      "date": "2025-12-01",
-      "time": "16:00",
-      "datetime": "2025-12-01T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "banana",
-      "fertilizer": "NPK 30-10-10"
-    },
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد القشطة",
-      "title_bn": "আতা সার প্রয়োগ",
-      "date": "2025-12-01",
-      "time": "16:00",
-      "datetime": "2025-12-01T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "custard_apple",
-      "fertilizer": "NPK 20-20-20"
-    },
     {
       "type": "fertilizer",
       "title_ar": "تسميد مانجو كبيرة",
@@ -482,6 +448,28 @@
       "icon": "💊",
       "reason_ar": "دعم وقائي",
       "reason_bn": "প্রতিরোধমূলক সহায়তা"
+    },
+    {
+      "type": "pipe_waterer_deep_clean",
+      "title_ar": "السقاية الأنبوبية - تنظيف عميق",
+      "title_bn": "পাইপ ওয়াটারার - গভীর পরিষ্কার",
+      "date": "2025-12-31",
+      "time": "15:00",
+      "datetime": "2025-12-31T15:00:00",
+      "priority": "medium",
+      "icon": "🚰"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد الموز",
+      "title_bn": "কলা সার প্রয়োগ",
+      "date": "2025-12-31",
+      "time": "16:00",
+      "datetime": "2025-12-31T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "banana",
+      "fertilizer": "NPK 30-10-10"
     }
   ],
   "countdown": {
@@ -498,13 +486,13 @@
       "fertilizer": "NPK 15-15-15"
     },
     "countdown": {
-      "total_seconds": 163273,
+      "total_seconds": 137223,
       "days": 1,
-      "hours": 21,
-      "minutes": 21,
-      "seconds": 13
+      "hours": 14,
+      "minutes": 7,
+      "seconds": 3
     },
-    "current_time": "2025-12-01T18:38:46.327509"
+    "current_time": "2025-12-02T01:52:56.613942"
   },
-  "total_count": 45
+  "total_count": 44
 }
