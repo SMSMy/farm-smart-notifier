@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-04T12:52:38.757544",
+  "generated_at": "2025-12-04T18:37:46.996022",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -474,23 +474,25 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "pipe_waterer_change_water",
-      "title_ar": "السقاية الأنبوبية - تغيير الماء",
-      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
-      "date": "2025-12-04",
-      "time": "15:00",
-      "datetime": "2025-12-04T15:00:00",
+      "type": "fertilizer",
+      "title_ar": "تسميد الرمان",
+      "title_bn": "ডালিম সার প্রয়োগ",
+      "date": "2025-12-05",
+      "time": "16:00",
+      "datetime": "2025-12-05T16:00:00",
       "priority": "medium",
-      "icon": "🚰"
+      "icon": "🌳",
+      "tree": "pomegranate",
+      "fertilizer": "NPK 15-15-15"
     },
     "countdown": {
-      "total_seconds": 7641,
+      "total_seconds": 76933,
       "days": 0,
-      "hours": 2,
-      "minutes": 7,
-      "seconds": 21
+      "hours": 21,
+      "minutes": 22,
+      "seconds": 13
     },
-    "current_time": "2025-12-04T12:52:38.757527"
+    "current_time": "2025-12-04T18:37:46.996006"
   },
   "total_count": 44
 }
