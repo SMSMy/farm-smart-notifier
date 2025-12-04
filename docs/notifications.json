@@ -1,18 +1,6 @@
 {
-  "generated_at": "2025-12-03T18:37:00.886879",
+  "generated_at": "2025-12-04T01:53:46.283988",
   "upcoming_notifications": [
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد مانجو كبيرة",
-      "title_bn": "বড় আম সার প্রয়োগ",
-      "date": "2025-12-03",
-      "time": "16:00",
-      "datetime": "2025-12-03T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "mango_large",
-      "fertilizer": "NPK 15-15-15"
-    },
     {
       "type": "pipe_waterer_change_water",
       "title_ar": "السقاية الأنبوبية - تغيير الماء",
@@ -470,6 +458,18 @@
       "icon": "🌳",
       "tree": "banana",
       "fertilizer": "NPK 30-10-10"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد مانجو كبيرة",
+      "title_bn": "বড় আম সার প্রয়োগ",
+      "date": "2026-01-02",
+      "time": "16:00",
+      "datetime": "2026-01-02T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "mango_large",
+      "fertilizer": "NPK 15-15-15"
     }
   ],
   "countdown": {
@@ -484,13 +484,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 73379,
+      "total_seconds": 47173,
       "days": 0,
-      "hours": 20,
-      "minutes": 22,
-      "seconds": 59
+      "hours": 13,
+      "minutes": 6,
+      "seconds": 13
     },
-    "current_time": "2025-12-03T18:37:00.886861"
+    "current_time": "2025-12-04T01:53:46.283971"
   },
   "total_count": 44
 }
