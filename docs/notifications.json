@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-05T12:49:49.414360",
+  "generated_at": "2025-12-05T18:32:08.399737",
   "upcoming_notifications": [
     {
       "type": "fertilizer",
@@ -504,25 +504,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "fertilizer",
-      "title_ar": "تسميد الرمان",
-      "title_bn": "ডালিম সার প্রয়োগ",
-      "date": "2025-12-05",
-      "time": "16:00",
-      "datetime": "2025-12-05T16:00:00",
+      "type": "weekly_cleaning",
+      "title_ar": "التنظيف الأسبوعي",
+      "title_bn": "সাপ্তাহিক পরিষ্কার",
+      "date": "2025-12-06",
+      "time": "11:00",
+      "datetime": "2025-12-06T11:00:00",
       "priority": "medium",
-      "icon": "🌳",
-      "tree": "pomegranate",
-      "fertilizer": "NPK 15-15-15"
+      "icon": "🧽"
     },
     "countdown": {
-      "total_seconds": 11410,
+      "total_seconds": 59271,
       "days": 0,
-      "hours": 3,
-      "minutes": 10,
-      "seconds": 10
+      "hours": 16,
+      "minutes": 27,
+      "seconds": 51
     },
-    "current_time": "2025-12-05T12:49:49.414341"
+    "current_time": "2025-12-05T18:32:08.399719"
   },
   "total_count": 47
 }
