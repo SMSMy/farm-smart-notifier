@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-06T06:32:56.930031",
+  "generated_at": "2025-12-06T12:44:21.524929",
   "upcoming_notifications": [
     {
       "type": "weekly_cleaning",
@@ -492,23 +492,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "weekly_cleaning",
-      "title_ar": "التنظيف الأسبوعي",
-      "title_bn": "সাপ্তাহিক পরিষ্কার",
+      "type": "ventilation",
+      "title_ar": "فحص التهوية",
+      "title_bn": "বায়ুচলাচল পরীক্ষা",
       "date": "2025-12-06",
-      "time": "11:00",
-      "datetime": "2025-12-06T11:00:00",
+      "time": "13:00",
+      "datetime": "2025-12-06T13:00:00",
       "priority": "medium",
-      "icon": "🧽"
+      "icon": "💨"
     },
     "countdown": {
-      "total_seconds": 16023,
+      "total_seconds": 938,
       "days": 0,
-      "hours": 4,
-      "minutes": 27,
-      "seconds": 3
+      "hours": 0,
+      "minutes": 15,
+      "seconds": 38
     },
-    "current_time": "2025-12-06T06:32:56.930013"
+    "current_time": "2025-12-06T12:44:21.524911"
   },
   "total_count": 46
 }
