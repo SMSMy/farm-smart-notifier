@@ -1,18 +1,6 @@
 {
-  "generated_at": "2025-12-05T18:32:08.399737",
+  "generated_at": "2025-12-06T01:47:16.573714",
   "upcoming_notifications": [
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد الرمان",
-      "title_bn": "ডালিম সার প্রয়োগ",
-      "date": "2025-12-05",
-      "time": "16:00",
-      "datetime": "2025-12-05T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "pomegranate",
-      "fertilizer": "NPK 15-15-15"
-    },
     {
       "type": "weekly_cleaning",
       "title_ar": "التنظيف الأسبوعي",
@@ -514,13 +502,13 @@
       "icon": "🧽"
     },
     "countdown": {
-      "total_seconds": 59271,
+      "total_seconds": 33163,
       "days": 0,
-      "hours": 16,
-      "minutes": 27,
-      "seconds": 51
+      "hours": 9,
+      "minutes": 12,
+      "seconds": 43
     },
-    "current_time": "2025-12-05T18:32:08.399719"
+    "current_time": "2025-12-06T01:47:16.573696"
   },
-  "total_count": 47
+  "total_count": 46
 }
