@@ -1,58 +1,6 @@
 {
-  "generated_at": "2025-12-06T18:31:23.351668",
+  "generated_at": "2025-12-07T02:02:25.089180",
   "upcoming_notifications": [
-    {
-      "type": "weekly_cleaning",
-      "title_ar": "التنظيف الأسبوعي",
-      "title_bn": "সাপ্তাহিক পরিষ্কার",
-      "date": "2025-12-06",
-      "time": "11:00",
-      "datetime": "2025-12-06T11:00:00",
-      "priority": "medium",
-      "icon": "🧽"
-    },
-    {
-      "type": "soil_turning",
-      "title_ar": "تقليب التراب",
-      "title_bn": "মাটি নাড়াচাড়া",
-      "date": "2025-12-06",
-      "time": "12:00",
-      "datetime": "2025-12-06T12:00:00",
-      "priority": "low",
-      "icon": "🌱"
-    },
-    {
-      "type": "ventilation",
-      "title_ar": "فحص التهوية",
-      "title_bn": "বায়ুচলাচল পরীক্ষা",
-      "date": "2025-12-06",
-      "time": "13:00",
-      "datetime": "2025-12-06T13:00:00",
-      "priority": "medium",
-      "icon": "💨"
-    },
-    {
-      "type": "pipe_waterer_rinse",
-      "title_ar": "السقاية الأنبوبية - شطف",
-      "title_bn": "পাইপ ওয়াটারার - ধোয়া",
-      "date": "2025-12-06",
-      "time": "15:00",
-      "datetime": "2025-12-06T15:00:00",
-      "priority": "medium",
-      "icon": "🚰"
-    },
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد التين",
-      "title_bn": "ডুমুর সার প্রয়োগ",
-      "date": "2025-12-06",
-      "time": "16:00",
-      "datetime": "2025-12-06T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "fig",
-      "fertilizer": "NPK متوازن"
-    },
     {
       "type": "pipe_waterer_change_water",
       "title_ar": "السقاية الأنبوبية - تغيير الماء",
@@ -502,13 +450,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 73716,
+      "total_seconds": 46654,
       "days": 0,
-      "hours": 20,
-      "minutes": 28,
-      "seconds": 36
+      "hours": 12,
+      "minutes": 57,
+      "seconds": 34
     },
-    "current_time": "2025-12-06T18:31:23.351649"
+    "current_time": "2025-12-07T02:02:25.089162"
   },
-  "total_count": 46
+  "total_count": 41
 }
