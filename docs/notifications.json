@@ -1,18 +1,6 @@
 {
-  "generated_at": "2025-12-08T18:36:40.436252",
+  "generated_at": "2025-12-09T01:53:47.537923",
   "upcoming_notifications": [
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد العنب",
-      "title_bn": "আঙ্গুর সার প্রয়োগ",
-      "date": "2025-12-08",
-      "time": "16:00",
-      "datetime": "2025-12-08T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "grape",
-      "fertilizer": "NPK 12-12-17"
-    },
     {
       "type": "pipe_waterer_change_water",
       "title_ar": "السقاية الأنبوبية - تغيير الماء",
@@ -448,6 +436,18 @@
       "icon": "🌳",
       "tree": "custard_apple",
       "fertilizer": "NPK 20-20-20"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد النعناع والحبق",
+      "title_bn": "পুদিনা ও তুলসী সার প্রয়োগ",
+      "date": "2026-01-07",
+      "time": "16:00",
+      "datetime": "2026-01-07T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "mint_basil",
+      "fertilizer": "NPK 20-20-20"
     }
   ],
   "countdown": {
@@ -462,13 +462,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 159799,
+      "total_seconds": 133572,
       "days": 1,
-      "hours": 20,
-      "minutes": 23,
-      "seconds": 19
+      "hours": 13,
+      "minutes": 6,
+      "seconds": 12
     },
-    "current_time": "2025-12-08T18:36:40.436235"
+    "current_time": "2025-12-09T01:53:47.537905"
   },
   "total_count": 42
 }
