@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-11T01:57:10.529989",
+  "generated_at": "2025-12-11T06:38:58.111071",
   "upcoming_notifications": [
     {
       "type": "fertilizer",
@@ -452,13 +452,13 @@
       "fertilizer": "Organic"
     },
     "countdown": {
-      "total_seconds": 136969,
+      "total_seconds": 120061,
       "days": 1,
-      "hours": 14,
-      "minutes": 2,
-      "seconds": 49
+      "hours": 9,
+      "minutes": 21,
+      "seconds": 1
     },
-    "current_time": "2025-12-11T01:57:10.529971"
+    "current_time": "2025-12-11T06:38:58.111053"
   },
   "total_count": 41
 }
