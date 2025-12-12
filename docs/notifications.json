@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-12T12:51:38.912526",
+  "generated_at": "2025-12-12T18:36:37.944849",
   "upcoming_notifications": [
     {
       "type": "fertilizer",
@@ -500,25 +500,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "fertilizer",
-      "title_ar": "تسميد الأكاسيا",
-      "title_bn": "বাবলা সার প্রয়োগ",
-      "date": "2025-12-12",
-      "time": "16:00",
-      "datetime": "2025-12-12T16:00:00",
+      "type": "water_station",
+      "title_ar": "تنظيف محطة الماء",
+      "title_bn": "পানি স্টেশন পরিষ্কার",
+      "date": "2025-12-13",
+      "time": "10:00",
+      "datetime": "2025-12-13T10:00:00",
       "priority": "medium",
-      "icon": "🌳",
-      "tree": "acacia",
-      "fertilizer": "Organic"
+      "icon": "💧"
     },
     "countdown": {
-      "total_seconds": 11301,
+      "total_seconds": 55402,
       "days": 0,
-      "hours": 3,
-      "minutes": 8,
-      "seconds": 21
+      "hours": 15,
+      "minutes": 23,
+      "seconds": 22
     },
-    "current_time": "2025-12-12T12:51:38.912507"
+    "current_time": "2025-12-12T18:36:37.944831"
   },
   "total_count": 47
 }
