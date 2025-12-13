@@ -1,18 +1,6 @@
 {
-  "generated_at": "2025-12-12T18:36:37.944849",
+  "generated_at": "2025-12-13T01:50:13.621927",
   "upcoming_notifications": [
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد الأكاسيا",
-      "title_bn": "বাবলা সার প্রয়োগ",
-      "date": "2025-12-12",
-      "time": "16:00",
-      "datetime": "2025-12-12T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "acacia",
-      "fertilizer": "Organic"
-    },
     {
       "type": "water_station",
       "title_ar": "تنظيف محطة الماء",
@@ -510,13 +498,13 @@
       "icon": "💧"
     },
     "countdown": {
-      "total_seconds": 55402,
+      "total_seconds": 29386,
       "days": 0,
-      "hours": 15,
-      "minutes": 23,
-      "seconds": 22
+      "hours": 8,
+      "minutes": 9,
+      "seconds": 46
     },
-    "current_time": "2025-12-12T18:36:37.944831"
+    "current_time": "2025-12-13T01:50:13.621910"
   },
-  "total_count": 47
+  "total_count": 46
 }
