@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-14T02:03:02.597901",
+  "generated_at": "2025-12-14T06:34:55.423068",
   "upcoming_notifications": [
     {
       "type": "fertilizer",
@@ -438,13 +438,13 @@
       "fertilizer": "High Phosphorus"
     },
     "countdown": {
-      "total_seconds": 50217,
+      "total_seconds": 33904,
       "days": 0,
-      "hours": 13,
-      "minutes": 56,
-      "seconds": 57
+      "hours": 9,
+      "minutes": 25,
+      "seconds": 4
     },
-    "current_time": "2025-12-14T02:03:02.597885"
+    "current_time": "2025-12-14T06:34:55.423051"
   },
   "total_count": 40
 }
