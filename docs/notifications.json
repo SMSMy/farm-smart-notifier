@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-15T12:55:02.431626",
+  "generated_at": "2025-12-15T18:37:12.145134",
   "upcoming_notifications": [
     {
       "type": "vitamins",
@@ -426,25 +426,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "fertilizer",
-      "title_ar": "تسميد المورينجا",
-      "title_bn": "সজনে সার প্রয়োগ",
-      "date": "2025-12-15",
-      "time": "16:00",
-      "datetime": "2025-12-15T16:00:00",
+      "type": "pipe_waterer_sanitize",
+      "title_ar": "السقاية الأنبوبية - تعقيم",
+      "title_bn": "পাইপ ওয়াটারার - জীবাণুমুক্তকরণ",
+      "date": "2025-12-16",
+      "time": "15:00",
+      "datetime": "2025-12-16T15:00:00",
       "priority": "medium",
-      "icon": "🌳",
-      "tree": "moringa",
-      "fertilizer": "Low Nitrogen"
+      "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 11097,
+      "total_seconds": 73367,
       "days": 0,
-      "hours": 3,
-      "minutes": 4,
-      "seconds": 57
+      "hours": 20,
+      "minutes": 22,
+      "seconds": 47
     },
-    "current_time": "2025-12-15T12:55:02.431610"
+    "current_time": "2025-12-15T18:37:12.145117"
   },
   "total_count": 40
 }
