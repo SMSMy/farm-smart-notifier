@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-16T12:53:30.055856",
+  "generated_at": "2025-12-16T18:37:06.364527",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_sanitize",
@@ -402,23 +402,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "pipe_waterer_sanitize",
-      "title_ar": "السقاية الأنبوبية - تعقيم",
-      "title_bn": "পাইপ ওয়াটারার - জীবাণুমুক্তকরণ",
-      "date": "2025-12-16",
+      "type": "pipe_waterer_change_water",
+      "title_ar": "السقاية الأنبوبية - تغيير الماء",
+      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
+      "date": "2025-12-19",
       "time": "15:00",
-      "datetime": "2025-12-16T15:00:00",
+      "datetime": "2025-12-19T15:00:00",
       "priority": "medium",
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 7589,
-      "days": 0,
-      "hours": 2,
-      "minutes": 6,
-      "seconds": 29
+      "total_seconds": 246173,
+      "days": 2,
+      "hours": 20,
+      "minutes": 22,
+      "seconds": 53
     },
-    "current_time": "2025-12-16T12:53:30.055837"
+    "current_time": "2025-12-16T18:37:06.364510"
   },
   "total_count": 38
 }
