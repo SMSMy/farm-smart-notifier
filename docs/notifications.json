@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-16T06:38:59.242529",
+  "generated_at": "2025-12-16T12:53:30.055856",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_sanitize",
@@ -412,13 +412,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 30060,
+      "total_seconds": 7589,
       "days": 0,
-      "hours": 8,
-      "minutes": 21,
-      "seconds": 0
+      "hours": 2,
+      "minutes": 6,
+      "seconds": 29
     },
-    "current_time": "2025-12-16T06:38:59.242511"
+    "current_time": "2025-12-16T12:53:30.055837"
   },
   "total_count": 38
 }
