@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-19T12:49:57.391328",
+  "generated_at": "2025-12-19T18:35:15.053124",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -454,23 +454,25 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "pipe_waterer_change_water",
-      "title_ar": "السقاية الأنبوبية - تغيير الماء",
-      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
-      "date": "2025-12-19",
-      "time": "15:00",
-      "datetime": "2025-12-19T15:00:00",
-      "priority": "medium",
-      "icon": "🚰"
+      "type": "coccidiosis",
+      "title_ar": "وقاية من الكوكسيديا - رطوبة عالية",
+      "title_bn": "কক্সিডিওসিস প্রতিরোধ - উচ্চ আর্দ্রতা",
+      "date": "2025-12-20",
+      "time": "09:30",
+      "datetime": "2025-12-20T09:30:00",
+      "priority": "high",
+      "icon": "🦠",
+      "reason_ar": "رطوبة عالية",
+      "reason_bn": "উচ্চ আর্দ্রতা"
     },
     "countdown": {
-      "total_seconds": 7802,
+      "total_seconds": 53684,
       "days": 0,
-      "hours": 2,
-      "minutes": 10,
-      "seconds": 2
+      "hours": 14,
+      "minutes": 54,
+      "seconds": 44
     },
-    "current_time": "2025-12-19T12:49:57.391311"
+    "current_time": "2025-12-19T18:35:15.053104"
   },
   "total_count": 43
 }
