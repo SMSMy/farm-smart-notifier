@@ -1,28 +1,6 @@
 {
-  "generated_at": "2025-12-19T18:35:15.053124",
+  "generated_at": "2025-12-20T01:49:59.812893",
   "upcoming_notifications": [
-    {
-      "type": "pipe_waterer_change_water",
-      "title_ar": "السقاية الأنبوبية - تغيير الماء",
-      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
-      "date": "2025-12-19",
-      "time": "15:00",
-      "datetime": "2025-12-19T15:00:00",
-      "priority": "medium",
-      "icon": "🚰"
-    },
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد القشطة",
-      "title_bn": "আতা সার প্রয়োগ",
-      "date": "2025-12-19",
-      "time": "16:00",
-      "datetime": "2025-12-19T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "custard_apple",
-      "fertilizer": "NPK 20-20-20"
-    },
     {
       "type": "coccidiosis",
       "title_ar": "وقاية من الكوكسيديا - رطوبة عالية",
@@ -450,6 +428,16 @@
       "datetime": "2026-01-17T15:00:00",
       "priority": "medium",
       "icon": "🚰"
+    },
+    {
+      "type": "pipe_waterer_change_water",
+      "title_ar": "السقاية الأنبوبية - تغيير الماء",
+      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
+      "date": "2026-01-18",
+      "time": "15:00",
+      "datetime": "2026-01-18T15:00:00",
+      "priority": "medium",
+      "icon": "🚰"
     }
   ],
   "countdown": {
@@ -466,13 +454,13 @@
       "reason_bn": "উচ্চ আর্দ্রতা"
     },
     "countdown": {
-      "total_seconds": 53684,
+      "total_seconds": 27600,
       "days": 0,
-      "hours": 14,
-      "minutes": 54,
-      "seconds": 44
+      "hours": 7,
+      "minutes": 40,
+      "seconds": 0
     },
-    "current_time": "2025-12-19T18:35:15.053104"
+    "current_time": "2025-12-20T01:49:59.812876"
   },
-  "total_count": 43
+  "total_count": 42
 }
