@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-20T12:45:15.701961",
+  "generated_at": "2025-12-20T18:30:46.132304",
   "upcoming_notifications": [
     {
       "type": "coccidiosis",
@@ -442,23 +442,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "ventilation",
-      "title_ar": "فحص التهوية",
-      "title_bn": "বায়ুচলাচল পরীক্ষা",
-      "date": "2025-12-20",
-      "time": "13:00",
-      "datetime": "2025-12-20T13:00:00",
+      "type": "pipe_waterer_change_water",
+      "title_ar": "السقاية الأنبوبية - تغيير الماء",
+      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
+      "date": "2025-12-22",
+      "time": "15:00",
+      "datetime": "2025-12-22T15:00:00",
       "priority": "medium",
-      "icon": "💨"
+      "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 884,
-      "days": 0,
-      "hours": 0,
-      "minutes": 14,
-      "seconds": 44
+      "total_seconds": 160153,
+      "days": 1,
+      "hours": 20,
+      "minutes": 29,
+      "seconds": 13
     },
-    "current_time": "2025-12-20T12:45:15.701944"
+    "current_time": "2025-12-20T18:30:46.132287"
   },
   "total_count": 42
 }
