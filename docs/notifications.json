@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-20T01:49:59.812893",
+  "generated_at": "2025-12-20T06:35:15.101170",
   "upcoming_notifications": [
     {
       "type": "coccidiosis",
@@ -454,13 +454,13 @@
       "reason_bn": "উচ্চ আর্দ্রতা"
     },
     "countdown": {
-      "total_seconds": 27600,
+      "total_seconds": 10484,
       "days": 0,
-      "hours": 7,
-      "minutes": 40,
-      "seconds": 0
+      "hours": 2,
+      "minutes": 54,
+      "seconds": 44
     },
-    "current_time": "2025-12-20T01:49:59.812876"
+    "current_time": "2025-12-20T06:35:15.101153"
   },
   "total_count": 42
 }
