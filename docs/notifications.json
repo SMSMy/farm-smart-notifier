@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-20T06:35:15.101170",
+  "generated_at": "2025-12-20T12:45:15.701961",
   "upcoming_notifications": [
     {
       "type": "coccidiosis",
@@ -442,25 +442,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "coccidiosis",
-      "title_ar": "وقاية من الكوكسيديا - رطوبة عالية",
-      "title_bn": "কক্সিডিওসিস প্রতিরোধ - উচ্চ আর্দ্রতা",
+      "type": "ventilation",
+      "title_ar": "فحص التهوية",
+      "title_bn": "বায়ুচলাচল পরীক্ষা",
       "date": "2025-12-20",
-      "time": "09:30",
-      "datetime": "2025-12-20T09:30:00",
-      "priority": "high",
-      "icon": "🦠",
-      "reason_ar": "رطوبة عالية",
-      "reason_bn": "উচ্চ আর্দ্রতা"
+      "time": "13:00",
+      "datetime": "2025-12-20T13:00:00",
+      "priority": "medium",
+      "icon": "💨"
     },
     "countdown": {
-      "total_seconds": 10484,
+      "total_seconds": 884,
       "days": 0,
-      "hours": 2,
-      "minutes": 54,
+      "hours": 0,
+      "minutes": 14,
       "seconds": 44
     },
-    "current_time": "2025-12-20T06:35:15.101153"
+    "current_time": "2025-12-20T12:45:15.701944"
   },
   "total_count": 42
 }
