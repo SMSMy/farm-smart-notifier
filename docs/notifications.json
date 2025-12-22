@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-22T12:51:04.452864",
+  "generated_at": "2025-12-22T18:36:01.390909",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -405,20 +405,20 @@
       "type": "pipe_waterer_change_water",
       "title_ar": "السقاية الأنبوبية - تغيير الماء",
       "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
-      "date": "2025-12-22",
+      "date": "2025-12-25",
       "time": "15:00",
-      "datetime": "2025-12-22T15:00:00",
+      "datetime": "2025-12-25T15:00:00",
       "priority": "medium",
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 7735,
-      "days": 0,
-      "hours": 2,
-      "minutes": 8,
-      "seconds": 55
+      "total_seconds": 246238,
+      "days": 2,
+      "hours": 20,
+      "minutes": 23,
+      "seconds": 58
     },
-    "current_time": "2025-12-22T12:51:04.452828"
+    "current_time": "2025-12-22T18:36:01.390892"
   },
   "total_count": 38
 }
