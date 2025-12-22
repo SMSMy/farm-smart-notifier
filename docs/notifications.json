@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-21T18:32:33.485305",
+  "generated_at": "2025-12-22T02:02:15.522852",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -386,6 +386,18 @@
       "datetime": "2026-01-18T15:00:00",
       "priority": "medium",
       "icon": "🚰"
+    },
+    {
+      "type": "coccidiosis",
+      "title_ar": "وقاية من الكوكسيديا - رطوبة عالية",
+      "title_bn": "কক্সিডিওসিস প্রতিরোধ - উচ্চ আর্দ্রতা",
+      "date": "2026-01-20",
+      "time": "09:30",
+      "datetime": "2026-01-20T09:30:00",
+      "priority": "high",
+      "icon": "🦠",
+      "reason_ar": "رطوبة عالية",
+      "reason_bn": "উচ্চ আর্দ্রতা"
     }
   ],
   "countdown": {
@@ -400,13 +412,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 73646,
+      "total_seconds": 46664,
       "days": 0,
-      "hours": 20,
-      "minutes": 27,
-      "seconds": 26
+      "hours": 12,
+      "minutes": 57,
+      "seconds": 44
     },
-    "current_time": "2025-12-21T18:32:33.485290"
+    "current_time": "2025-12-22T02:02:15.522834"
   },
-  "total_count": 37
+  "total_count": 38
 }
