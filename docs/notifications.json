@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-23T06:39:07.128215",
+  "generated_at": "2025-12-23T12:52:15.871098",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -412,13 +412,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 202852,
+      "total_seconds": 180464,
       "days": 2,
-      "hours": 8,
-      "minutes": 20,
-      "seconds": 52
+      "hours": 2,
+      "minutes": 7,
+      "seconds": 44
     },
-    "current_time": "2025-12-23T06:39:07.128198"
+    "current_time": "2025-12-23T12:52:15.871080"
   },
   "total_count": 38
 }
