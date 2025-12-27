@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-27T06:36:08.965449",
+  "generated_at": "2025-12-27T12:47:01.887692",
   "upcoming_notifications": [
     {
       "type": "water_station",
@@ -464,23 +464,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "water_station",
-      "title_ar": "تنظيف محطة الماء",
-      "title_bn": "পানি স্টেশন পরিষ্কার",
+      "type": "ventilation",
+      "title_ar": "فحص التهوية",
+      "title_bn": "বায়ুচলাচল পরীক্ষা",
       "date": "2025-12-27",
-      "time": "10:00",
-      "datetime": "2025-12-27T10:00:00",
+      "time": "13:00",
+      "datetime": "2025-12-27T13:00:00",
       "priority": "medium",
-      "icon": "💧"
+      "icon": "💨"
     },
     "countdown": {
-      "total_seconds": 12231,
+      "total_seconds": 778,
       "days": 0,
-      "hours": 3,
-      "minutes": 23,
-      "seconds": 51
+      "hours": 0,
+      "minutes": 12,
+      "seconds": 58
     },
-    "current_time": "2025-12-27T06:36:08.965430"
+    "current_time": "2025-12-27T12:47:01.887674"
   },
   "total_count": 44
 }
