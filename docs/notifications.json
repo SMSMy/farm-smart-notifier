@@ -1,16 +1,6 @@
 {
-  "generated_at": "2025-12-28T18:33:52.730918",
+  "generated_at": "2025-12-29T02:06:24.641222",
   "upcoming_notifications": [
-    {
-      "type": "pipe_waterer_change_water",
-      "title_ar": "السقاية الأنبوبية - تغيير الماء",
-      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
-      "date": "2025-12-28",
-      "time": "15:00",
-      "datetime": "2025-12-28T15:00:00",
-      "priority": "medium",
-      "icon": "🚰"
-    },
     {
       "type": "fertilizer",
       "title_ar": "تسميد مانجو صغيرة",
@@ -400,6 +390,16 @@
       "icon": "🌳",
       "tree": "custard_apple",
       "fertilizer": "NPK 20-20-20"
+    },
+    {
+      "type": "pipe_waterer_change_water",
+      "title_ar": "السقاية الأنبوبية - تغيير الماء",
+      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
+      "date": "2026-01-27",
+      "time": "15:00",
+      "datetime": "2026-01-27T15:00:00",
+      "priority": "medium",
+      "icon": "🚰"
     }
   ],
   "countdown": {
@@ -416,13 +416,13 @@
       "fertilizer": "NPK 20-20-20"
     },
     "countdown": {
-      "total_seconds": 77167,
+      "total_seconds": 50015,
       "days": 0,
-      "hours": 21,
-      "minutes": 26,
-      "seconds": 7
+      "hours": 13,
+      "minutes": 53,
+      "seconds": 35
     },
-    "current_time": "2025-12-28T18:33:52.730901"
+    "current_time": "2025-12-29T02:06:24.641205"
   },
   "total_count": 38
 }
