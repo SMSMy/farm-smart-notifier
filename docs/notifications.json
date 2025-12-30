@@ -1,18 +1,6 @@
 {
-  "generated_at": "2025-12-29T18:35:15.086372",
+  "generated_at": "2025-12-30T01:58:07.012620",
   "upcoming_notifications": [
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد مانجو صغيرة",
-      "title_bn": "ছোট আম সার প্রয়োগ",
-      "date": "2025-12-29",
-      "time": "16:00",
-      "datetime": "2025-12-29T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "mango_small",
-      "fertilizer": "NPK 20-20-20"
-    },
     {
       "type": "vitamins",
       "title_ar": "فيتامينات وإلكتروليت - دعم وقائي",
@@ -400,6 +388,18 @@
       "datetime": "2026-01-27T15:00:00",
       "priority": "medium",
       "icon": "🚰"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد مانجو صغيرة",
+      "title_bn": "ছোট আম সার প্রয়োগ",
+      "date": "2026-01-28",
+      "time": "16:00",
+      "datetime": "2026-01-28T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "mango_small",
+      "fertilizer": "NPK 20-20-20"
     }
   ],
   "countdown": {
@@ -416,13 +416,13 @@
       "reason_bn": "প্রতিরোধমূলক সহায়তা"
     },
     "countdown": {
-      "total_seconds": 51884,
+      "total_seconds": 25312,
       "days": 0,
-      "hours": 14,
-      "minutes": 24,
-      "seconds": 44
+      "hours": 7,
+      "minutes": 1,
+      "seconds": 52
     },
-    "current_time": "2025-12-29T18:35:15.086354"
+    "current_time": "2025-12-30T01:58:07.012604"
   },
   "total_count": 38
 }
