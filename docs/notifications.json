@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-01T02:08:45.836690",
+  "generated_at": "2026-01-01T06:38:50.452439",
   "upcoming_notifications": [
     {
       "type": "fertilizer",
@@ -426,13 +426,13 @@
       "fertilizer": "NPK 15-15-15"
     },
     "countdown": {
-      "total_seconds": 136274,
+      "total_seconds": 120069,
       "days": 1,
-      "hours": 13,
-      "minutes": 51,
-      "seconds": 14
+      "hours": 9,
+      "minutes": 21,
+      "seconds": 9
     },
-    "current_time": "2026-01-01T02:08:45.836674"
+    "current_time": "2026-01-01T06:38:50.452422"
   },
   "total_count": 39
 }
