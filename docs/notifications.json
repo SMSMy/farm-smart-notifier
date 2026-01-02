@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-01T18:35:36.232962",
+  "generated_at": "2026-01-02T02:00:06.620192",
   "upcoming_notifications": [
     {
       "type": "fertilizer",
@@ -410,6 +410,46 @@
       "icon": "🌳",
       "tree": "banana",
       "fertilizer": "NPK 30-10-10"
+    },
+    {
+      "type": "weekly_cleaning",
+      "title_ar": "التنظيف الأسبوعي",
+      "title_bn": "সাপ্তাহিক পরিষ্কার",
+      "date": "2026-01-31",
+      "time": "11:00",
+      "datetime": "2026-01-31T11:00:00",
+      "priority": "medium",
+      "icon": "🧽"
+    },
+    {
+      "type": "soil_turning",
+      "title_ar": "تقليب التراب",
+      "title_bn": "মাটি নাড়াচাড়া",
+      "date": "2026-01-31",
+      "time": "12:00",
+      "datetime": "2026-01-31T12:00:00",
+      "priority": "low",
+      "icon": "🌱"
+    },
+    {
+      "type": "ventilation",
+      "title_ar": "فحص التهوية",
+      "title_bn": "বায়ুচলাচল পরীক্ষা",
+      "date": "2026-01-31",
+      "time": "13:00",
+      "datetime": "2026-01-31T13:00:00",
+      "priority": "medium",
+      "icon": "💨"
+    },
+    {
+      "type": "pipe_waterer_rinse",
+      "title_ar": "السقاية الأنبوبية - شطف",
+      "title_bn": "পাইপ ওয়াটারার - ধোয়া",
+      "date": "2026-01-31",
+      "time": "15:00",
+      "datetime": "2026-01-31T15:00:00",
+      "priority": "medium",
+      "icon": "🚰"
     }
   ],
   "countdown": {
@@ -426,13 +466,13 @@
       "fertilizer": "NPK 15-15-15"
     },
     "countdown": {
-      "total_seconds": 77063,
+      "total_seconds": 50393,
       "days": 0,
-      "hours": 21,
-      "minutes": 24,
-      "seconds": 23
+      "hours": 13,
+      "minutes": 59,
+      "seconds": 53
     },
-    "current_time": "2026-01-01T18:35:36.232944"
+    "current_time": "2026-01-02T02:00:06.620175"
   },
-  "total_count": 39
+  "total_count": 43
 }
