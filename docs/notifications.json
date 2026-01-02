@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-02T12:49:42.886619",
+  "generated_at": "2026-01-02T18:34:36.157762",
   "upcoming_notifications": [
     {
       "type": "fertilizer",
@@ -454,25 +454,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "fertilizer",
-      "title_ar": "تسميد مانجو كبيرة",
-      "title_bn": "বড় আম সার প্রয়োগ",
-      "date": "2026-01-02",
-      "time": "16:00",
-      "datetime": "2026-01-02T16:00:00",
+      "type": "weekly_cleaning",
+      "title_ar": "التنظيف الأسبوعي",
+      "title_bn": "সাপ্তাহিক পরিষ্কার",
+      "date": "2026-01-03",
+      "time": "11:00",
+      "datetime": "2026-01-03T11:00:00",
       "priority": "medium",
-      "icon": "🌳",
-      "tree": "mango_large",
-      "fertilizer": "NPK 15-15-15"
+      "icon": "🧽"
     },
     "countdown": {
-      "total_seconds": 11417,
+      "total_seconds": 59123,
       "days": 0,
-      "hours": 3,
-      "minutes": 10,
-      "seconds": 17
+      "hours": 16,
+      "minutes": 25,
+      "seconds": 23
     },
-    "current_time": "2026-01-02T12:49:42.886601"
+    "current_time": "2026-01-02T18:34:36.157743"
   },
   "total_count": 43
 }
