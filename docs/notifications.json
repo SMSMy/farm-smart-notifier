@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-03T12:47:49.373648",
+  "generated_at": "2026-01-03T18:33:24.572885",
   "upcoming_notifications": [
     {
       "type": "weekly_cleaning",
@@ -466,23 +466,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "ventilation",
-      "title_ar": "فحص التهوية",
-      "title_bn": "বায়ুচলাচল পরীক্ষা",
-      "date": "2026-01-03",
-      "time": "13:00",
-      "datetime": "2026-01-03T13:00:00",
+      "type": "pipe_waterer_change_water",
+      "title_ar": "السقاية الأنبوبية - تغيير الماء",
+      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
+      "date": "2026-01-06",
+      "time": "15:00",
+      "datetime": "2026-01-06T15:00:00",
       "priority": "medium",
-      "icon": "💨"
+      "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 730,
-      "days": 0,
-      "hours": 0,
-      "minutes": 12,
-      "seconds": 10
+      "total_seconds": 246395,
+      "days": 2,
+      "hours": 20,
+      "minutes": 26,
+      "seconds": 35
     },
-    "current_time": "2026-01-03T12:47:49.373631"
+    "current_time": "2026-01-03T18:33:24.572854"
   },
   "total_count": 44
 }
