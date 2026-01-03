@@ -1,18 +1,6 @@
 {
-  "generated_at": "2026-01-02T18:34:36.157762",
+  "generated_at": "2026-01-03T01:53:51.428600",
   "upcoming_notifications": [
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد مانجو كبيرة",
-      "title_bn": "বড় আম সার প্রয়োগ",
-      "date": "2026-01-02",
-      "time": "16:00",
-      "datetime": "2026-01-02T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "mango_large",
-      "fertilizer": "NPK 15-15-15"
-    },
     {
       "type": "weekly_cleaning",
       "title_ar": "التنظيف الأسبوعي",
@@ -450,6 +438,30 @@
       "datetime": "2026-01-31T15:00:00",
       "priority": "medium",
       "icon": "🚰"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد مانجو كبيرة",
+      "title_bn": "বড় আম সার প্রয়োগ",
+      "date": "2026-02-01",
+      "time": "16:00",
+      "datetime": "2026-02-01T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "mango_large",
+      "fertilizer": "NPK 15-15-15"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد النعناع والحبق",
+      "title_bn": "পুদিনা ও তুলসী সার প্রয়োগ",
+      "date": "2026-02-01",
+      "time": "16:00",
+      "datetime": "2026-02-01T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "mint_basil",
+      "fertilizer": "NPK 20-20-20"
     }
   ],
   "countdown": {
@@ -464,13 +476,13 @@
       "icon": "🧽"
     },
     "countdown": {
-      "total_seconds": 59123,
+      "total_seconds": 32768,
       "days": 0,
-      "hours": 16,
-      "minutes": 25,
-      "seconds": 23
+      "hours": 9,
+      "minutes": 6,
+      "seconds": 8
     },
-    "current_time": "2026-01-02T18:34:36.157743"
+    "current_time": "2026-01-03T01:53:51.428581"
   },
-  "total_count": 43
+  "total_count": 44
 }
