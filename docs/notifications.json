@@ -1,46 +1,6 @@
 {
-  "generated_at": "2026-01-03T18:33:24.572885",
+  "generated_at": "2026-01-04T02:09:59.038259",
   "upcoming_notifications": [
-    {
-      "type": "weekly_cleaning",
-      "title_ar": "التنظيف الأسبوعي",
-      "title_bn": "সাপ্তাহিক পরিষ্কার",
-      "date": "2026-01-03",
-      "time": "11:00",
-      "datetime": "2026-01-03T11:00:00",
-      "priority": "medium",
-      "icon": "🧽"
-    },
-    {
-      "type": "soil_turning",
-      "title_ar": "تقليب التراب",
-      "title_bn": "মাটি নাড়াচাড়া",
-      "date": "2026-01-03",
-      "time": "12:00",
-      "datetime": "2026-01-03T12:00:00",
-      "priority": "low",
-      "icon": "🌱"
-    },
-    {
-      "type": "ventilation",
-      "title_ar": "فحص التهوية",
-      "title_bn": "বায়ুচলাচল পরীক্ষা",
-      "date": "2026-01-03",
-      "time": "13:00",
-      "datetime": "2026-01-03T13:00:00",
-      "priority": "medium",
-      "icon": "💨"
-    },
-    {
-      "type": "pipe_waterer_rinse",
-      "title_ar": "السقاية الأنبوبية - شطف",
-      "title_bn": "পাইপ ওয়াটারার - ধোয়া",
-      "date": "2026-01-03",
-      "time": "15:00",
-      "datetime": "2026-01-03T15:00:00",
-      "priority": "medium",
-      "icon": "🚰"
-    },
     {
       "type": "pipe_waterer_change_water",
       "title_ar": "السقاية الأنبوبية - تغيير الماء",
@@ -462,6 +422,28 @@
       "icon": "🌳",
       "tree": "mint_basil",
       "fertilizer": "NPK 20-20-20"
+    },
+    {
+      "type": "pipe_waterer_change_water",
+      "title_ar": "السقاية الأنبوبية - تغيير الماء",
+      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
+      "date": "2026-02-02",
+      "time": "15:00",
+      "datetime": "2026-02-02T15:00:00",
+      "priority": "medium",
+      "icon": "🚰"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد الجهنمية",
+      "title_bn": "বাগানবিলাস সার প্রয়োগ",
+      "date": "2026-02-02",
+      "time": "16:00",
+      "datetime": "2026-02-02T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "bougainvillea",
+      "fertilizer": "High Phosphorus"
     }
   ],
   "countdown": {
@@ -476,13 +458,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 246395,
+      "total_seconds": 219000,
       "days": 2,
-      "hours": 20,
-      "minutes": 26,
-      "seconds": 35
+      "hours": 12,
+      "minutes": 50,
+      "seconds": 0
     },
-    "current_time": "2026-01-03T18:33:24.572854"
+    "current_time": "2026-01-04T02:09:59.038229"
   },
-  "total_count": 44
+  "total_count": 42
 }
