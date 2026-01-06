@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-05T18:38:04.102805",
+  "generated_at": "2026-01-06T02:00:05.203019",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -444,6 +444,18 @@
       "icon": "🌳",
       "tree": "bougainvillea",
       "fertilizer": "High Phosphorus"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد التين",
+      "title_bn": "ডুমুর সার প্রয়োগ",
+      "date": "2026-02-04",
+      "time": "16:00",
+      "datetime": "2026-02-04T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "fig",
+      "fertilizer": "NPK متوازن"
     }
   ],
   "countdown": {
@@ -458,13 +470,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 73315,
+      "total_seconds": 46794,
       "days": 0,
-      "hours": 20,
-      "minutes": 21,
-      "seconds": 55
+      "hours": 12,
+      "minutes": 59,
+      "seconds": 54
     },
-    "current_time": "2026-01-05T18:38:04.102787"
+    "current_time": "2026-01-06T02:00:05.203001"
   },
-  "total_count": 42
+  "total_count": 43
 }
