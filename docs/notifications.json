@@ -1,18 +1,6 @@
 {
-  "generated_at": "2026-01-07T18:38:19.910565",
+  "generated_at": "2026-01-08T02:00:03.847047",
   "upcoming_notifications": [
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد النعناع والحبق",
-      "title_bn": "পুদিনা ও তুলসী সার প্রয়োগ",
-      "date": "2026-01-07",
-      "time": "16:00",
-      "datetime": "2026-01-07T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "mint_basil",
-      "fertilizer": "NPK 20-20-20"
-    },
     {
       "type": "pipe_waterer_change_water",
       "title_ar": "السقاية الأنبوبية - تغيير الماء",
@@ -458,13 +446,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 159700,
+      "total_seconds": 133196,
       "days": 1,
-      "hours": 20,
-      "minutes": 21,
-      "seconds": 40
+      "hours": 12,
+      "minutes": 59,
+      "seconds": 56
     },
-    "current_time": "2026-01-07T18:38:19.910548"
+    "current_time": "2026-01-08T02:00:03.847028"
   },
-  "total_count": 42
+  "total_count": 41
 }
