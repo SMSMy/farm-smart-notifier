@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-09T12:53:11.107700",
+  "generated_at": "2026-01-09T18:37:39.516455",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -496,23 +496,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "pipe_waterer_change_water",
-      "title_ar": "السقاية الأنبوبية - تغيير الماء",
-      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
-      "date": "2026-01-09",
-      "time": "15:00",
-      "datetime": "2026-01-09T15:00:00",
+      "type": "water_station",
+      "title_ar": "تنظيف محطة الماء",
+      "title_bn": "পানি স্টেশন পরিষ্কার",
+      "date": "2026-01-10",
+      "time": "10:00",
+      "datetime": "2026-01-10T10:00:00",
       "priority": "medium",
-      "icon": "🚰"
+      "icon": "💧"
     },
     "countdown": {
-      "total_seconds": 7608,
+      "total_seconds": 55340,
       "days": 0,
-      "hours": 2,
-      "minutes": 6,
-      "seconds": 48
+      "hours": 15,
+      "minutes": 22,
+      "seconds": 20
     },
-    "current_time": "2026-01-09T12:53:11.107680"
+    "current_time": "2026-01-09T18:37:39.516435"
   },
   "total_count": 47
 }
