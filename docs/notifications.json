@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-08T18:34:17.805681",
+  "generated_at": "2026-01-09T02:01:22.644417",
   "upcoming_notifications": [
     {
       "type": "pipe_waterer_change_water",
@@ -432,6 +432,66 @@
       "datetime": "2026-02-05T15:00:00",
       "priority": "medium",
       "icon": "🚰"
+    },
+    {
+      "type": "water_station",
+      "title_ar": "تنظيف محطة الماء",
+      "title_bn": "পানি স্টেশন পরিষ্কার",
+      "date": "2026-02-07",
+      "time": "10:00",
+      "datetime": "2026-02-07T10:00:00",
+      "priority": "medium",
+      "icon": "💧"
+    },
+    {
+      "type": "weekly_cleaning",
+      "title_ar": "التنظيف الأسبوعي",
+      "title_bn": "সাপ্তাহিক পরিষ্কার",
+      "date": "2026-02-07",
+      "time": "11:00",
+      "datetime": "2026-02-07T11:00:00",
+      "priority": "medium",
+      "icon": "🧽"
+    },
+    {
+      "type": "soil_turning",
+      "title_ar": "تقليب التراب",
+      "title_bn": "মাটি নাড়াচাড়া",
+      "date": "2026-02-07",
+      "time": "12:00",
+      "datetime": "2026-02-07T12:00:00",
+      "priority": "low",
+      "icon": "🌱"
+    },
+    {
+      "type": "ventilation",
+      "title_ar": "فحص التهوية",
+      "title_bn": "বায়ুচলাচল পরীক্ষা",
+      "date": "2026-02-07",
+      "time": "13:00",
+      "datetime": "2026-02-07T13:00:00",
+      "priority": "medium",
+      "icon": "💨"
+    },
+    {
+      "type": "feeder_cleaning",
+      "title_ar": "غسيل المعالف",
+      "title_bn": "খাবার পাত্র পরিষ্কার",
+      "date": "2026-02-07",
+      "time": "14:00",
+      "datetime": "2026-02-07T14:00:00",
+      "priority": "medium",
+      "icon": "🪣"
+    },
+    {
+      "type": "pipe_waterer_rinse",
+      "title_ar": "السقاية الأنبوبية - شطف",
+      "title_bn": "পাইপ ওয়াটারার - ধোয়া",
+      "date": "2026-02-07",
+      "time": "15:00",
+      "datetime": "2026-02-07T15:00:00",
+      "priority": "medium",
+      "icon": "🚰"
     }
   ],
   "countdown": {
@@ -446,13 +506,13 @@
       "icon": "🚰"
     },
     "countdown": {
-      "total_seconds": 73542,
+      "total_seconds": 46717,
       "days": 0,
-      "hours": 20,
-      "minutes": 25,
-      "seconds": 42
+      "hours": 12,
+      "minutes": 58,
+      "seconds": 37
     },
-    "current_time": "2026-01-08T18:34:17.805664"
+    "current_time": "2026-01-09T02:01:22.644399"
   },
-  "total_count": 41
+  "total_count": 47
 }
