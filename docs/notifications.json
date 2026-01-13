@@ -1,16 +1,6 @@
 {
-  "generated_at": "2026-01-12T18:38:11.849466",
+  "generated_at": "2026-01-13T01:57:29.135761",
   "upcoming_notifications": [
-    {
-      "type": "pipe_waterer_change_water",
-      "title_ar": "السقاية الأنبوبية - تغيير الماء",
-      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
-      "date": "2026-01-12",
-      "time": "15:00",
-      "datetime": "2026-01-12T15:00:00",
-      "priority": "medium",
-      "icon": "🚰"
-    },
     {
       "type": "fertilizer",
       "title_ar": "تسميد الحناء",
@@ -432,6 +422,28 @@
       "datetime": "2026-02-08T15:00:00",
       "priority": "medium",
       "icon": "🚰"
+    },
+    {
+      "type": "pipe_waterer_change_water",
+      "title_ar": "السقاية الأنبوبية - تغيير الماء",
+      "title_bn": "পাইপ ওয়াটারার - পানি পরিবর্তন",
+      "date": "2026-02-11",
+      "time": "15:00",
+      "datetime": "2026-02-11T15:00:00",
+      "priority": "medium",
+      "icon": "🚰"
+    },
+    {
+      "type": "fertilizer",
+      "title_ar": "تسميد القشطة",
+      "title_bn": "আতা সার প্রয়োগ",
+      "date": "2026-02-11",
+      "time": "16:00",
+      "datetime": "2026-02-11T16:00:00",
+      "priority": "medium",
+      "icon": "🌳",
+      "tree": "custard_apple",
+      "fertilizer": "NPK 20-20-20"
     }
   ],
   "countdown": {
@@ -448,13 +460,13 @@
       "fertilizer": "NPK 20-20-20"
     },
     "countdown": {
-      "total_seconds": 76908,
+      "total_seconds": 50550,
       "days": 0,
-      "hours": 21,
-      "minutes": 21,
-      "seconds": 48
+      "hours": 14,
+      "minutes": 2,
+      "seconds": 30
     },
-    "current_time": "2026-01-12T18:38:11.849449"
+    "current_time": "2026-01-13T01:57:29.135741"
   },
-  "total_count": 41
+  "total_count": 42
 }
