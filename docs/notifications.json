@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-14T02:04:51.713480",
+  "generated_at": "2026-01-14T06:39:37.371890",
   "upcoming_notifications": [
     {
       "type": "vitamins",
@@ -448,13 +448,13 @@
       "reason_bn": "প্রতিরোধমূলক সহায়তা"
     },
     "countdown": {
-      "total_seconds": 111308,
+      "total_seconds": 94822,
       "days": 1,
-      "hours": 6,
-      "minutes": 55,
-      "seconds": 8
+      "hours": 2,
+      "minutes": 20,
+      "seconds": 22
     },
-    "current_time": "2026-01-14T02:04:51.713462"
+    "current_time": "2026-01-14T06:39:37.371872"
   },
   "total_count": 41
 }
