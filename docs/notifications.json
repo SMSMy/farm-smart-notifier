@@ -1,18 +1,6 @@
 {
-  "generated_at": "2026-01-13T18:36:17.154887",
+  "generated_at": "2026-01-14T02:04:51.713480",
   "upcoming_notifications": [
-    {
-      "type": "fertilizer",
-      "title_ar": "تسميد الحناء",
-      "title_bn": "মেহেদি সার প্রয়োগ",
-      "date": "2026-01-13",
-      "time": "16:00",
-      "datetime": "2026-01-13T16:00:00",
-      "priority": "medium",
-      "icon": "🌳",
-      "tree": "henna",
-      "fertilizer": "NPK 20-20-20"
-    },
     {
       "type": "vitamins",
       "title_ar": "فيتامينات وإلكتروليت - دعم وقائي",
@@ -460,13 +448,13 @@
       "reason_bn": "প্রতিরোধমূলক সহায়তা"
     },
     "countdown": {
-      "total_seconds": 138222,
+      "total_seconds": 111308,
       "days": 1,
-      "hours": 14,
-      "minutes": 23,
-      "seconds": 42
+      "hours": 6,
+      "minutes": 55,
+      "seconds": 8
     },
-    "current_time": "2026-01-13T18:36:17.154869"
+    "current_time": "2026-01-14T02:04:51.713462"
   },
-  "total_count": 42
+  "total_count": 41
 }
