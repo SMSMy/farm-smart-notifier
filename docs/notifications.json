@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-15T12:54:18.219320",
+  "generated_at": "2026-01-15T18:41:45.019643",
   "upcoming_notifications": [
     {
       "type": "vitamins",
@@ -436,23 +436,23 @@
   ],
   "countdown": {
     "next_notification": {
-      "type": "pipe_waterer_sanitize",
-      "title_ar": "السقاية الأنبوبية - تعقيم",
-      "title_bn": "পাইপ ওয়াটারার - জীবাণুমুক্তকরণ",
-      "date": "2026-01-15",
-      "time": "15:00",
-      "datetime": "2026-01-15T15:00:00",
+      "type": "weekly_cleaning",
+      "title_ar": "التنظيف الأسبوعي",
+      "title_bn": "সাপ্তাহিক পরিষ্কার",
+      "date": "2026-01-17",
+      "time": "11:00",
+      "datetime": "2026-01-17T11:00:00",
       "priority": "medium",
-      "icon": "🚰"
+      "icon": "🧽"
     },
     "countdown": {
-      "total_seconds": 7541,
-      "days": 0,
-      "hours": 2,
-      "minutes": 5,
-      "seconds": 41
+      "total_seconds": 145094,
+      "days": 1,
+      "hours": 16,
+      "minutes": 18,
+      "seconds": 14
     },
-    "current_time": "2026-01-15T12:54:18.219303"
+    "current_time": "2026-01-15T18:41:45.019626"
   },
   "total_count": 41
 }
