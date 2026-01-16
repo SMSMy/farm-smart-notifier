@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-16T02:01:37.874999",
+  "generated_at": "2026-01-16T06:39:41.160587",
   "upcoming_notifications": [
     {
       "type": "weekly_cleaning",
@@ -464,13 +464,13 @@
       "icon": "🧽"
     },
     "countdown": {
-      "total_seconds": 118702,
+      "total_seconds": 102018,
       "days": 1,
-      "hours": 8,
-      "minutes": 58,
-      "seconds": 22
+      "hours": 4,
+      "minutes": 20,
+      "seconds": 18
     },
-    "current_time": "2026-01-16T02:01:37.874980"
+    "current_time": "2026-01-16T06:39:41.160569"
   },
   "total_count": 43
 }
